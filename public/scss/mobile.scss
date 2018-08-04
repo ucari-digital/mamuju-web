@@ -11,6 +11,9 @@ $s-font-small: 12px;
 
 @import 'mobile-menu';
 @import 'c_element';
+
+// Page
+@import 'user_viewer';
 // Navigation
 .navigation{
 	background-color: $dark;

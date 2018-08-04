@@ -8,7 +8,7 @@
 		<input type="text" class="form-control border-0" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon1">
 	</div>
 </div>
-<div class="headline">
+<div class="headline js-link" data-link="{{url('viewer/politik/ayo')}}">
 	<img src="https://alibaba.kumpar.com/kumpar/image/upload/c_fill,g_face,f_jpg,q_auto,fl_progressive,fl_lossy,w_800/yomvnyhqzf88t3c0ukse.jpg">
 	<div class="title my-2">
 		<h5>Ayo Nilai Calon Pemimpinmu</h5>

@@ -23,7 +23,7 @@
 	</div>
 	<div class="author py-2">
 		<div class="row">
-			<div class="col-md-6 col-6">
+			<div class="col-md-6 col-6 js-link" data-link="{{url('u/dimas')}}">
 				<div class="avatar">
 					<img src="https://instagram.fcgk10-1.fna.fbcdn.net/vp/05ecd0192c87c1e156e8bdb829f86fe1/5C0A4CA3/t51.2885-15/e35/37083179_2151383635147018_8612091074149613568_n.jpg">
 				</div>
@@ -32,7 +32,7 @@
 					<div class="position">Penulis</div>
 				</div>
 			</div>
-			<div class="col-md-6 col-6">
+			<div class="col-md-6 col-6 js-link" data-link="{{url('u/dimas')}}">
 				<div class="avatar">
 					<img src="https://cdn.dribbble.com/users/1769044/screenshots/4662857/img_1867.png">
 				</div>

@@ -1,4 +1,7 @@
 $border: #e0e0e0;
+a, a:focus{
+	text-decoration: none;
+}
 hr.dashed{
 	border-top: 1px dashed $border;
 }

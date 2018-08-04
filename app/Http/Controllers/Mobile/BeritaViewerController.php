@@ -11,4 +11,9 @@ class BeritaViewerController extends Controller
     {
     	return view('mobile.berita-viewer');
     }
+
+    public function user()
+    {
+    	return view('mobile.user-viewer');
+    }
 }

@@ -36,8 +36,27 @@
     height: 40px;
     padding: 12px 14px; }
 
+a, a:focus {
+  text-decoration: none; }
+
 hr.dashed {
   border-top: 1px dashed #e0e0e0; }
+
+.profil {
+  box-shadow: 0px 1px 5px 0px #e0e0e0; }
+  .profil .avatar {
+    width: 50px;
+    margin: 0px auto; }
+    .profil .avatar > img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50px; }
+  .profil .info {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px; }
+    .profil .info .name {
+      text-align: center; }
 
 .navigation {
   background-color: #212121;
