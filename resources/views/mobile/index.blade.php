@@ -1,5 +1,27 @@
 @extends('mobile.layout')
 @section('content')
+<div class="block-nav my-3">
+	<div class="row">
+		<div class="col-md-4 col-4 js-link" data-link="{{url('/kategori/infografis')}}">
+			<div class="item green" id="infografis">
+				<i class="far fa-map"></i>
+				<span>Infografis</span>
+			</div>
+		</div>
+		<div class="col-md-4 col-4 js-link" data-link="{{url('/')}}">
+			<div class="item red" id="populer">
+				<i class="far fa-fire"></i>
+				<span>Populer</span>
+			</div>
+		</div>
+		<div class="col-md-4 col-4 js-link" data-link="{{url('/kategori/tv')}}">
+			<div class="item orange" id="tv">
+				<i class="far fa-tv-retro"></i>
+				<span>TV</span>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="search mt-3">
 	<div class="input-group mb-3">
 		<div class="input-group-prepend">

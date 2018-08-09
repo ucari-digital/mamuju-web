@@ -17,17 +17,7 @@
 			<img class="rounded  mx-auto d-block" src="{{url('asset/logo.png')}}">
 		</div>
 		<div class="menu-maps">
-			<div class="row py-2 px-0 mx-0">
-				<div class="col-md-4 col-4">
-					<a href="{{url('/kategori/infografis')}}" id="infografis">Infografis</a>
-				</div>
-				<div class="col-md-4 col-4">
-					<a href="{{url('/')}}" id="populer">Populer</a>
-				</div>
-				<div class="col-md-4 col-4">
-					<a href="{{url('/kategori/tv')}}" id="tv">TV</a>
-				</div>
-			</div>
+			@yield('menu-maps')
 		</div>
 	</div>
 	<div class="container">
@@ -59,11 +49,11 @@
 					<small>Kontak</small>
 				</div>
 				<div class="col-md-6 col-6 border-left">
-					<small>Redaksi</small>
-					<small>Pedoman Media Siber</small>
-					<small>Tentang Kami</small>
-					<small>Disclaimer</small>
-					<small>Kontak</small>
+					<small>Beriklan</small>
+					<small>Komplain</small>
+					<small>Facebook</small>
+					<small>Twitter</small>
+					<small>Instagram</small>
 				</div>
 			</div>
 			<hr class="my-2">

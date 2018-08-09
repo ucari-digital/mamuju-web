@@ -29,22 +29,22 @@
 					<span class="list-menu">Tokoh</span>
 				</div>
 				<div class="col-md-3 col-4 mt-3">
-					<span class="list-menu">Olahraga</span>
+					<span class="list-menu">Opini</span>
 				</div>
 				<div class="col-md-3 col-4 mt-3">
-					<span class="list-menu">Daerah</span>
+					<span class="list-menu">Foto</span>
 				</div>
 				<div class="col-md-3 col-4 mt-3">
-					<span class="list-menu">Tokoh</span>
+					<span class="list-menu">TV</span>
 				</div>
 				<div class="col-md-3 col-4 mt-3">
-					<span class="list-menu">Olahraga</span>
+					<span class="list-menu">Desaku</span>
 				</div>
 				<div class="col-md-3 col-4 mt-3">
-					<span class="list-menu">Daerah</span>
+					<span class="list-menu">Cerpen</span>
 				</div>
 				<div class="col-md-3 col-4 mt-3">
-					<span class="list-menu">Tokoh</span>
+					<span class="list-menu">Wisata</span>
 				</div>
 			</div>
 		</div>
