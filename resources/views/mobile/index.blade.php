@@ -30,13 +30,16 @@
 		<input type="text" class="form-control border-0" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon1">
 	</div>
 </div>
-<div class="headline js-link" data-link="{{url('viewer/politik/ayo')}}">
-	<img src="https://alibaba.kumpar.com/kumpar/image/upload/c_fill,g_face,f_jpg,q_auto,fl_progressive,fl_lossy,w_800/yomvnyhqzf88t3c0ukse.jpg">
+<div class="headline js-link" data-link="{{url('viewer/politik/'.$headline['seo'])}}">
+	<img src="/{{env('PATH_STORAGE').$headline['gambar']}}">
 	<div class="title my-2">
-		<h5>Ayo Nilai Calon Pemimpinmu</h5>
+		<h5>{{$headline['judul']}}</h5>
 	</div>
 	<div class="desc">
-		{{str_limit('Riuh rendah Pilpres 2019 sudah terasa di seluruh pelosok negeri. Terlepas dari lobi-lobi bawah tangan yang masih terus terjadi, masyarakat tampak bersemangat mengikuti detik demi detik gempita pesta demokrasi lima tahunan ini.', 150)}}
+		@php
+			$headline_render = strip_tags($headline['berita']);
+		@endphp
+		{{str_limit($headline_render, 200)}}
 	</div>
 </div>
 <div class="news mt-3">
@@ -45,41 +48,34 @@
 			<h6 class="box-title float-left">Berita Terbaru</h6>
 			<span class="box-more float-right">Lihat semua</span>
 		</div>
+		@foreach($news_line as $item)
 		<div class="col-md-6 col-6">
-			<img src="https://alibaba.kumpar.com/kumpar/image/upload/c_fill,g_face,f_jpg,q_auto,fl_progressive,fl_lossy,w_800/qhmlunklwtboydi9jzgk.jpg">
+			<img src="/{{env('PATH_STORAGE').$item['gambar']}}">
 			<div class="title mt-1">
-				<h6>Jokowi Akan Bertemu Prabowo</h6>
+				<h6>{{$item['judul']}}</h6>
 			</div>
 			<div class="desc">
-				{{str_limit('Di tengah riuh lobi-lobi jelang pendaftaran presiden dan calon presiden di Pilpres 2019, beredar informasi bahwa Presiden Joko Widodo akan bertemu dengan Ketum Gerindra Prabowo Subianto. Staf Ahli Utama Kantor Staf Kepresidenan Ali Mochtar Ngabalin mengaku sudah mendengar rencana itu.', 70)}}
+				@php
+					$headline_render = strip_tags($item['berita']);
+				@endphp
+				{{str_limit($headline_render, 70)}}
 			</div>
 			<div class="info">
 				<div class="label yellow mt-1">Politik</div>
 				<div class="tanggal mt-1">31/07/2018</div>
 			</div>
 		</div>
-		<div class="col-md-6 col-6">
-			<img src="https://alibaba.kumpar.com/kumpar/image/upload/c_fill,g_face,f_jpg,q_auto,fl_progressive,fl_lossy,w_800/l9pjmy89tb78ifk692a9.jpg">
-			<div class="title mt-1">
-				<h6>Mahkota Raja dan Ratu Swedia Dicuri</h6>
-			</div>
-			<div class="desc">
-				{{str_limit('Pencurian dilaporkan terjadi terhadap sejumlah benda berharga milik kerajaan Swedia. Pelaku mencuri barang berharga tersebut dari Katedral dan membawa kabur dengan speedboat.', 70)}}
-			</div>
-			<div class="info">
-				<div class="label orange mt-1">Internasional</div>
-				<div class="tanggal mt-1">31/07/2018</div>
-			</div>
-		</div>
+		@endforeach
 	</div>
 	<div class="line">
+		@foreach($news_list as $item)
 		<div class="row mt-3">
 			<div class="col-md-5 col-5">
-				<img src="https://alibaba.kumpar.com/kumpar/image/upload/q_auto,f_jpg,fl_progressive,fl_lossy,c_fill,g_face,w_640,ar_16:9/bkncjlu5gizsilv8qjmq.jpg">
+				<img src="/{{env('PATH_STORAGE').$item['gambar']}}">
 			</div>
 			<div class="col-md-7 col-7">
 				<div class="title">
-					<h6>{{str_limit('Pelajar di Tangerang yang Dibacok Saat Tawuran Dirujuk ke RSCM', 50)}}</h6>
+					<h6>{{str_limit($item['judul'], 50)}}</h6>
 				</div>
 				<div class="info">
 					<div class="label orange mt-1">Internasional</div>
@@ -87,34 +83,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row mt-3">
-			<div class="col-md-5 col-5">
-				<img src="https://alibaba.kumpar.com/kumpar/image/upload/q_auto,f_jpg,fl_progressive,fl_lossy,c_fill,g_face,w_640,ar_16:9/wlm0aecueqmsfdj3fyou.jpg">
-			</div>
-			<div class="col-md-7 col-7">
-				<div class="title">
-					<h6>{{str_limit('Infografik: 19 Titik Gerbang Tol yang Ditutup Saat Asian Games', 50)}}</h6>
-				</div>
-				<div class="info">
-					<div class="label green mt-1">Olahraga</div>
-					<div class="tanggal mt-1">31/07/2018</div>
-				</div>
-			</div>
-		</div>
-		<div class="row mt-3">
-			<div class="col-md-5 col-5">
-				<img src="https://alibaba.kumpar.com/kumpar/image/upload/q_auto,f_jpg,fl_progressive,fl_lossy,c_fill,g_face,w_640,ar_16:9/atr2r2puocqydu3f82nf.jpg">
-			</div>
-			<div class="col-md-7 col-7">
-				<div class="title">
-					<h6>{{str_limit('Bom Bunuh Diri Serang Gedung Pemerintahan Afghanistan, 15 Orang Tewas', 50)}}</h6>
-				</div>
-				<div class="info">
-					<div class="label orange mt-1">Internasional</div>
-					<div class="tanggal mt-1">31/07/2018</div>
-				</div>
-			</div>
-		</div>
+		@endforeach
 	</div>
 </div>
 <div class="infografis mt-3">
