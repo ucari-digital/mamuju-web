@@ -78,7 +78,7 @@
 					<h6>{{str_limit($item['judul'], 50)}}</h6>
 				</div>
 				<div class="info">
-					<div class="label orange mt-1">Internasional</div>
+					<div class="label mt-1" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
 					<div class="tanggal mt-1">31/07/2018</div>
 				</div>
 			</div>

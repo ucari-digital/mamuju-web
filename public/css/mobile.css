@@ -124,14 +124,16 @@ hr.dashed {
   color: #707070; }
   .container .headline > img {
     width: 100%;
-    border-radius: 5px; }
+    border-radius: 5px;
+    max-height: 200px; }
   .container .headline > .title > h5 {
     font-size: 1.1rem !important; }
   .container .headline > .desc {
     font-size: 14px; }
 .container .news img {
   width: 100%;
-  border-radius: 5px; }
+  border-radius: 5px;
+  max-height: 100px; }
 .container .news .title > h6 {
   color: #707070;
   font-size: 0.9rem !important; }
@@ -154,7 +156,7 @@ hr.dashed {
   float: right; }
 .container .video > iframe {
   width: 100%;
-  height: 50%;
+  height: 40%;
   max-height: 300px;
   border-radius: 5px; }
 .container .box-title {
@@ -165,7 +167,8 @@ hr.dashed {
   font-size: 0.9rem; }
 .container .line img {
   width: 100%;
-  border-radius: 5px; }
+  border-radius: 5px;
+  max-height: 80px; }
 .container .line .title {
   font-size: 1rem !important; }
 .container .info .label {
@@ -206,10 +209,12 @@ hr.dashed {
         margin: 0 15px 0 0; }
         .container .scrollabel .scroll .content-large > img {
           width: 100%;
-          border-radius: 5px; }
+          border-radius: 5px;
+          min-height: 200px; }
       .container .scrollabel .scroll .content > img {
         width: 100%;
-        border-radius: 5px; }
+        border-radius: 5px;
+        max-height: 100px; }
       .container .scrollabel .scroll .content .title > h5 {
         font-size: 0.9rem !important; }
 
