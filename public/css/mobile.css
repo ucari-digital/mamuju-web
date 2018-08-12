@@ -154,7 +154,7 @@ hr.dashed {
 .container .news .info .tanggal {
   font-size: 12px;
   float: right; }
-.container .video > iframe {
+.container .video > iframe, .container .video img {
   width: 100%;
   height: 40%;
   max-height: 300px;
@@ -210,7 +210,7 @@ hr.dashed {
         .container .scrollabel .scroll .content-large > img {
           width: 100%;
           border-radius: 5px;
-          min-height: 200px; }
+          max-height: 200px; }
       .container .scrollabel .scroll .content > img {
         width: 100%;
         border-radius: 5px;

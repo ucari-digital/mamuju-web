@@ -22,25 +22,14 @@
 		<div class="item">Ayo nilai calon pemimpinmu</div>
 	</div> --}}
 	{{-- <hr class="dashed my-1"> --}}
-	<h6 class="title pt-3 pb-1">Ayo nilai calon pemimpinmu</h6>
-	<div class="time-upload">31 Juli 2018 21:00 WIB <div class="coment-counter">3 <i class="fal fa-comment-alt"></i></div></div>
+	<h6 class="title pt-3 pb-1">{{$data['judul']}}</h6>
+	<div class="time-upload">{{$data['tgl_upload']}} <div class="coment-counter">3 <i class="fal fa-comment-alt"></i></div></div>
 	<div class="image">
-		<img src="https://alibaba.kumpar.com/kumpar/image/upload/c_fill,g_face,f_jpg,q_auto,fl_progressive,fl_lossy,w_800/yomvnyhqzf88t3c0ukse.jpg" alt="">
-		<small class="img-ket">Bursa pilpres 2019</small>
+		<img src="/{{env('PATH_STORAGE').$data['gambar']}}" alt="">
+		<small class="img-ket">{{$data['keterangan_gambar']}}</small>
 	</div>
 	<div class="konten py-2">
-		<p>
-			Ekonomi Indonesia mengalami kebocoran, karena devisa berupada dolar AS hasil ekspor tak seluruhnya dibawa masuk ke dalam negeri. Akibatnya, rupiah sulit menahan penguatan dolar AS, akibat pengusaha lebih memilih memarkir dolar AS mereka di luar negeri sehingga Devisa Hasil Ekspor (DHE) “bocor”.
-		</p>
-		<p>
-			Menteri Koordinator Bidang Kemaritiman, Luhut Binsar Pandjaitan, mengatakan pemerintah sudah mengimbau para warga Indonesia yang memiliki dolar AS di luar negeri agar mau membawanya ke Indonesia. Kata dia, banyak dari mereka memiliki nasionalisme untuk sama-sama menyelamatkan ekonomi Indonesia. 
-		</p>
-		<p>
-			“Ya jadi kami sudah imbau, saya rasa banyak kok yang punya komitmen, mereka mau naruh (dolar AS) di dalam. Saya bilang ke mereka, kamu pengusaha Indonesia, orang Indonesia, kan kamu menikmati Indonesia, kamu ekspor, ya mbok bawa lah duitnya ke dalam negeri,” kata dia saat ditemui di kantornya, Jumat (3/8). 
-		</p>
-		<p>
-			Kata Luhut, setelah dirinya bertemu pada eskportir itu, banyak juga yang mau berkomitmen untuk membawa dolar AS-nya ke Indonesia. Tapi Luhut juga bilang bahwa imbauan itu bukan berarti membuat pemerintah mendikte pengusaha    tapi murni untuk memperbaiki rupiah. 
-		</p>
+		{!! $data['berita'] !!}
 	</div>
 	<div class="author py-2">
 		<div class="row">

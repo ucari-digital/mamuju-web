@@ -11,10 +11,13 @@ class MobileIndexController extends Controller
 {
     public function index()
     {
-    	$headline = self::headline()['data'][0];
+    	$headline = self::headline()['data'];
         $news_line = self::news_line()['data'];
         $news_list = self::news_list()['data'];
-    	return view('mobile.index', compact('headline', 'news_line', 'news_list'));
+        $infografis = self::news_kategori('1', 5)['data'];
+        $foto = self::news_kategori('2', 5)['data'];
+        $video = self::news_kategori('3', 1)['data'];
+    	return view('mobile.index', compact('headline', 'news_line', 'news_list', 'infografis', 'foto', 'video'));
     }
 
     public static function headline()
@@ -48,7 +51,7 @@ class MobileIndexController extends Controller
                 ],
                 'form_params' => [
                     'take' => '2',
-                    'skip' => '0'
+                    'skip' => '1'
                 ]
             ]
         ];
@@ -68,6 +71,26 @@ class MobileIndexController extends Controller
                 'form_params' => [
                     'take' => '3',
                     'skip' => '3'
+                ]
+            ]
+        ];
+        return Guzzle::request($param);
+    }
+
+    public static function news_kategori($id, $take)
+    {
+        $param = [
+            'method' => 'POST',
+            'url' => 'news',
+            'request' => [
+                'allow_redirects' => true,
+                'headers' => [
+                    
+                ],
+                'form_params' => [
+                    'take' => $take,
+                    'skip' => '0',
+                    'kategori' => $id
                 ]
             ]
         ];

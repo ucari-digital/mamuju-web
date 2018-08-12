@@ -14,7 +14,7 @@
 			<i class="fal fa-bars"></i>
 		</div>
 		<div class="logo">
-			<img class="rounded  mx-auto d-block" src="{{url('asset/logo.png')}}">
+			<img class="rounded  mx-auto d-block js-link" data-link="{{url('/')}}" src="{{url('asset/logo.png')}}">
 		</div>
 		<div class="menu-maps">
 			@yield('menu-maps')
@@ -78,13 +78,17 @@
 			if ('{{url('/kategori/infografis')}}' == '{{url()->full()}}') {
 				$('#infografis').addClass('active');
 			}
-			if ('{{url('/')}}' == '{{url()->full()}}') {
+			if ('{{url('/populer')}}' == '{{url()->full()}}') {
 				$('#populer').addClass('active');
 			}
 			if ('{{url('/kategori/tv')}}' == '{{url()->full()}}') {
 				$('#tv').addClass('active');
 			}
+
 		});
+		$( "img" ).on('error', function() {
+		    $(this).attr('src', '{{url('asset/no_image_to_show_.jpg')}}')
+		})
 	</script>
 </body>
 </html>
