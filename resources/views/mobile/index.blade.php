@@ -1,6 +1,6 @@
 @extends('mobile.layout')
 @section('content')
-<div class="block-nav my-3">
+<div class="block-nav mb-3" style="margin-top: 80px">
 	<div class="row">
 		<div class="col-md-4 col-4 js-link" data-link="{{url('/kategori/infografis')}}">
 			<div class="item green" id="infografis">
@@ -128,8 +128,10 @@
 					<h5>{{str_limit($item['judul'], 50)}}</h5>
 				</div>
 				<div class="info">
+					<div class="label mt-1" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
 					<div class="tanggal mt-1">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
 				</div>
+
 			</div>
 			@endforeach
 		</div>
@@ -138,16 +140,21 @@
 <div class="video mt-3">
 	<div class="row">
 		<div class="col-md-12 mb-3">
-			<h6 class="box-title float-left">Video</h6>
+			<h6 class="box-title float-left">TV</h6>
 			<span class="box-more float-right">Lihat semua</span>
 		</div>
 	</div>
 	@foreach($video as $item)
-	<div class="content">
+	<div class="content js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
 		<img src="/{{env('PATH_STORAGE').$item['gambar']}}">
 		<div class="title my-2">
 			<h5>{{$item['judul']}}</h5>
 		</div>
+		<div class="info">
+			<div class="label mt-1" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
+			<div class="tanggal mt-1">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
+		</div>
+
 	</div>
 	@endforeach
 </div>

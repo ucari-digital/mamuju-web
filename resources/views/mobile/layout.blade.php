@@ -14,7 +14,9 @@
 			<i class="fal fa-bars"></i>
 		</div>
 		<div class="logo">
-			<img class="rounded  mx-auto d-block js-link" data-link="{{url('/')}}" src="{{url('asset/logo.png')}}">
+			<div class="circle">
+				<img class="rounded  mx-auto d-block js-link" data-link="{{url('/')}}" src="{{url('asset/mamuju.png')}}">
+			</div>
 		</div>
 		<div class="menu-maps">
 			@yield('menu-maps')
