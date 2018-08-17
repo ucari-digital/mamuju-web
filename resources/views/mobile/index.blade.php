@@ -1,161 +1,181 @@
 @extends('mobile.layout')
 @section('content')
-<div class="block-nav mb-3" style="margin-top: 80px">
-	<div class="row">
-		<div class="col-md-4 col-4 js-link" data-link="{{url('/kategori/infografis')}}">
-			<div class="item green" id="infografis">
-				<i class="far fa-map"></i>
-				<span>Infografis</span>
+{{-- ST MENU KATEGORI --}}
+<div class="container">
+	<div class="block-nav mb-3">
+		<div class="row">
+			<div class="col-md-4 col-4 js-link" data-link="{{url('/kategori/infografis')}}">
+				<div class="item green" id="infografis">
+					<div class="icon">
+						<i class="far fa-map"></i>
+					</div>
+					<span>Infografis</span>
+				</div>
 			</div>
-		</div>
-		<div class="col-md-4 col-4 js-link" data-link="{{url('/')}}">
-			<div class="item red" id="populer">
-				<i class="far fa-fire"></i>
-				<span>Populer</span>
+			<div class="col-md-4 col-4 js-link" data-link="{{url('/')}}">
+				<div class="item red" id="populer">
+					<div class="icon">
+						<i class="far fa-fire">
+						<div class="m-label">Hot</div>
+						</i>
+					</div>
+					<span>Populer</span>
+				</div>
 			</div>
-		</div>
-		<div class="col-md-4 col-4 js-link" data-link="{{url('/kategori/tv')}}">
-			<div class="item orange" id="tv">
-				<i class="far fa-tv-retro"></i>
-				<span>TV</span>
+			<div class="col-md-4 col-4 js-link" data-link="{{url('/kategori/tv')}}">
+				<div class="item orange" id="tv">
+					<div class="icon">
+						<i class="far fa-tv-retro"></i>
+					</div>
+					<span>TV</span>
+				</div>
 			</div>
 		</div>
 	</div>
+	{{-- <div class="search mt-3">
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text border-0" id="basic-addon1"><i class="far fa-search"></i></span>
+			</div>
+			<input type="text" class="form-control border-0" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon1">
+		</div>
+	</div> --}}
 </div>
-<div class="search mt-3">
-	<div class="input-group mb-3">
-		<div class="input-group-prepend">
-			<span class="input-group-text border-0" id="basic-addon1"><i class="far fa-search"></i></span>
+{{-- END MENU KETEGORI --}}
+
+{{-- ST HEADLINE --}}
+@foreach($headline as $item)
+<div class="box-single">
+	<img src="/{{env('PATH_STORAGE').$item['gambar']}}">
+	<div class="content">
+		<h5 class="title">{{str_limit($item['judul'], 50)}}</h5>
+		<div class="description">
+			@php
+			$headline_render = strip_tags($item['berita']);
+			@endphp
+			{{str_limit($headline_render, 100)}}
 		</div>
-		<input type="text" class="form-control border-0" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon1">
-	</div>
-</div>
-@foreach($headline as $headline)
-<div class="headline js-link" data-link="{{url('viewer/politik/'.$headline['seo'].'-'.$headline['id'])}}">
-	<img src="/{{env('PATH_STORAGE').$headline['gambar']}}">
-	<div class="title my-2">
-		<h5>{{$headline['judul']}}</h5>
-	</div>
-	<div class="desc">
-		@php
-			$headline_render = strip_tags($headline['berita']);
-		@endphp
-		{{str_limit($headline_render, 200)}}
+		<div class="information mt-3">
+			<div class="category mr-2">
+				Geografis
+			</div>
+			<div class="time">
+				{{App\Helper\TimeFormat::formatId($item['created_at'])}}
+			</div>
+		</div>
 	</div>
 </div>
 @endforeach
-<div class="news mt-3">
-	<div class="row">
-		<div class="col-md-12 mb-3">
-			<h6 class="box-title float-left">Berita Terbaru</h6>
-			<span class="box-more float-right">Lihat semua</span>
-		</div>
-		@foreach($news_line as $item)
-		<div class="col-md-6 col-6 js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-			<img src="/{{env('PATH_STORAGE').$item['gambar']}}">
-			<div class="title mt-1">
-				<h6>{{$item['judul']}}</h6>
-			</div>
-			<div class="desc">
-				@php
-					$headline_render = strip_tags($item['berita']);
-				@endphp
-				{{str_limit($headline_render, 70)}}
-			</div>
-			<div class="info">
-				<div class="label mt-1" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
-				<div class="tanggal mt-1">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
-			</div>
-		</div>
-		@endforeach
-	</div>
-	<div class="line mt-2">
-		@foreach($news_list as $item)
-		<div class="row mt-3 js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-			<div class="col-md-5 col-5">
-				<img src="/{{env('PATH_STORAGE').$item['gambar']}}">
-			</div>
-			<div class="col-md-7 col-7">
-				<div class="title">
-					<h6>{{str_limit($item['judul'], 50)}}</h6>
-				</div>
-				<div class="info">
-					<div class="label mt-1" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
-					<div class="tanggal mt-1">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
-				</div>
-			</div>
-		</div>
-		@endforeach
-	</div>
-</div>
-<div class="infografis mt-3">
-	<div class="row">
-		<div class="col-md-12 mb-3">
-			<h6 class="box-title float-left">Infografis</h6>
-			<span class="box-more float-right">Lihat semua</span>
-		</div>
-	</div>
-	<div class="scrollabel">
-		<div class="scroll">
-			@foreach($infografis as $item)
-			<div class="content js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-				<img src="/{{env('PATH_STORAGE').$item['gambar']}}">
-				<div class="title my-2">
-					<h5>{{str_limit($item['judul'], 50)}}</h5>
-				</div>
-				<div class="info">
-					<div class="label mt-1" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
-					<div class="tanggal mt-1">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
-				</div>
-			</div>
-			@endforeach
-		</div>
-	</div>
-</div>
-<div class="foto mt-3">
-	<div class="row">
-		<div class="col-md-12 mb-3">
-			<h6 class="box-title float-left">Foto</h6>
-			<span class="box-more float-right">Lihat semua</span>
-		</div>
-	</div>
-	<div class="scrollabel">
-		<div class="scroll">
-			@foreach($foto as $item)
-			<div class="content-large js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-				<img src="/{{env('PATH_STORAGE').$item['gambar']}}">
-				<div class="title my-2">
-					<h5>{{str_limit($item['judul'], 50)}}</h5>
-				</div>
-				<div class="info">
-					<div class="label mt-1" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
-					<div class="tanggal mt-1">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
-				</div>
+{{-- END HEADLINE --}}
 
-			</div>
-			@endforeach
+<div class="container">
+	<div class="title-nav">
+		<div class="title">Terbaru</div>
+		<div class="button">
+			<a href="" class="dark">Lebih banyak</a>
 		</div>
 	</div>
-</div>
-<div class="video mt-3">
-	<div class="row">
-		<div class="col-md-12 mb-3">
-			<h6 class="box-title float-left">TV</h6>
-			<span class="box-more float-right">Lihat semua</span>
+	@foreach($terbaru as $item)
+	<div class="box-list mt-3">
+		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
+		<div class="content">
+			<div class="title">{{str_limit($item['judul'], 50)}}</div>
+			<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
+			<div class="category" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
 		</div>
-	</div>
-	@foreach($video as $item)
-	<div class="content js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-		<img src="/{{env('PATH_STORAGE').$item['gambar']}}">
-		<div class="title my-2">
-			<h5>{{$item['judul']}}</h5>
-		</div>
-		<div class="info">
-			<div class="label mt-1" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
-			<div class="tanggal mt-1">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
-		</div>
-
 	</div>
 	@endforeach
 </div>
+<div class="infografis" style="background-color: #4caf50">
+	<div class="container">
+		<div class="title-nav">
+			<div class="title white">Infografis</div>
+			<div class="button">
+				<a href="" class="white">Lebih banyak</a>
+			</div>
+		</div>
+		@foreach($infografis as $item)
+		<div class="box-double">
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
+			<div class="content">
+				<div class="title mb-1 pb-1">{{str_limit($item['judul'], 50)}}</div>
+				<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
+			</div>
+		</div>
+		@endforeach
+	</div>
+</div>
+<div class="foto">
+	<div class="container">
+		<div class="title-nav">
+			<div class="title dark">FOTO</div>
+			<div class="button">
+				<a href="" class="dark">Lebih banyak</a>
+			</div>
+		</div>
+		<div class="box-scroll">
+			<div class="scroll">
+				@foreach($foto as $item)
+				<div class="box-item">
+					<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
+					<div class="content">
+						<div class="title">{{str_limit($item['judul'], 50)}}</div>
+					</div>
+					<div class="information">
+						<div class="category" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
+						<div class="time">
+							{{App\Helper\TimeFormat::formatId($item['created_at'])}}
+						</div>
+					</div>
+				</div>
+				@endforeach
+			</div>
+		</div>
+	</div>
+</div>
+<div class="tv">
+	<div class="container">
+		<div class="title-nav">
+			<div class="title dark">TV</div>
+			<div class="button">
+				<a href="" class="dark">Lebih banyak</a>
+			</div>
+		</div>
+		</div>
+	@foreach($video as $item)
+	<div class="box-single">
+		<img src="/{{env('PATH_STORAGE').$item['gambar']}}">
+		<div class="content">
+			<h5 class="title">{{str_limit($item['judul'], 50)}}</h5>
+			<div class="information mt-3">
+				<div class="category" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
+				<div class="time">
+					{{App\Helper\TimeFormat::formatId($item['created_at'])}}
+				</div>
+			</div>
+		</div>
+	</div>
+	@endforeach
+</div>
+<div class="container">
+	<div class="title-nav">
+		<div class="title">Terpopuler</div>
+		<div class="button">
+			<a href="" class="dark">Lebih banyak</a>
+		</div>
+	</div>
+	@foreach($populer as $item)
+	<div class="box-list mt-3">
+		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
+		<div class="content">
+			<div class="title">{{str_limit($item['judul'], 50)}}</div>
+			<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
+			<div class="category" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
+		</div>
+	</div>
+	@endforeach
+</div>
+@endsection
+@section('footer')
+
 @endsection

@@ -10,19 +10,24 @@
 </head>
 <body>
 	<div class="navigation">
-		<div class="menu" id="menu">
-			<i class="fal fa-bars"></i>
-		</div>
-		<div class="logo">
-			<div class="circle">
-				<img class="rounded  mx-auto d-block js-link" data-link="{{url('/')}}" src="{{url('asset/mamuju.png')}}">
+		<div class="container">
+			<div class="menu" id="menu">
+				<i class="fas fa-th"></i>
+			</div>
+			<div class="logo">
+				<div class="circle">
+					<img class="rounded  mx-auto d-block js-link" data-link="{{url('/')}}" src="{{url('asset/mt.png')}}">
+				</div>
+			</div>
+			<div class="account">
+				<i class="fal fa-bell"></i>
 			</div>
 		</div>
 		<div class="menu-maps">
 			@yield('menu-maps')
 		</div>
 	</div>
-	<div class="container">
+	<div>
 		@yield('content')
 	</div>
 	<div class="footer mt-3 pt-3">
@@ -80,7 +85,7 @@
 			if ('{{url('/kategori/infografis')}}' == '{{url()->full()}}') {
 				$('#infografis').addClass('active');
 			}
-			if ('{{url('/populer')}}' == '{{url()->full()}}') {
+			if ('{{url('/')}}' == '{{url()->full()}}') {
 				$('#populer').addClass('active');
 			}
 			if ('{{url('/kategori/tv')}}' == '{{url()->full()}}') {

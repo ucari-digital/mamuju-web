@@ -12,48 +12,47 @@ $s-font-small: 12px;
 
 @import 'mobile-menu';
 @import 'c_element';
+@import 'box';
 
 // Page
 @import 'user_viewer';
 
 .navigation{
-	background-color: $dark;
+	background-color: #FFF;
 	display: inline-block;
 	width: 100%;
 	position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
-    box-shadow: 0px 1px 5px #616161;
+    box-shadow: 0px 1px 5px #eeeeee;
 	.menu {
-		padding: 15px;
+		padding: 15px 0;
 		float: left;
 		display: inline-block;
 		> i {
-			color: #FFF;
+			color: $dark;
 			font-size: 24px;
 		}
 	}
 	.logo {
-		padding: 10px 40%;
+		padding: 0px 40%;
 		width: 100%;
 		height: 50px;
-		.circle{
-			width: 85px;
-		    height: 85px;
-		    position: fixed;
-		    top: -20px;
-		    background-color: #FFF;
-		    border-radius: 50px;
-		    z-index: -1;
-		    box-shadow: 0px 1px 5px #616161;
-		    > img {
-				width: 78px;
-				max-width: 270px;
-				z-index: 1000;
-				margin-top: 25px;
-			}
+		img {
+			width: 72px;
+		    max-width: 270px;
+		    z-index: 1000;
+		    margin-top: 3px;
 		}
+	}
+	.account{
+		float: right;
+	    display: inline-block;
+	    position: absolute;
+	    top: 15px;
+	    right: 15px;
+	    font-size: 24px;
 	}
 	.menu-maps{
 		display: block;
@@ -72,31 +71,188 @@ $s-font-small: 12px;
 	}
 }
 
+.block-nav{
+	margin-top: 70px;
+    padding: 10px 0;
+    background-color: #FFF;
+    border-radius: 3px;
+	.item{
+		width: 70px;
+		margin: 0 auto;
+		&.green.active{
+			border-bottom: 3px solid $green;
+			padding-bottom: 5px;
+			i{
+				color: $green;
+			}
+		}
+		&.red.active{
+			border-bottom: 3px solid $red;
+			padding-bottom: 5px;
+			i{
+				color: $red;
+			}
+		}
+		&.orange.active{
+			border-bottom: 3px solid $orange;
+			padding-bottom: 5px;
+			i{
+				color: $orange;
+			}
+		}
+		.icon{
+			height: 20px;
+			.m-label{
+				background-color: #f44336;
+			    position: relative;
+			    top: -22px;
+			    right: -18px;
+			    font-size: 10px;
+			    color: #FFF;
+			    padding: 1px 5px;
+			    border-radius: 2px;
+			    font-weight: 600;
+			    width: 30px;
+			}
+		}
+		text-align: center;
+		i {
+			display: inline-block;
+			font-size: 20px;
+			height: 20px;
+		}
+		> span {
+			font-size: 14px;
+			font-weight: 500;
+		}
+	}
+}
+
+.search{
+	.input-group{
+		box-shadow: 0px 2px 5px 0px #bdbdbd;
+		border-radius: 5px;
+		.form-control{
+			padding: 12px 5px;
+			box-shadow: none !important;
+		}
+	}
+	.input-group-text{
+		padding: 12px 10px 12px 20px;
+		background-color: transparent !important;
+	}
+}
+
+.title-nav{
+	display: flex;
+	padding: 15px 0;
+	.title{
+		width: 50%;
+	    display: inline-block;
+	    font-size: 18px;
+	    font-weight: 500;
+	    text-transform: uppercase;
+	    &.white{
+	    	color: #FFF;
+	    }
+	    &.dark{
+	    	color: $dark;
+	    }
+	}
+	.button{
+		width: 50%;
+		display: inline-block;
+		text-align: right;
+		font-size: 12px;
+		a{
+			color: #212121;
+		    font-weight: 500;
+		    padding: 3px 10px;
+		    border-radius: 50px;
+		    &.white{
+			    background-color: #FFF;
+		    	box-shadow: 3px 3px 5px #338a3e;
+		    	color: $dark;
+		    }
+		    &.dark{
+		    	background-color: #9e9e9e;
+		    	box-shadow: 1px 1px 5px 0px #9e9e9e;
+		    	color: #FFF;
+		    }
+		}
+	}
+}
+
+// Index Element Infografis
+.infografis{
+	background-image: url('/mamuju/mamuju-web/public/asset/pattern.png');
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.foto{
+	border-bottom: 1px dashed $border;
+}
+
+
+
+// OLD
+
 .container{
 	.block-nav{
+		margin-top: 70px;
+	    padding: 10px 0;
+	    background-color: #FFF;
+	    border-radius: 3px;
 		.item{
+			width: 70px;
+			margin: 0 auto;
 			&.green.active{
-				> i{
+				border-bottom: 3px solid $green;
+				padding-bottom: 5px;
+				i{
 					color: $green;
 				}
 			}
 			&.red.active{
-				> i{
+				border-bottom: 3px solid $red;
+				padding-bottom: 5px;
+				i{
 					color: $red;
 				}
 			}
 			&.orange.active{
-				> i{
+				border-bottom: 3px solid $orange;
+				padding-bottom: 5px;
+				i{
 					color: $orange;
 				}
 			}
+			.icon{
+				height: 20px;
+				.m-label{
+					background-color: #f44336;
+				    position: relative;
+				    top: -22px;
+				    right: -18px;
+				    font-size: 10px;
+				    color: #FFF;
+				    padding: 1px 5px;
+				    border-radius: 2px;
+				    font-weight: 600;
+				    width: 30px;
+				}
+			}
 			text-align: center;
-			> i {
-				display: block;
+			i {
+				display: inline-block;
 				font-size: 20px;
+				height: 20px;
 			}
 			> span {
 				font-size: 14px;
+				font-weight: 500;
 			}
 		}
 	}
@@ -109,7 +265,7 @@ $s-font-small: 12px;
 
 	.search{
 		.input-group{
-			box-shadow: 0px 3px 10px 2px #bdbdbd;
+			box-shadow: 0px 2px 5px 0px #bdbdbd;
     		border-radius: 5px;
 			.form-control{
 				padding: 12px 5px;
@@ -119,21 +275,6 @@ $s-font-small: 12px;
 		.input-group-text{
 			padding: 12px 10px 12px 20px;
 			background-color: transparent !important;
-		}
-	}
-
-	.headline{
-		color: $font;
-		> img {
-			width: 100%;
-			border-radius: 5px;
-			max-height: 200px;
-		}
-		> .title > h5{
-			font-size: 1.1rem !important;
-		}
-		> .desc{
-			font-size: $s-font-normal;
 		}
 	}
 
@@ -268,6 +409,7 @@ $s-font-small: 12px;
 		}
 	}
 }
+
 
 .berita{
 	.page-map{

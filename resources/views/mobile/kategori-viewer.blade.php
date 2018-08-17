@@ -1,22 +1,30 @@
 @extends('mobile.layout')
 @section('content')
-<div class="block-nav my-3">
+<div class="block-nav mb-3" style="margin-top: 80px">
 	<div class="row">
 		<div class="col-md-4 col-4 js-link" data-link="{{url('/kategori/infografis')}}">
 			<div class="item green" id="infografis">
-				<i class="far fa-map"></i>
+				<div class="icon">
+					<i class="far fa-map"></i>
+				</div>
 				<span>Infografis</span>
 			</div>
 		</div>
 		<div class="col-md-4 col-4 js-link" data-link="{{url('/')}}">
 			<div class="item red" id="populer">
-				<i class="far fa-fire"></i>
+				<div class="icon">
+					<i class="far fa-fire">
+						<div class="m-label">Hot</div>
+					</i>
+				</div>
 				<span>Populer</span>
 			</div>
 		</div>
 		<div class="col-md-4 col-4 js-link" data-link="{{url('/kategori/tv')}}">
 			<div class="item orange" id="tv">
-				<i class="far fa-tv-retro"></i>
+				<div class="icon">
+					<i class="far fa-tv-retro"></i>
+				</div>
 				<span>TV</span>
 			</div>
 		</div>

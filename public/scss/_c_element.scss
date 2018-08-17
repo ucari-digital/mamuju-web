@@ -1,7 +1,19 @@
 $border: #e0e0e0;
+
 a, a:focus{
 	text-decoration: none;
 }
 hr.dashed{
 	border-top: 1px dashed $border;
+}
+.label-kategori{
+	font-size: 12px;
+    font-weight: 500;
+    border-radius: 2px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.bxs{
+	box-shadow: 0px 5px 10px #eee;
 }

@@ -11,73 +11,16 @@ class MobileIndexController extends Controller
 {
     public function index()
     {
-    	$headline = self::headline()['data'];
-        $news_line = self::news_line()['data'];
-        $news_list = self::news_list()['data'];
-        $infografis = self::news_kategori('1', 5)['data'];
-        $foto = self::news_kategori('2', 5)['data'];
-        $video = self::news_kategori('3', 1)['data'];
-    	return view('mobile.index', compact('headline', 'news_line', 'news_list', 'infografis', 'foto', 'video'));
+    	$headline = self::news('1', '0')['data'];
+        $terbaru = self::news('4', '1')['data'];
+        $infografis = self::news('4', '0', '1')['data'];
+        $foto = self::news('5', '0', '2')['data'];
+        $video = self::news('1', '0', '3')['data'];
+        $populer = self::news('5', '0')['data'];
+    	return view('mobile.index', compact('headline', 'terbaru', 'infografis', 'foto', 'video', 'populer'));
     }
 
-    public static function headline()
-    {
-    	$param = [
-            'method' => 'POST',
-            'url' => 'news',
-            'request' => [
-                'allow_redirects' => true,
-                'headers' => [
-                    
-                ],
-                'form_params' => [
-                    'take' => '1',
-                    'skip' => '0'
-                ]
-            ]
-        ];
-        return Guzzle::request($param);
-    }
-
-    public static function news_line()
-    {
-        $param = [
-            'method' => 'POST',
-            'url' => 'news',
-            'request' => [
-                'allow_redirects' => true,
-                'headers' => [
-                    
-                ],
-                'form_params' => [
-                    'take' => '2',
-                    'skip' => '1'
-                ]
-            ]
-        ];
-        return Guzzle::request($param);
-    }
-
-    public static function news_list()
-    {
-        $param = [
-            'method' => 'POST',
-            'url' => 'news',
-            'request' => [
-                'allow_redirects' => true,
-                'headers' => [
-                    
-                ],
-                'form_params' => [
-                    'take' => '3',
-                    'skip' => '3'
-                ]
-            ]
-        ];
-        return Guzzle::request($param);
-    }
-
-    public static function news_kategori($id, $take)
+    public static function news($take, $skip, $kategori = '')
     {
         $param = [
             'method' => 'POST',
@@ -89,8 +32,28 @@ class MobileIndexController extends Controller
                 ],
                 'form_params' => [
                     'take' => $take,
-                    'skip' => '0',
-                    'kategori' => $id
+                    'skip' => $skip,
+                    'kategori' => $kategori
+                ]
+            ]
+        ];
+        return Guzzle::request($param);
+    }
+
+    public static function populer_news($take, $skip, $kategori = '')
+    {
+        $param = [
+            'method' => 'POST',
+            'url' => 'populer',
+            'request' => [
+                'allow_redirects' => true,
+                'headers' => [
+                    
+                ],
+                'form_params' => [
+                    'take' => $take,
+                    'skip' => $skip,
+                    'kategori' => $kategori
                 ]
             ]
         ];

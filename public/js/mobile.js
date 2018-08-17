@@ -17,3 +17,11 @@ $(document).ready(function() {
 		window.location.href = $(this).data('link');
 	});
 });
+
+// css image injection
+$('.img').each(function(i, obj){
+	var img_url = $(obj).data('img');
+	var id = $(obj).attr('id');
+	var elm = document.getElementById(id);
+	elm.style.backgroundImage = 'url('+img_url+')';
+});
