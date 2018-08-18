@@ -8,7 +8,7 @@
   height: 100%;
   display: none;
   background-color: #fff;
-  background-image: url(/mamuju/mamuju-web/public/asset/pattern-white.png);
+  background-image: url(../asset/pattern-white.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
@@ -452,7 +452,7 @@ hr.dashed {
         color: #FFF; }
 
 .infografis {
-  background-image: url("/mamuju/mamuju-web/public/asset/pattern.png");
+  background-image: url("../asset/pattern.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
@@ -464,7 +464,7 @@ hr.dashed {
 .footer {
   background-color: #212121 !important;
   color: #FFF;
-  background-image: url("/mamuju/mamuju-web/public/asset/pattern-white.png");
+  background-image: url("../asset/pattern-white.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom; }
