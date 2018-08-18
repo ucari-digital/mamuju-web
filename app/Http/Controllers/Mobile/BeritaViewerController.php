@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Helper\Guzzle;
+use App\Http\Controllers\GlobalController as G;
 class BeritaViewerController extends Controller
 {
     public function index($kategori, $kode_berita)
@@ -32,6 +33,7 @@ class BeritaViewerController extends Controller
 
     public function user()
     {
-    	return view('mobile.user-viewer');
+        $terbaru = G::news('4', '1')['data'];
+    	return view('mobile.user-viewer', compact('terbaru'));
     }
 }

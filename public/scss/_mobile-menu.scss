@@ -1,5 +1,5 @@
 .partial-menu{
-	position: absolute;
+	position: fixed;
 	z-index: 20;
 	top: 0;
 	left: 0;
@@ -7,38 +7,29 @@
 	font-weight: 500;
 	height: 100%;
 	display: none;
-	.bg-sidebar{
-		position: fixed;
-		width: 100%;
-		height: 20%;
-		background-color: rgba(250,250,250,0.5);
-	}
-	.sidebar{
-		width: 100%;
-		height: 80%;
-		background-color: #212121;
-		padding: 10px;
-		position: fixed;
-		bottom: 0;
-		overflow-x: scroll;
-		.sidebar-box{
-			.list-menu{
-				color: #FFF;
-				display: inline-block;
-				padding: 5px 0;
-			    width: 20%;
-			}
+	background-color: #fff;
+	background-image: url(#{$path_url_image}/pattern-white.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	.list-menu{
+		display: flex;
+		.item{
+			width: calc(100% / 3);
+			display: inline-block;
+			text-align: center;
+			padding: 10px;
+			border-radius: 3px;
+			margin: 5px;
 		}
 	}
-	.overlay-button-close{
-		position: fixed;
-	    color: #FFF;
-	    background-color: #212121;
-	    top: 65px;
-	    right: 10;
-	    border-radius: 50px;
-	    width: 40px;
-	    height: 40px;
-	    padding: 12px 14px;
+	.menu-button-close{
+		background-color: $dark;
+		text-align: center;
+		color: #FFF;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		padding: 10px;
 	}
 }

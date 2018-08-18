@@ -1,16 +1,20 @@
 $(document).ready(function() {
 	$('#menu').click(function(){
-		$('.partial-menu').fadeIn(1000, function() {
+		$('.partial-menu').fadeIn('fast', function() {
 			
 		});
 		$('.sidebar').addClass('animated slideInUp');
+		$('.content').fadeOut('fast', function() {
+			
+		});
 	});
 
-	$('.overlay-button-close').click(function(){
+	$('.menu-button-close').click(function(){
 		$('.sidebar').removeClass('slideInUp');
 		$('.partial-menu').fadeOut('slow', function() {
 			
 		});
+		$('.content').show();
 	});
 
 	$('.js-link').click(function(){

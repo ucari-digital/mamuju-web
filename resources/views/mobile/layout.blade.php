@@ -27,12 +27,12 @@
 			@yield('menu-maps')
 		</div>
 	</div>
-	<div>
+	<div class="content">
 		@yield('content')
 	</div>
-	<div class="footer mt-3 pt-3">
+	<div class="footer mt-3">
 		<div class="container">
-			<div class="row">
+			<div class="row input-box">
 				<div class="col-md-12 col-12">
 					<div class="subscribe">
 						<form action="">
@@ -46,7 +46,6 @@
 					</div>
 				</div>
 			</div>
-			<hr class="mt-0">
 			<div class="row footer-text">
 				<div class="col-md-6 col-6">
 					<small>Redaksi</small>
@@ -55,7 +54,7 @@
 					<small>Disclaimer</small>
 					<small>Kontak</small>
 				</div>
-				<div class="col-md-6 col-6 border-left">
+				<div class="col-md-6 col-6">
 					<small>Beriklan</small>
 					<small>Komplain</small>
 					<small>Facebook</small>
@@ -63,7 +62,7 @@
 					<small>Instagram</small>
 				</div>
 			</div>
-			<hr class="my-2">
+			<hr class="my-2 dashed">
 			<div class="row pb-2">
 				<div class="col-md-12 col-12">
 					<small>Copyright © 2017 PT. Media Mandar Nusantara</small>

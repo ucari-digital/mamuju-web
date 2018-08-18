@@ -1,0 +1,164 @@
+.berita{
+	margin-top: 60px;
+	.page-map{
+		.item{
+			display: inline-block;
+			font-size: 12px;
+		}
+		.separator{
+			display: inline-block;
+			font-size: 12px;
+		}
+	}
+	.title{
+		font-size: 1.1rem !important;
+		padding: 15px;
+	}
+	.time-upload{
+		font-size: 11px;
+	    padding-bottom: .5rem;
+	    color: $font-grey;
+	    font-weight: 500;
+	    .coment-counter{
+	    	display: inline-block;
+	    	float: right;
+	    }
+	}
+	.author{
+		width: 100%;
+		display: inline-block;
+		border-top: 1px dashed #e0e0e0;
+		border-bottom: 1px dashed #e0e0e0;
+		.avatar {
+			display: inline-block;
+			float: left;
+			img {
+				width: 40px;
+				height: 40px;
+				border-radius: 50px;
+				display: inline-block;
+			}
+		}
+		.box{
+			display: inline-block;
+			.name{
+				font-size: 12px;
+				display: block;
+				font-weight: 500;
+				padding-left: 10px;
+			}
+			.position{
+				display: block;
+				font-size: 12px;
+				padding-left: 10px;
+			}
+		}
+	}
+	.image {
+		display: block;
+		> img {
+			width: 100%;
+		}
+		> .img-ket{
+			font-style: italic;
+			font-size: 10px;
+			color: $font;
+			width: 100%;
+			display: block;
+			text-align: center;
+		}
+	}
+	.konten{
+		font-size: 14px;
+		&> * {
+			font-size: 14px !important;
+		}
+	}
+	.tags{
+		.label{
+			font-size: 14px;
+		    display: inline-block;
+    		font-weight: 500;
+		}
+		.list{
+			display: inline-block;
+			.item{
+				font-size: 12px;
+			    background-color: $border;
+	    		color: $font;
+	    		display: inline-block;
+	    		padding: 0 10px;
+	    		border-radius: 10px;
+			}
+		}
+	}
+	.komentar{
+		box-shadow: 1px 3px 5px 1px $border;
+	    padding: 0 20px;
+	    border-radius: 3px;
+		.label{
+			display: inline-block;
+			width: 80px;
+			font-size: 14px;
+		    font-weight: 500;
+		}
+		.text-kometar{
+			width: 100%;
+		    outline: none;
+    		border: 0px solid $border;
+    		font-size: 16px;
+		}
+		.button-komentar{
+			background-color: $dark;
+		    border: none;
+		    color: #FFF;
+		    width: 100%;
+		    font-size: 14px;
+		    font-weight: 500;
+		    padding: 5px 0;
+		    border-radius: 3px;
+		    margin: 1rem 0;
+		}
+	}
+	.viewer-komentar{
+		.list{
+			padding-top: .5rem;
+			.avatar{
+				display: inline-block;
+				img{
+					width: 40px;
+					height: 40px;
+					border-radius: 50px;
+				}
+			}
+			.box{
+				display: inline-block;
+				vertical-align: middle;
+				.name{
+					display: block;
+					font-size: 14px;
+					font-weight: 500;
+					padding: 0 10px;
+				}
+				.time{
+					display: block;
+					font-size: 12px;
+					padding-left: 10px;
+				}
+			}
+			.komentar-content{
+				display: block;
+				padding: .5rem 1rem;
+				font-size: 14px;
+				border-bottom: 1px solid $border;
+			}
+		}
+		.load-more-komentar{
+			text-align: center;
+			padding-top: .5rem;
+		    font-size: 14px;
+		    color: $font-grey;
+		    font-weight: 500;
+		}
+	}
+}

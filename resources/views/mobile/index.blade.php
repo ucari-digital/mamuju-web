@@ -25,7 +25,7 @@
 			<div class="col-md-4 col-4 js-link" data-link="{{url('/kategori/tv')}}">
 				<div class="item orange" id="tv">
 					<div class="icon">
-						<i class="far fa-tv-retro"></i>
+						<i class="far fa-tv"></i>
 					</div>
 					<span>TV</span>
 				</div>
@@ -45,7 +45,7 @@
 
 {{-- ST HEADLINE --}}
 @foreach($headline as $item)
-<div class="box-single">
+<div class="box-single js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
 	<img src="/{{env('PATH_STORAGE').$item['gambar']}}">
 	<div class="content">
 		<h5 class="title">{{str_limit($item['judul'], 50)}}</h5>
@@ -56,9 +56,7 @@
 			{{str_limit($headline_render, 100)}}
 		</div>
 		<div class="information mt-3">
-			<div class="category mr-2">
-				Geografis
-			</div>
+			<div class="category mr-2" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
 			<div class="time">
 				{{App\Helper\TimeFormat::formatId($item['created_at'])}}
 			</div>
@@ -144,7 +142,7 @@
 		</div>
 	@foreach($video as $item)
 	<div class="box-single">
-		<img src="/{{env('PATH_STORAGE').$item['gambar']}}">
+		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
 		<div class="content">
 			<h5 class="title">{{str_limit($item['judul'], 50)}}</h5>
 			<div class="information mt-3">
