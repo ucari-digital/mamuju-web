@@ -27,7 +27,7 @@ class BeritaViewerController extends Controller
                 ]
             ]
         ];
-        $data = Guzzle::request($param)['data'];
+        $data = Guzzle::request($param)['data']['news_detail'];
     	return view('mobile.berita-viewer', compact('data'));
     }
 
