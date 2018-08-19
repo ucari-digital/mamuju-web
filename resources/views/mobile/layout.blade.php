@@ -11,12 +11,9 @@
 <body>
 	<div class="navigation">
 		<div class="container">
-			<div class="menu" id="menu">
-				<i class="fas fa-th"></i>
-			</div>
 			<div class="logo">
 				<div class="circle">
-					<img class="rounded  mx-auto d-block js-link" data-link="{{url('/')}}" src="{{url('asset/mt.png')}}">
+					<img class="rounded d-block js-link" data-link="{{url('/')}}" src="{{url('asset/mt.png')}}">
 				</div>
 			</div>
 			<div class="account">
@@ -84,7 +81,7 @@
 			if ('{{url('/kategori/infografis')}}' == '{{url()->full()}}') {
 				$('#infografis').addClass('active');
 			}
-			if ('{{url('/')}}' == '{{url()->full()}}') {
+			if ('{{url('/populer')}}' == '{{url()->full()}}') {
 				$('#populer').addClass('active');
 			}
 			if ('{{url('/kategori/tv')}}' == '{{url()->full()}}') {

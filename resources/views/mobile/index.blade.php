@@ -1,51 +1,8 @@
 @extends('mobile.layout')
 @section('content')
-{{-- ST MENU KATEGORI --}}
-<div class="container">
-	<div class="block-nav mb-3">
-		<div class="row">
-			<div class="col-md-4 col-4 js-link" data-link="{{url('/kategori/infografis')}}">
-				<div class="item green" id="infografis">
-					<div class="icon">
-						<i class="far fa-map"></i>
-					</div>
-					<span>Infografis</span>
-				</div>
-			</div>
-			<div class="col-md-4 col-4 js-link" data-link="{{url('/')}}">
-				<div class="item red" id="populer">
-					<div class="icon">
-						<i class="far fa-fire">
-						<div class="m-label">Hot</div>
-						</i>
-					</div>
-					<span>Populer</span>
-				</div>
-			</div>
-			<div class="col-md-4 col-4 js-link" data-link="{{url('/kategori/tv')}}">
-				<div class="item orange" id="tv">
-					<div class="icon">
-						<i class="far fa-tv"></i>
-					</div>
-					<span>TV</span>
-				</div>
-			</div>
-		</div>
-	</div>
-	{{-- <div class="search mt-3">
-		<div class="input-group mb-3">
-			<div class="input-group-prepend">
-				<span class="input-group-text border-0" id="basic-addon1"><i class="far fa-search"></i></span>
-			</div>
-			<input type="text" class="form-control border-0" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon1">
-		</div>
-	</div> --}}
-</div>
-{{-- END MENU KETEGORI --}}
-
 {{-- ST HEADLINE --}}
 @foreach($headline as $item)
-<div class="box-single js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
+<div class="box-single js-link headline" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
 	<img src="/{{env('PATH_STORAGE').$item['gambar']}}">
 	<div class="content">
 		<h5 class="title">{{str_limit($item['judul'], 50)}}</h5>
@@ -65,6 +22,49 @@
 </div>
 @endforeach
 {{-- END HEADLINE --}}
+
+{{-- ST MENU KATEGORI --}}
+<div class="container">
+	<div class="block-nav">
+		<div class="row">
+			<div class="col-md-3 col-3 js-link nav-item lb" data-link="{{url('/kategori/infografis')}}">
+				<div class="item green active" id="infografis">
+					<div class="icon">
+						<i class="far fa-map"></i>
+					</div>
+					<span>Infografis</span>
+				</div>
+			</div>
+			<div class="col-md-3 col-3 js-link nav-item lb" data-link="{{url('/')}}">
+				<div class="item red active" id="populer">
+					<div class="icon">
+						<i class="far fa-fire">
+						<div class="m-label">Hot</div>
+						</i>
+					</div>
+					<span>Populer</span>
+				</div>
+			</div>
+			<div class="col-md-3 col-3 js-link nav-item lb" data-link="{{url('/kategori/tv')}}">
+				<div class="item orange active" id="tv">
+					<div class="icon">
+						<i class="far fa-tv"></i>
+					</div>
+					<span>TV</span>
+				</div>
+			</div>
+			<div class="col-md-3 col-3 js-link nav-item" data-link="{{url('/kategori/tv')}}">
+				<div class="item orange" id="tv">
+					<div class="icon">
+						<i class="fas fa-th"></i>
+					</div>
+					<span>Lainnya</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{-- END MENU KETEGORI --}}
 
 <div class="container">
 	<div class="title-nav">

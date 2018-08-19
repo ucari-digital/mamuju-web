@@ -1,7 +1,7 @@
 @extends('mobile.layout')
 @section('content')
 <div class="container">
-	<div class="block-nav mb-3">
+	<div class="block-nav pb-3 x-m">
 		<div class="row">
 			<div class="col-md-4 col-4 js-link" data-link="{{url('/kategori/infografis')}}">
 				<div class="item green" id="infografis">
