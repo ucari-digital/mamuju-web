@@ -53,7 +53,7 @@
 					<span>TV</span>
 				</div>
 			</div>
-			<div class="col-md-3 col-3 js-link nav-item" data-link="{{url('/kategori/tv')}}">
+			<div class="col-md-3 col-3 nav-item" id="menu">
 				<div class="item orange" id="tv">
 					<div class="icon">
 						<i class="fas fa-th"></i>

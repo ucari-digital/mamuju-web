@@ -6,6 +6,7 @@
 // Page
 @import 'user_viewer';
 @import 'berita_viewer';
+@import 'logister';
 
 .navigation{
 	background-color: #FFF;
@@ -16,6 +17,7 @@
     left: 0;
     z-index: 10;
     box-shadow: 0px 1px 5px #eeeeee;
+    height: 50px;
 	.menu {
 		padding: 15px 0;
 		float: left;
@@ -65,14 +67,16 @@
     border-radius: 3px;
     color: $font;
     &.x-m{ // Extra margin
-		margin-top: 70px;
-		border-bottom: 1px dashed $border;
+		margin-top: 50px;
     }
     .nav-item{
     	padding: 15px 0;
     	border-bottom: 1px dashed $border;
     	&.lb{
     		border-right: 1px dashed $border;
+    	}
+    	&.tb{
+    		border-top: 1px dashed $border;
     	}
     }
 	.item{
@@ -188,7 +192,7 @@
 
 // Index Element Headline Infografis
 .headline{
-	margin-top: 57px;
+	margin-top: 50px;
 }
 .infografis{
 	background-image: url('#{$path_url_image}/pattern.png');

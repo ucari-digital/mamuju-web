@@ -16,8 +16,8 @@
 					<img class="rounded d-block js-link" data-link="{{url('/')}}" src="{{url('asset/mt.png')}}">
 				</div>
 			</div>
-			<div class="account">
-				<i class="fal fa-bell"></i>
+			<div class="account js-link" data-link="{{url('login')}}">
+				<i class="fal fa-user-circle"></i>
 			</div>
 		</div>
 		<div class="menu-maps">

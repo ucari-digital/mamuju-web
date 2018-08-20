@@ -1,9 +1,9 @@
 @extends('mobile.layout')
 @section('content')
 <div class="container">
-	<div class="block-nav pb-3 x-m">
+	<div class="block-nav x-m">
 		<div class="row">
-			<div class="col-md-4 col-4 js-link" data-link="{{url('/kategori/infografis')}}">
+			<div class="col-md-3 col-3 js-link nav-item lb tb" data-link="{{url('/kategori/infografis')}}">
 				<div class="item green" id="infografis">
 					<div class="icon">
 						<i class="far fa-map"></i>
@@ -11,7 +11,7 @@
 					<span>Infografis</span>
 				</div>
 			</div>
-			<div class="col-md-4 col-4 js-link" data-link="{{url('/')}}">
+			<div class="col-md-3 col-3 js-link nav-item lb tb" data-link="{{url('/')}}">
 				<div class="item red" id="populer">
 					<div class="icon">
 						<i class="far fa-fire">
@@ -21,12 +21,20 @@
 					<span>Populer</span>
 				</div>
 			</div>
-			<div class="col-md-4 col-4 js-link" data-link="{{url('/kategori/tv')}}">
+			<div class="col-md-3 col-3 js-link nav-item lb tb" data-link="{{url('/kategori/tv')}}">
 				<div class="item orange" id="tv">
 					<div class="icon">
 						<i class="far fa-tv"></i>
 					</div>
 					<span>TV</span>
+				</div>
+			</div>
+			<div class="col-md-3 col-3 nav-item tb" id="menu">
+				<div class="item orange" id="tv">
+					<div class="icon">
+						<i class="fas fa-th"></i>
+					</div>
+					<span>Lainnya</span>
 				</div>
 			</div>
 		</div>
