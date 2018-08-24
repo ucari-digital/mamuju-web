@@ -177,7 +177,7 @@ hr.dashed {
 
 .profil {
   box-shadow: 0px 1px 5px 0px #e0e0e0;
-  margin-top: 60px; }
+  margin-top: 50px; }
   .profil .avatar {
     width: 50px;
     margin: 0px auto; }
@@ -235,6 +235,13 @@ hr.dashed {
         display: block;
         font-size: 12px;
         padding-left: 10px; }
+    .berita .author .viewer {
+      padding: 10px;
+      font-size: 14px; }
+      .berita .author .viewer i {
+        font-weight: 500;
+        font-size: 16px;
+        color: #707070; }
   .berita .image {
     display: block; }
     .berita .image > img {
@@ -405,13 +412,22 @@ hr.dashed {
       max-width: 270px;
       z-index: 1000;
       margin-top: 3px; }
+  .navigation .search {
+    float: right;
+    display: inline-block;
+    position: absolute;
+    top: 19px;
+    right: 55px;
+    font-size: 19px;
+    color: #707070; }
   .navigation .account {
     float: right;
     display: inline-block;
     position: absolute;
     top: 15px;
     right: 15px;
-    font-size: 24px; }
+    font-size: 24px;
+    color: #707070; }
   .navigation .menu-maps {
     display: block;
     float: left;

@@ -53,6 +53,15 @@
 				padding-left: 10px;
 			}
 		}
+		.viewer{
+			padding: 10px;
+			font-size: 14px;
+			i {
+				font-weight: 500;
+				font-size: 16px;
+				color: $font;
+			}
+		}
 	}
 	.image {
 		display: block;

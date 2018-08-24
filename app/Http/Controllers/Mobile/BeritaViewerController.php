@@ -27,13 +27,34 @@ class BeritaViewerController extends Controller
                 ]
             ]
         ];
-        $data = Guzzle::request($param)['data']['news_detail'];
-    	return view('mobile.berita-viewer', compact('data'));
+        $data = Guzzle::request($param)['data'];
+        $berita = $data['news_detail'];
+        $penulis = $data['user_detail'];
+        $komentar = $data['komentar'];
+    	return view('mobile.berita-viewer', compact('berita', 'penulis', 'komentar'));
     }
 
     public function user()
     {
         $terbaru = G::news('4', '1')['data'];
     	return view('mobile.user-viewer', compact('terbaru'));
+    }
+
+    public function komentar(Request $request, $berita_id)
+    {
+        $param = [
+            'method' => 'POST',
+            'url' => 'komentar',
+            'request' => [
+                'allow_redirects' => true,
+                'headers' => [
+                ],
+                'form_params' => [
+                    'berita_id' => $id,
+                    'user_id' => $user_id,
+                    'komentar' => $request->komentar
+                ]
+            ]
+        ];
     }
 }

@@ -16,6 +16,9 @@
 					<img class="rounded d-block js-link" data-link="{{url('/')}}" src="{{url('asset/mt.png')}}">
 				</div>
 			</div>
+			<div class="search" id="menu">
+				<i class="far fa-search"></i>
+			</div>
 			<div class="account js-link" data-link="{{url('login')}}">
 				<i class="fal fa-user-circle"></i>
 			</div>
