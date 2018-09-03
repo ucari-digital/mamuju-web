@@ -46,6 +46,9 @@ hr.dashed {
 .bxs {
   box-shadow: 0px 5px 10px #eee; }
 
+.btn-dark {
+  background-color: #212121; }
+
 .box-single img {
   width: 100%; }
 .box-single .img {
@@ -191,6 +194,8 @@ hr.dashed {
     padding: 5px; }
     .profil .info .name {
       text-align: center; }
+  .profil .divider {
+    padding: 20px 50px; }
 
 .berita {
   margin-top: 60px; }
@@ -207,7 +212,10 @@ hr.dashed {
     font-size: 11px;
     padding-bottom: .5rem;
     color: #bdbdbd;
-    font-weight: 500; }
+    font-weight: 500;
+    float: left;
+    width: 100%;
+    padding: 0 1rem .5rem; }
     .berita .time-upload .coment-counter {
       display: inline-block;
       float: right; }
@@ -387,6 +395,14 @@ hr.dashed {
   .box-logister button {
     border-radius: 0; }
 
+.msg {
+  margin-top: 30%;
+  text-align: center; }
+  .msg i {
+    font-size: 72px;
+    margin-bottom: .5rem;
+    color: #4caf50; }
+
 .navigation {
   background-color: #FFF;
   display: inline-block;
@@ -428,6 +444,19 @@ hr.dashed {
     right: 15px;
     font-size: 24px;
     color: #707070; }
+  .navigation .account-img {
+    float: right;
+    display: inline-block;
+    position: absolute;
+    top: 11px;
+    right: 15px;
+    font-size: 24px;
+    color: #707070; }
+    .navigation .account-img img {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #e0e0e0;
+      border-radius: 50px; }
   .navigation .menu-maps {
     display: block;
     float: left;
@@ -444,12 +473,12 @@ hr.dashed {
 .block-nav {
   background-color: #FFF;
   border-radius: 3px;
-  color: #707070; }
+  color: #707070;
+  margin-top: 60px; }
   .block-nav.x-m {
     margin-top: 50px; }
   .block-nav .nav-item {
-    padding: 15px 0;
-    border-bottom: 1px dashed #e0e0e0; }
+    padding: 15px 0; }
     .block-nav .nav-item.lb {
       border-right: 1px dashed #e0e0e0; }
     .block-nav .nav-item.tb {
@@ -534,7 +563,7 @@ hr.dashed {
         color: #FFF; }
 
 .headline {
-  margin-top: 50px; }
+  margin-top: 0px; }
 
 .infografis {
   background-image: url("../asset/pattern.png");
@@ -552,7 +581,10 @@ hr.dashed {
   background-image: url("../asset/pattern-white.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom; }
+  background-position: bottom;
+  position: absolute;
+  width: 100%;
+  bottom: 0; }
   .footer .input-box {
     padding-top: 1rem;
     box-shadow: 0px 1px 10px #000; }

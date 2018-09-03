@@ -20,6 +20,11 @@ class MobileIndexController extends Controller
     	return view('mobile.index', compact('headline', 'terbaru', 'infografis', 'foto', 'video', 'populer'));
     }
 
+    public function profil()
+    {
+        return view('mobile.user-profil');
+    }
+
     public static function populer_news($take, $skip, $kategori = '')
     {
         $param = [

@@ -1,5 +1,47 @@
 @extends('mobile.layout')
 @section('content')
+{{-- ST MENU KATEGORI --}}
+<div class="container">
+	<div class="block-nav">
+		<div class="row">
+			<div class="col-md-3 col-3 js-link nav-item" data-link="{{url('/kategori/infografis')}}">
+				<div class="item green active" id="infografis">
+					<div class="icon">
+						<i class="far fa-map"></i>
+					</div>
+					<span>Infografis</span>
+				</div>
+			</div>
+			<div class="col-md-3 col-3 js-link nav-item" data-link="{{url('/')}}">
+				<div class="item red active" id="populer">
+					<div class="icon">
+						<i class="far fa-fire">
+						<div class="m-label">Hot</div>
+						</i>
+					</div>
+					<span>Populer</span>
+				</div>
+			</div>
+			<div class="col-md-3 col-3 js-link nav-item" data-link="{{url('/kategori/tv')}}">
+				<div class="item orange active" id="tv">
+					<div class="icon">
+						<i class="far fa-tv"></i>
+					</div>
+					<span>TV</span>
+				</div>
+			</div>
+			<div class="col-md-3 col-3 nav-item btn-more">
+				<div class="item orange" id="tv">
+					<div class="icon">
+						<i class="fas fa-th"></i>
+					</div>
+					<span>Lainnya</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{-- END MENU KETEGORI --}}
 {{-- ST HEADLINE --}}
 @foreach($headline as $item)
 <div class="box-single js-link headline" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
@@ -23,49 +65,6 @@
 @endforeach
 {{-- END HEADLINE --}}
 
-{{-- ST MENU KATEGORI --}}
-<div class="container">
-	<div class="block-nav">
-		<div class="row">
-			<div class="col-md-3 col-3 js-link nav-item lb" data-link="{{url('/kategori/infografis')}}">
-				<div class="item green active" id="infografis">
-					<div class="icon">
-						<i class="far fa-map"></i>
-					</div>
-					<span>Infografis</span>
-				</div>
-			</div>
-			<div class="col-md-3 col-3 js-link nav-item lb" data-link="{{url('/')}}">
-				<div class="item red active" id="populer">
-					<div class="icon">
-						<i class="far fa-fire">
-						<div class="m-label">Hot</div>
-						</i>
-					</div>
-					<span>Populer</span>
-				</div>
-			</div>
-			<div class="col-md-3 col-3 js-link nav-item lb" data-link="{{url('/kategori/tv')}}">
-				<div class="item orange active" id="tv">
-					<div class="icon">
-						<i class="far fa-tv"></i>
-					</div>
-					<span>TV</span>
-				</div>
-			</div>
-			<div class="col-md-3 col-3 nav-item" id="menu">
-				<div class="item orange" id="tv">
-					<div class="icon">
-						<i class="fas fa-th"></i>
-					</div>
-					<span>Lainnya</span>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-{{-- END MENU KETEGORI --}}
-
 <div class="container">
 	<div class="title-nav">
 		<div class="title">Terbaru</div>
@@ -74,7 +73,7 @@
 		</div>
 	</div>
 	@foreach($terbaru as $item)
-	<div class="box-list mt-3">
+	<div class="box-list mt-3 js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
 		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
 		<div class="content">
 			<div class="title">{{str_limit($item['judul'], 50)}}</div>
@@ -93,7 +92,7 @@
 			</div>
 		</div>
 		@foreach($infografis as $item)
-		<div class="box-double">
+		<div class="box-double js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
 			<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
 			<div class="content">
 				<div class="title mb-1 pb-1">{{str_limit($item['judul'], 50)}}</div>
@@ -114,7 +113,7 @@
 		<div class="box-scroll">
 			<div class="scroll">
 				@foreach($foto as $item)
-				<div class="box-item">
+				<div class="box-item js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
 					<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
 					<div class="content">
 						<div class="title">{{str_limit($item['judul'], 50)}}</div>
@@ -141,7 +140,7 @@
 		</div>
 		</div>
 	@foreach($video as $item)
-	<div class="box-single">
+	<div class="box-single js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
 		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
 		<div class="content">
 			<h5 class="title">{{str_limit($item['judul'], 50)}}</h5>
@@ -163,7 +162,7 @@
 		</div>
 	</div>
 	@foreach($populer as $item)
-	<div class="box-list mt-3">
+	<div class="box-list mt-3 js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
 		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
 		<div class="content">
 			<div class="title">{{str_limit($item['judul'], 50)}}</div>

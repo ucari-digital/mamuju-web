@@ -16,12 +16,18 @@
 					<img class="rounded d-block js-link" data-link="{{url('/')}}" src="{{url('asset/mt.png')}}">
 				</div>
 			</div>
-			<div class="search" id="menu">
+			<div class="search btn-more">
 				<i class="far fa-search"></i>
 			</div>
+			@if(session('id'))
+			<div class="account account-img js-link" data-link="{{url('u/profil')}}">
+				<img src="/{{env('PATH_STORAGE').session('avatar')}}">
+			</div>
+			@else
 			<div class="account js-link" data-link="{{url('login')}}">
 				<i class="fal fa-user-circle"></i>
 			</div>
+			@endif
 		</div>
 		<div class="menu-maps">
 			@yield('menu-maps')

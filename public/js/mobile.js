@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('#menu').click(function(){
+	$('.btn-more').click(function(){
 		$('.partial-menu').fadeIn('fast', function() {
 			
 		});

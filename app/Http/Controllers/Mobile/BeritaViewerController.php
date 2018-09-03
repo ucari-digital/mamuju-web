@@ -34,27 +34,45 @@ class BeritaViewerController extends Controller
     	return view('mobile.berita-viewer', compact('berita', 'penulis', 'komentar'));
     }
 
-    public function user()
-    {
-        $terbaru = G::news('4', '1')['data'];
-    	return view('mobile.user-viewer', compact('terbaru'));
-    }
-
-    public function komentar(Request $request, $berita_id)
+    public function user($user)
     {
         $param = [
-            'method' => 'POST',
-            'url' => 'komentar',
+            'method' => 'post',
+            'url' => 'user',
             'request' => [
                 'allow_redirects' => true,
                 'headers' => [
                 ],
                 'form_params' => [
-                    'berita_id' => $id,
-                    'user_id' => $user_id,
-                    'komentar' => $request->komentar
+                    'nickname' => $user
                 ]
             ]
         ];
+        $data = Guzzle::request($param)['data'];   
+    	return view('mobile.user-viewer', compact('data'));
+    }
+
+    public function komentar(Request $request, $berita_id)
+    {
+        try {
+            $param = [
+                'method' => 'POST',
+                'url' => 'komentar',
+                'request' => [
+                    'allow_redirects' => true,
+                    'headers' => [
+                    ],
+                    'form_params' => [
+                        'berita_id' => $berita_id,
+                        'user_id' => session('id'),
+                        'komentar' => $request->komentar
+                    ]
+                ]
+            ];
+            $data = Guzzle::request($param)['data'];
+            return redirect()->back();
+        } catch (\Exception $e) {
+
+        }
     }
 }

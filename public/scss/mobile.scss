@@ -7,6 +7,7 @@
 @import 'user_viewer';
 @import 'berita_viewer';
 @import 'logister';
+@import 'message';
 
 .navigation{
 	background-color: #FFF;
@@ -55,6 +56,22 @@
 	    font-size: 24px;
 	    color: $font;
 	}
+	.account-img {
+		float: right;
+	    display: inline-block;
+	    position: absolute;
+	    top: 11px;
+	    right: 15px;
+	    font-size: 24px;
+	    color: $font;
+		img{
+    		width: 30px;
+    		height: 30px;
+    		border: 1px solid $border;
+    		border-radius: 50px;
+    	}
+	}
+		
 	.menu-maps{
 		display: block;
 		float: left;
@@ -76,12 +93,13 @@
     background-color: #FFF;
     border-radius: 3px;
     color: $font;
+    margin-top: 60px;
     &.x-m{ // Extra margin
 		margin-top: 50px;
     }
     .nav-item{
     	padding: 15px 0;
-    	border-bottom: 1px dashed $border;
+    	// border-bottom: 1px dashed $border;
     	&.lb{
     		border-right: 1px dashed $border;
     	}
@@ -202,7 +220,7 @@
 
 // Index Element Headline Infografis
 .headline{
-	margin-top: 50px;
+	margin-top: 0px;
 }
 .infografis{
 	background-image: url('#{$path_url_image}/pattern.png');
@@ -223,6 +241,9 @@
 	background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 	.input-box{
 		padding-top: 1rem;
 		box-shadow: 0px 1px 10px #000;

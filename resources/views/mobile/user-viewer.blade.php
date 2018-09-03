@@ -2,15 +2,15 @@
 @section('content')
 <div class="profil py-3">
 	<div class="avatar">
-		<img src="https://cdn.dribbble.com/users/1769044/screenshots/4662857/img_1867.png" alt="">
+		<img src="/{{env('PATH_STORAGE').$data['users']['avatar']}}" alt="">
 	</div>
 	<div class="info">
-		<div class="name">Dimas Adi Satria</div>
+		<div class="name">{{$data['users']['name']}}</div>
 	</div>
 </div>
 <div class="news mt-3">
 	<div class="container">
-		@foreach($terbaru as $item)
+		@foreach($data['berita'] as $item)
 		<div class="box-list mt-3">
 			<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
 			<div class="content">

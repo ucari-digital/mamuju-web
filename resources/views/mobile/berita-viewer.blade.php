@@ -21,7 +21,7 @@
 		</div>
 		<div class="author py-2">
 			<div class="row">
-				<div class="col-md-6 col-6 js-link" data-link="{{url('u/dimas')}}">
+				<div class="col-md-6 col-6 js-link" data-link="{{url('u/'.$penulis['nickname'])}}">
 					<div class="avatar">
 						<img src="/{{env('PATH_STORAGE').$penulis['avatar']}}">
 					</div>
@@ -52,6 +52,7 @@
 		<div class="komentar pt-2 my-2">
 			<div class="label">Komentar</div>
 			<form action="{{url('komentar'.'/'.$berita['id'])}}" method="post">
+				@csrf
 				<textarea name="komentar" class="text-kometar mt-2" placeholder="Tulis komentar disini"></textarea>
 				<button type="submit" class="button-komentar">Kirim</button>
 			</form>
