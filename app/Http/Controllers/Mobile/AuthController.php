@@ -74,12 +74,11 @@ class AuthController extends Controller
 	        ];
 	        $data = Guzzle::request($param);
 	        if ($data['status'] == 200) {
-	        	session([
-	        		'id' => $data['data']['id'],
-	        		'name' => $data['data']['name'],
-	        		'email' => $data['data']['email'],
-	        		'avatar' => $data['data']['avatar'],
-	        	]);
+	        	$request->session()->put('id', $data['data']['id']);
+	        	$request->session()->put('name', $data['data']['name']);
+	        	$request->session()->put('email', $data['data']['email']);
+	        	$request->session()->put('avatar', $data['data']['id']);
+	        	$request->session()->save();
 	        	return redirect('m/register');
 	        }
     	} catch (\Exception $e) {
