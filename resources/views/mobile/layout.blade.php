@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="{{url('css/mobile.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url('css/fontawesome/css/all.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url('css/animate.css')}}">
+	@yield('header')
 </head>
 <body>
 	<div class="navigation">
@@ -54,11 +55,11 @@
 			</div>
 			<div class="row footer-text">
 				<div class="col-md-6 col-6">
-					<small>Redaksi</small>
-					<small>Pedoman Media Siber</small>
-					<small>Tentang Kami</small>
-					<small>Disclaimer</small>
-					<small>Kontak</small>
+					<small class="js-link" data-link="{{url('redaksi')}}">Redaksi</small>
+					<small class="js-link" data-link="{{url('p-media-siber')}}">Pedoman Media Siber</small>
+					<small class="js-link" data-link="{{url('')}}">Tentang Kami</small>
+					<small class="js-link" data-link="{{url('disclaimer')}}">Disclaimer</small>
+					<small class="js-link" data-link="{{url('kontak')}}">Kontak</small>
 				</div>
 				<div class="col-md-6 col-6">
 					<small>Beriklan</small>
