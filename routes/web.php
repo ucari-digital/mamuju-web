@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,5 +31,9 @@ Route::post('komentar/{berita_id}', 'Mobile\BeritaViewerController@komentar');
 
 Route::prefix('m')->group(function(){
 	Route::get('register', 'MessageController@register');
+});
+
+Route::get('s', function(Request $request){
+	return $request->session()->all();
 });
 
