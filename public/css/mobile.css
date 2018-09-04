@@ -581,10 +581,7 @@ hr.dashed {
   background-image: url("../asset/pattern-white.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom;
-  position: absolute;
-  width: 100%;
-  bottom: 0; }
+  background-position: bottom; }
   .footer .input-box {
     padding-top: 1rem;
     box-shadow: 0px 1px 10px #000; }
