@@ -30,6 +30,7 @@ Route::get('/u/{user}', 'Mobile\BeritaViewerController@user');
 Route::post('komentar/{berita_id}', 'Mobile\BeritaViewerController@komentar');
 
 Route::post('subscribe', 'Mobile\MobileIndexController@subscribe');
+Route::post('search', 'Mobile\MobileIndexController@search');
 
 
 Route::prefix('m')->group(function(){
