@@ -44,5 +44,27 @@ class MobileIndexController extends Controller
         ];
         return Guzzle::request($param);
     }
+
+    public function subscribe(Request $request)
+    {
+        try {
+            $param = [
+                'method' => 'POST',
+                'url' => 'subscribe',
+                'request' => [
+                    'allow_redirects' => true,
+                    'headers' => [
+                    ],
+                    'form_params' => [
+                        'email' => $request->email
+                    ]
+                ]
+            ];
+            $data = Guzzle::request($param)['data'];
+            return redirect()->back();
+        } catch (\Exception $e) {
+            return $e;
+        }
+    }
     
 }

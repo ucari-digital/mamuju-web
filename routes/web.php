@@ -29,6 +29,8 @@ Route::get('/u/{user}', 'Mobile\BeritaViewerController@user');
 
 Route::post('komentar/{berita_id}', 'Mobile\BeritaViewerController@komentar');
 
+Route::post('subscribe', 'Mobile\MobileIndexController@subscribe');
+
 
 Route::prefix('m')->group(function(){
 	Route::get('register', 'MessageController@register');
