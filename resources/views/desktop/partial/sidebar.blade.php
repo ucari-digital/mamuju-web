@@ -2,19 +2,19 @@
 	<img src="http://localhost/mamuju/mamuju-web/public/asset/mt.png">
 </div>
 <div class="menu">
-	<div class="list">
+	<div class="list js-link" data-link="{{url('/')}}">
 		<div class="icon red active">
 			<i class="far fa-fire"></i>
 		</div>
 		<span>Populer</span>
 	</div>
-	<div class="list">
+	<div class="list js-link" data-link="{{url('/kategori/infografis')}}">
 		<div class="icon green active">
 			<i class="far fa-map"></i>
 		</div>
 		<span>Infografis</span>
 	</div>
-	<div class="list">
+	<div class="list js-link" data-link="{{url('/kategori/tv')}}">
 		<div class="icon orange active">
 			<i class="far fa-tv"></i>
 		</div>

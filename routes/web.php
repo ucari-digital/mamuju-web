@@ -61,6 +61,7 @@ if ($agent->isMobile()) {
 	});
 } else {
 	Route::get('/', 'Desktop\DesktopController@index');
+    Route::post('subscribe', 'Desktop\DesktopController@subscribe');
 }
 
 

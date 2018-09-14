@@ -1,132 +1,111 @@
 @extends('desktop.layout')
 @section('content')
-<div class="headline">
+@foreach($headline as $item)
+<div class="headline js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
 	<div class="big-banner-tr">
-		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/mamuju/mamuju-admin/public/images/berita/t2Ygn62zB6eDfvatUw94AYyNCCVUMnoxqvVKuesg.jpeg"></div>
+		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
 		<div class="text-banner">
-			<div class="title">Gemas! 8 Pesawat Ini Miliki Desain Ikonik dan Eye Catching</div>
-			<div class="desc">Meski tak jadi tentara waktu zaman Revolusi, Try Sutrisno masih bisa digolongkan sebagai Angkatan ’45.</div>
+			<div class="title">{{str_limit($item['judul'], 50)}}</div>
+			<div class="desc">
+				@php
+					$headline_render = strip_tags($item['berita']);
+				@endphp
+				{{str_limit($headline_render, 100)}}
+			</div>
 			<div class="info text-center mt-3">
-				<div class="kategori">TV</div>
-				<div class="time">12 Agustus 2018</div>
+				<div class="kategori" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
+				<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
 			</div>
 		</div>
 	</div>
 </div>
+@endforeach
 <div class="c-title mt-5">Terbaru</div>
 <div class="terbaru">
-	<div class="medium-banner">
-		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/mamuju/mamuju-admin/public/images/berita/t2Ygn62zB6eDfvatUw94AYyNCCVUMnoxqvVKuesg.jpeg"></div>
-		<div class="title">Gemas! 8 Pesawat Ini Miliki Desain Ikonik dan Eye Catching</div>
-		<div class="desc">Meski tak jadi tentara waktu zaman Revolusi, Try Sutrisno masih bisa digolongkan sebagai Angkatan ’45.</div>
+	@foreach($terbaru as $item)
+	<div class="medium-banner js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
+		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
+		<div class="title">{{str_limit($item['judul'], 50)}}</div>
+		<div class="desc">
+			@php
+				$headline_render = strip_tags($item['berita']);
+			@endphp
+			{{str_limit($headline_render, 100)}}
+		</div>
 		<div class="info text-center mt-3">
-			<div class="kategori">TV</div>
-			<div class="time">12 Agustus 2018</div>
+			<div class="kategori" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
+			<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
 		</div>
 	</div>
-	<div class="medium-banner">
-		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/mamuju/mamuju-admin/public/images/berita/t2Ygn62zB6eDfvatUw94AYyNCCVUMnoxqvVKuesg.jpeg"></div>
-		<div class="title">Gemas! 8 Pesawat Ini Miliki Desain Ikonik dan Eye Catching</div>
-		<div class="desc">Meski tak jadi tentara waktu zaman Revolusi, Try Sutrisno masih bisa digolongkan sebagai Angkatan ’45.</div>
-		<div class="info text-center mt-3">
-			<div class="kategori">TV</div>
-			<div class="time">12 Agustus 2018</div>
-		</div>
-	</div>
-	<div class="medium-banner">
-		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/mamuju/mamuju-admin/public/images/berita/t2Ygn62zB6eDfvatUw94AYyNCCVUMnoxqvVKuesg.jpeg"></div>
-		<div class="title">Gemas! 8 Pesawat Ini Miliki Desain Ikonik dan Eye Catching</div>
-		<div class="desc">Meski tak jadi tentara waktu zaman Revolusi, Try Sutrisno masih bisa digolongkan sebagai Angkatan ’45.</div>
-		<div class="info text-center mt-3">
-			<div class="kategori">TV</div>
-			<div class="time">12 Agustus 2018</div>
-		</div>
-	</div>
+	@endforeach
 </div>
 
 <div class="c-title mt-5">Infografis</div>
 <div class="Infografis">
-	<div class="big-banner">
-		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/mamuju/mamuju-admin/public/images/berita/t2Ygn62zB6eDfvatUw94AYyNCCVUMnoxqvVKuesg.jpeg"></div>
-		<div class="title">Gemas! 8 Pesawat Ini Miliki Desain Ikonik dan Eye Catching</div>
-		<div class="desc">Meski tak jadi tentara waktu zaman Revolusi, Try Sutrisno masih bisa digolongkan sebagai Angkatan ’45.</div>
+	@foreach($infografis_head as $item)
+	<div class="big-banner js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
+		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
+		<div class="title">{{str_limit($item['judul'], 50)}}</div>
+		<div class="desc">
+			@php
+				$headline_render = strip_tags($item['berita']);
+			@endphp
+			{{str_limit($headline_render, 100)}}
+		</div>
 	</div>
+	@endforeach
+
 	<div class="list-banner">
-		<div class="small-banner">
-			<div class="img" id="hash-{{rand(000, 999)}}" data-img="/mamuju/mamuju-admin/public/images/berita/t2Ygn62zB6eDfvatUw94AYyNCCVUMnoxqvVKuesg.jpeg"></div>
+		@foreach($infografis_head as $item)
+		<div class="small-banner js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
 			<div class="title text-center">
-			Gemas! 8 Pesawat Ini Miliki Desain Ikonik dan Eye Catching
+				{{str_limit($item['judul'], 50)}}
 				<div class="info text-center">
-					<div class="kategori">TV</div>
-					<div class="time">12 Agustus 2018</div>
+					<div class="kategori" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
+					<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
 				</div>
 			</div>
 		</div>
-		<div class="small-banner">
-			<div class="img" id="hash-{{rand(000, 999)}}" data-img="/mamuju/mamuju-admin/public/images/berita/t2Ygn62zB6eDfvatUw94AYyNCCVUMnoxqvVKuesg.jpeg"></div>
-			<div class="title text-center">
-			Gemas! 8 Pesawat Ini Miliki Desain Ikonik dan Eye Catching
-				<div class="info text-center">
-					<div class="kategori">TV</div>
-					<div class="time">12 Agustus 2018</div>
-				</div>
-			</div>
-		</div>
-		<div class="small-banner">
-			<div class="img" id="hash-{{rand(000, 999)}}" data-img="/mamuju/mamuju-admin/public/images/berita/t2Ygn62zB6eDfvatUw94AYyNCCVUMnoxqvVKuesg.jpeg"></div>
-			<div class="title text-center">
-			Gemas! 8 Pesawat Ini Miliki Desain Ikonik dan Eye Catching
-				<div class="info text-center">
-					<div class="kategori">TV</div>
-					<div class="time">12 Agustus 2018</div>
-				</div>
-			</div>
-		</div>
+		@endforeach
 	</div>
 </div>
 <div class="c-title mt-5">Foto</div>
 <div class="foto">
 	<div class="scrollable">
 		<div class="dividder" style="width: 1300px">
-			<div class="split-banner">
-				<div class="img" id="hash-{{rand(000, 999)}}" data-img="/mamuju/mamuju-admin/public/images/berita/t2Ygn62zB6eDfvatUw94AYyNCCVUMnoxqvVKuesg.jpeg"></div>
-				<div class="title">Gemas! 8 Pesawat Ini Miliki Desain Ikonik dan Eye Catching</div>
+			@foreach($foto as $item)
+			<div class="split-banner js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
+				<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
+				<div class="title">{{str_limit($item['judul'], 50)}}</div>
 				<div class="info text-center">
-					<div class="kategori">TV</div>
-					<div class="time">12 Agustus 2018</div>
+					<div class="kategori" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
+					<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
 				</div>
 			</div>
-			<div class="split-banner">
-				<div class="img" id="hash-{{rand(000, 999)}}" data-img="/mamuju/mamuju-admin/public/images/berita/t2Ygn62zB6eDfvatUw94AYyNCCVUMnoxqvVKuesg.jpeg"></div>
-				<div class="title">Gemas! 8 Pesawat Ini Miliki Desain Ikonik dan Eye Catching</div>
-				<div class="info text-center">
-					<div class="kategori">TV</div>
-					<div class="time">12 Agustus 2018</div>
-				</div>
-			</div>
-			<div class="split-banner">
-				<div class="img" id="hash-{{rand(000, 999)}}" data-img="/mamuju/mamuju-admin/public/images/berita/t2Ygn62zB6eDfvatUw94AYyNCCVUMnoxqvVKuesg.jpeg"></div>
-				<div class="title">Gemas! 8 Pesawat Ini Miliki Desain Ikonik dan Eye Catching</div>
-				<div class="info text-center">
-					<div class="kategori">TV</div>
-					<div class="time">12 Agustus 2018</div>
-				</div>
-			</div>
+			@endforeach
 		</div>
 	</div>
 </div>
 <div class="c-title mt-5 mb-3">Video</div>
 <div class="video">
-	<div class="big-banner-tr">
-		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/mamuju/mamuju-admin/public/images/berita/t2Ygn62zB6eDfvatUw94AYyNCCVUMnoxqvVKuesg.jpeg"></div>
+	@foreach($video as $item)
+	<div class="big-banner-tr js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
+		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
 		<div class="text-banner">
-			<div class="title">Gemas! 8 Pesawat Ini Miliki Desain Ikonik dan Eye Catching</div>
-			<div class="desc">Meski tak jadi tentara waktu zaman Revolusi, Try Sutrisno masih bisa digolongkan sebagai Angkatan ’45.</div>
+			<div class="title">{{str_limit($item['judul'], 50)}}</div>
+			<div class="desc">
+				@php
+					$headline_render = strip_tags($item['berita']);
+				@endphp
+				{{str_limit($headline_render, 100)}}
+			</div>
 			<div class="info text-center mt-3">
-				<div class="kategori">TV</div>
-				<div class="time">12 Agustus 2018</div>
+				<div class="kategori" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
+				<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
 			</div>
 		</div>
 	</div>
+	@endforeach
 </div>
 @endsection

@@ -20,11 +20,12 @@
 		</div>
 		<div class="col-md-4">
 			<div class="subscribe">
-				<form action="">
+				<form action="{{url('subscribe')}}" method="post">
+					@csrf
 					<div class="input-group mb-3">
-						<input type="text" class="form-control border-0" placeholder="Alamat Email" aria-label="Alamat Email" aria-describedby="button-addon2">
+						<input type="email" name="email" class="form-control border-0" placeholder="Alamat Email" aria-label="Alamat Email" aria-describedby="button-addon2">
 						<div class="input-group-append">
-							<button class="btn btn-outline-secondary border-0" type="button" id="button-addon2">Subscribe</button>
+							<button class="btn btn-outline-secondary border-0" id="button-addon2">Subscribe</button>
 						</div>
 					</div>
 				</form>
