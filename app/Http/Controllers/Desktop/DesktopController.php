@@ -37,6 +37,7 @@ class DesktopController extends Controller
                 ]
             ];
             $data = Guzzle::request($param)['data'];
+            alert()->success('Terimakasih', 'pantau terus info menarik mamuju today');
             return redirect()->back();
         } catch (\Exception $e) {
             return $e;

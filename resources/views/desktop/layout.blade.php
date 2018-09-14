@@ -7,9 +7,11 @@
 	<link rel="stylesheet" type="text/css" href="{{url('css/desktop.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url('css/fontawesome/css/all.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url('css/animate.css')}}">
+	<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 	@yield('header')
 </head>
 <body>
+	@include('sweetalert::alert')
 	<div class="sidebar">
 		@include('desktop.partial.sidebar')
 	</div>
