@@ -62,6 +62,9 @@ if ($agent->isMobile()) {
 } else {
 	Route::get('/', 'Desktop\DesktopController@index');
     Route::post('subscribe', 'Desktop\DesktopController@subscribe');
+
+    Route::get('/viewer/{kategori}/{kode_berita}', 'Desktop\BeritaViewerController@index');
+    Route::post('komentar/{berita_id}', 'Desktop\BeritaViewerController@komentar');
 }
 
 
