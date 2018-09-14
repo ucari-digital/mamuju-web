@@ -1,13 +1,13 @@
 @import 'variable';
-@import 'mobile-menu';
+@import 'mobile/mobile-menu';
 @import 'c_element';
-@import 'box';
+@import 'mobile/box';
 
 // Page
-@import 'user_viewer';
-@import 'berita_viewer';
-@import 'logister';
-@import 'message';
+@import 'mobile/user_viewer';
+@import 'mobile/berita_viewer';
+@import 'mobile/logister';
+@import 'mobile/message';
 
 .navigation{
 	background-color: #FFF;

@@ -1,0 +1,66 @@
+.footer{
+	padding: 2rem;
+	margin-left: 250px;
+	background-color: $dark;
+	position: absolute;
+	width: fill-available;
+	width: -webkit-fill-available;
+	background-image: url('#{$path_url_image}/pattern-white.png');
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+	.list{
+		a{
+			display: block;
+			text-decoration: none;
+			color: #FFF;
+		}
+	}
+	.subscribe{
+		input{
+			border-radius: 50px 0 0 50px;
+			background-color: #616161;
+			color: #FFF;
+			text-align: center;
+			&::placeholder{
+				color: #FFF;
+				font-size: 14px;
+				text-align: center;
+			}
+			&:focus{
+				outline: 0px !important;
+				box-shadow: none !important;
+			}
+		}
+		button{
+			border-radius: 0 50px 50px 0;
+			background-color: #000;
+			color: #FFF;
+		    font-size: 14px;
+		    padding: 5px 15px;
+		    box-shadow: none !important;
+		}
+	}
+	.dl{
+		background-color: #616161;
+	    padding: 5px;
+	    border-radius: 5px;
+	    display: inline-flex;
+		.ios{
+			width: 150px;
+			background-image: url('#{$path_url_image}/gap.png');
+			height: 50px;
+		    background-size: 150px;
+		    background-position-x: 150px;
+		    background-position-y: 162.5px;
+		}
+		.and{
+			width: 150px;
+			background-image: url('#{$path_url_image}/gap.png');
+			height: 50px;
+		    background-size: 150px;
+		    background-position-x: 150px;
+		    background-position-y: 108.5px;
+		}
+	}
+}

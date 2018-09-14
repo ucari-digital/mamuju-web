@@ -1,0 +1,156 @@
+.big-banner{
+	width: 66.6666666%;
+	height: 400px;
+	display: inline-block;
+	padding: 1rem;
+	.img{
+		width: 100%;
+		height: 300px;
+		background-repeat: no-repeat;
+	    background-size: cover;
+	    background-position: center;
+	    box-shadow: 0px 6px 15px #eee;
+	}
+	.title{
+		font-size: 1.5rem;
+		display: block;
+		text-align: center;
+		padding-top: 10px;
+	}
+	.desc{
+		display: block;
+		text-align: center;
+		padding-top: .3rem;
+	}
+}
+
+.big-banner-tr{
+	width: 100%;
+	height: 350px;
+	display: flex;
+	padding: 0 1rem;
+	.img{
+		width: 66.6666666%;
+		height: 350px;
+		background-repeat: no-repeat;
+	    background-size: cover;
+	    background-position: center;
+	    box-shadow: 0px 6px 15px #eee;
+	    display: inline-block;
+	}
+	.text-banner{
+		width: 33.3333333%;
+		display: inline-block;
+		padding: 1rem;
+		.title{
+			font-size: 1.5rem;
+			display: block;
+			text-align: center;
+			padding-top: 10px;
+		}
+		.desc{
+			display: block;
+			text-align: center;
+			padding-top: .3rem;
+		}
+	}
+}
+
+.medium-banner{
+	width: 33.3333333%;
+	height: 400px;
+	display: inline-block;
+	padding: 1rem;
+	.img{
+		width: 100%;
+		height: 300px;
+		background-repeat: no-repeat;
+	    background-size: cover;
+	    background-position: center;
+	    box-shadow: 0px 6px 15px #eee;
+	}
+	.title{
+		font-size: 1.5rem;
+		display: block;
+		text-align: center;
+		padding-top: 10px;
+	}
+	.desc{
+		display: block;
+		text-align: center;
+		padding-top: .3rem;
+	}
+}
+
+.small-banner{
+	width: 100%;
+	display: flex;
+	padding: 1rem;
+	.img{
+		width: 100px;
+		height: 100px;
+		background-repeat: no-repeat;
+	    background-size: cover;
+	    background-position: center;
+	    box-shadow: 0px 6px 15px #eee;
+	    display: inline-block;
+	}
+	.title{
+		font-size: 1rem;
+		padding:0 10px;
+		width: 65%;
+		font-weight:500;
+	}
+}
+
+.split-banner{
+	width: 400px;
+	display: inline-block;
+	padding: 1rem;
+	.img{
+		width: 100%;
+		height: 300px;
+		background-repeat: no-repeat;
+	    background-size: cover;
+	    background-position: center;
+	    box-shadow: 0px 6px 15px #eee;
+	    display: inline-block;
+	}
+	.title{
+		font-size: 1.2rem;
+		text-align: center;
+		padding-top: 10px;
+		font-weight: 500;
+	}
+}
+
+.scrollable{
+	width: 100%;
+	overflow-x: auto;
+}
+
+.list-banner{
+	width: 33.3333333%;
+}
+
+.info{
+	display: block;
+	.kategori{
+		display: inline-block;
+		font-weight: 500;
+	    padding: 0 10px 0px;
+	    border-radius: 50px;
+	    font-size: 11px;
+	}
+	.time{
+		display: inline-block;
+		font-size: 13px;
+    	text-align: center;
+    	font-weight: 400;
+	}
+}
+
+.c-title{
+	font-size: 30px;
+	padding: 1rem 1rem 0;
+}
