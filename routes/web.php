@@ -36,6 +36,8 @@ if ($agent->isMobile()) {
 	Route::prefix('m')->group(function(){
 		Route::get('register', 'MessageController@register');
 	});
+	Route::post('subscribe', 'Mobile\MobileIndexController@subscribe');
+	Route::post('search', 'Mobile\MobileIndexController@search');
 
 	Route::get('redaksi', function(){
 		return view('mobile.page.redaksi');
