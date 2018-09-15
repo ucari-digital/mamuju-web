@@ -7,11 +7,17 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
 
 use App\Helper\Guzzle;
+use Jenssegers\Agent\Agent;
+
 class AuthController extends Controller
 {
     public function login(Request $request)
     {
-    	return view('mobile.auth.login');
+        $agent = new Agent();
+        if ($agent->isMobile())
+            return view('mobile.auth.login');
+        else
+            return view('desktop.auth.login');
     }
 
     public function loginSubmit(Request $request)

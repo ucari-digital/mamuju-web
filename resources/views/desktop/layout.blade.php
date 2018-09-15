@@ -16,6 +16,20 @@
 		@include('desktop.partial.sidebar')
 	</div>
 	<div class="content">
+		<div class="col-md-12">
+			<div class="card text-white bg-dark mb-3">
+				<div class="card-body">
+					@if(Auth::check())
+						<a href="{{url('u/profil')}}" class="btn btn-primary">welcome, {{Auth::User()->name}}</a>
+					@else
+						<div class="btn-group float-right">
+							<a href="{{url('login')}}" class="btn btn-success">Do you want login?</a>
+							<a href="{{url('register')}}" class="btn btn-info">or register?</a>
+						</div>
+					@endif
+				</div>
+			</div>
+		</div>
 		@yield('content')
 	</div>
 	@include('desktop.partial.footer')

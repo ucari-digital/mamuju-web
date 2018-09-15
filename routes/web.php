@@ -61,8 +61,17 @@ if ($agent->isMobile()) {
 	});
 } else {
 	Route::get('/', 'Desktop\DesktopController@index');
+    Route::get('login', 'Mobile\AuthController@login');
+    Route::post('login', 'Mobile\AuthController@loginSubmit');
+    Route::get('register', 'Mobile\AuthController@register');
+    Route::post('register', 'Mobile\AuthController@registerSubmit');
+    Route::get('logout', 'Mobile\AuthController@logout');
+
+    Route::get('u/profil', 'Mobile\MobileIndexController@profil');
+
     Route::post('subscribe', 'Desktop\DesktopController@subscribe');
 
+    Route::get('/kategori/{kategori}', 'Desktop\KategoriViewerController@index');
     Route::get('/viewer/{kategori}/{kode_berita}', 'Desktop\BeritaViewerController@index');
     Route::post('komentar/{berita_id}', 'Desktop\BeritaViewerController@komentar');
 }

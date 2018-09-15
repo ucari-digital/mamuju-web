@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Desktop;
 
 use App\Helper\Guzzle;
+use App\Http\Controllers\GlobalController as G;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -30,7 +31,8 @@ class BeritaViewerController extends Controller
         $berita = $data['news_detail'];
         $penulis = $data['user_detail'];
         $komentar = $data['komentar'];
-        return view('desktop.berita-viewer', compact('berita', 'penulis', 'komentar'));
+        $terbaru = G::news('3', '0')['data'];
+        return view('desktop.berita-viewer', compact('berita', 'penulis', 'komentar', 'terbaru'));
     }
 
     public function komentar(Request $request, $berita_id)
