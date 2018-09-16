@@ -69,11 +69,22 @@ if ($agent->isMobile()) {
 
     Route::get('u/profil', 'Mobile\MobileIndexController@profil');
 
-    Route::post('subscribe', 'Desktop\DesktopController@subscribe');
-
     Route::get('/kategori/{kategori}', 'Desktop\KategoriViewerController@index');
     Route::get('/viewer/{kategori}/{kode_berita}', 'Desktop\BeritaViewerController@index');
+    Route::get('/u/{user}', 'Mobile\BeritaViewerController@user');
+
     Route::post('komentar/{berita_id}', 'Desktop\BeritaViewerController@komentar');
+
+    // Meesage
+    Route::prefix('m')->group(function(){
+        Route::get('register', 'MessageController@register');
+    });
+    Route::post('subscribe', 'Desktop\DesktopController@subscribe');
+    Route::post('search', 'Mobile\MobileIndexController@search');
+
+    Route::get('s', function(Request $request){
+        return $request->session()->all();
+    });
 }
 
 
