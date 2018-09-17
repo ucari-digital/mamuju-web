@@ -25,7 +25,7 @@
 			<a class="navbar-brand link-navbar" href="/"></a>
 			@if(session('id'))
 				<div class="account account-img js-link" data-link="{{url('u/profil')}}">
-					<span>hai, {{session('name')}}</span>
+					<span class="text-capitalize">hai, {{session('name')}}</span>
 					<img src="/{{env('PATH_STORAGE').session('avatar')}}" class="img img-profile">
 				</div>
 			@else

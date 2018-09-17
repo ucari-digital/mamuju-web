@@ -67,7 +67,7 @@ if ($agent->isMobile()) {
     Route::post('register', 'Mobile\AuthController@registerSubmit');
     Route::get('logout', 'Mobile\AuthController@logout');
 
-    Route::get('u/profil', 'Mobile\MobileIndexController@profil');
+    Route::get('u/profil', 'Desktop\DesktopController@profil');
 
     Route::get('/kategori/{kategori}', 'Desktop\KategoriViewerController@index');
     Route::get('/viewer/{kategori}/{kode_berita}', 'Desktop\BeritaViewerController@index');
@@ -81,6 +81,30 @@ if ($agent->isMobile()) {
     });
     Route::post('subscribe', 'Desktop\DesktopController@subscribe');
     Route::post('search', 'Mobile\MobileIndexController@search');
+
+    Route::get('redaksi', function(){
+        $active = "redaksi";
+        return view('desktop.page', compact('active'));
+    });
+    Route::get('p-media-siber', function(){
+        $active = "p-media-siber";
+        return view('desktop.page', compact('active'));
+    });
+
+    Route::get('tentang-kami', function(){
+        $active = "tentang-kami";
+        return view('desktop.page', compact('active'));
+    });
+
+    Route::get('disclaimer', function(){
+        $active = "disclaimer";
+        return view('desktop.page', compact('active'));
+    });
+
+    Route::get('kontak', function(){
+        $active = 'kontak';
+        return view('desktop.page', compact('active'));
+    });
 
     Route::get('s', function(Request $request){
         return $request->session()->all();

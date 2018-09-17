@@ -2,11 +2,11 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="list">
-				<a href="#">Redaksi</a>
-				<a href="#">Pedoman Media Siber</a>
-				<a href="#">Tentang Kami</a>
-				<a href="#">Disclaimer</a>
-				<a href="#">Kontak</a>
+				<a href="{{url('redaksi')}}">Redaksi</a>
+				<a href="{{url('p-media-siber')}}">Pedoman Media Siber</a>
+				<a href="{{url('tentang-kami')}}">Tentang Kami</a>
+				<a href="{{url('disclaimer')}}">Disclaimer</a>
+				<a href="{{url('kontak')}}">Kontak</a>
 			</div>
 		</div>
 		<div class="col-md-4">
