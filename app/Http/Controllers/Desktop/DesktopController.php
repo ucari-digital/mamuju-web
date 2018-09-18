@@ -65,7 +65,7 @@ class DesktopController extends Controller
                 ]
             ];
             $data = Guzzle::request($param)['data'];
-            return view('mobile.berita-cari')
+            return view('desktop.berita-cari')
                 ->with('data', $data)
                 ->with('cari', $request->cari);
         } catch (\Exception $e) {

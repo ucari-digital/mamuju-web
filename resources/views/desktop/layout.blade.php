@@ -17,6 +17,22 @@
 </head>
 <body>
 	@include('sweetalert::alert')
+
+	<!-- Modal -->
+	<form method="post" action="{{url('search')}}">
+		@csrf
+		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+						<input type="text" name="text" class="form-control border-0" placeholder="berita apa yang anda cari?..." aria-label="Pencarian" aria-describedby="basic-addon1" onsubmit="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	{{--End Modal--}}
+
 	<div class="sidebar">
 		@include('desktop.partial.sidebar')
 	</div>

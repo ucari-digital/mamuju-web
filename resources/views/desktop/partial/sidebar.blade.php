@@ -26,4 +26,10 @@
 		</div>
 		<span>Lainnya</span>
 	</div>
+	<div class="list">
+		<div class="icon default active" data-toggle="modal" data-target="#exampleModalCenter">
+			<i class="fas fa-search"></i>
+		</div>
+		<span>Cari</span>
+	</div>
 </div>

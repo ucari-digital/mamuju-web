@@ -4,6 +4,7 @@
         .nav-pills .nav-link.active, .nav-pills .show>.nav-link{background-color:#16a085;}
         a.link-tabs{color:#7f8c8d;}
         .pull-content{margin-bottom:500px;}
+        .padding-content-tab{padding-top:25px;}
     </style>
 @endsection
 @section('content')
@@ -25,7 +26,7 @@
                 <a class="nav-link link-tabs {{$active == "kontak" ? "active" : ""}}" id="pills-kon-tab" data-toggle="pill" href="#pills-kon" role="tab" aria-controls="pills-kon" aria-selected="false">KONTAK</a>
             </li>
         </ul>
-        <div class="tab-content" id="pills-tabContent">
+        <div class="tab-content padding-content-tab" id="pills-tabContent">
             <div class="tab-pane fade {{$active == "redaksi" ? "show active" : ""}}" id="pills-rds" role="tabpanel" aria-labelledby="pills-rds-tab">
                 <div class="row">
                     <div class="col-md-12">
@@ -168,7 +169,9 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade {{$active == "tentang-kami" ? "show active" : ""}}" id="pills-ttm" role="tabpanel" aria-labelledby="pills-ttm-tab">...</div>
+            <div class="tab-pane fade {{$active == "tentang-kami" ? "show active" : ""}}" id="pills-ttm" role="tabpanel" aria-labelledby="pills-ttm-tab">
+                <div class="pull-content">...</div>
+            </div>
             <div class="tab-pane fade {{$active == "disclaimer" ? "show active" : ""}}" id="pills-dis" role="tabpanel" aria-labelledby="pills-dis-tab">
                 <div class="pull-content">
                     <h6>

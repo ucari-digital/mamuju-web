@@ -80,7 +80,7 @@ if ($agent->isMobile()) {
         Route::get('register', 'MessageController@register');
     });
     Route::post('subscribe', 'Desktop\DesktopController@subscribe');
-    Route::post('search', 'Mobile\MobileIndexController@search');
+    Route::post('search', 'Desktop\DesktopController@search');
 
     Route::get('redaksi', function(){
         $active = "redaksi";
