@@ -1,111 +1,301 @@
 @extends('desktop.layout')
 @section('content')
-@foreach($headline as $item)
-<div class="headline js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-	<div class="big-banner-tr">
-		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
-		<div class="text-banner">
-			<div class="title">{{str_limit($item['judul'], 50)}}</div>
+<div class="box-nm">
+	<div class="banner fw js-load" data-link="{{url('viewer/Foto/julius-dein-tujukkan-trik-sulap-memukau-di-on-off-festival-2018-6')}}">
+		<img src="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg">
+		<div class="attr m-32">
+			<div class="title">
+				Pesawat memakan banyak bahan bakar
+			</div>
 			<div class="desc">
-				@php
-					$headline_render = strip_tags($item['berita']);
-				@endphp
-				{{str_limit($headline_render, 100)}}
-			</div>
-			<div class="info text-center mt-3">
-				<div class="kategori" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
-				<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat...
 			</div>
 		</div>
 	</div>
 </div>
-@endforeach
-<div class="c-title mt-5">Terbaru</div>
-<div class="terbaru">
-	@foreach($terbaru as $item)
-	<div class="medium-banner js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
-		<div class="title">{{str_limit($item['judul'], 50)}}</div>
-		<div class="desc">
-			@php
-				$headline_render = strip_tags($item['berita']);
-			@endphp
-			{{str_limit($headline_render, 100)}}
+<hr>
+<div class="title mt-4">Terbaru</div>
+<div class="banner split mt-3">
+	<div class="banner-box">
+		<div class="list">
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+			<div class="attr">
+				<div class="kategori">
+					Internasional
+				</div>
+				<div class="title">
+					Pesawat memakan banyak bahan bakar
+				</div>
+				<div class="time">10-10-2019</div>
+			</div>
 		</div>
-		<div class="info text-center mt-3">
-			<div class="kategori" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
-			<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
+		<div class="list">
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+			<div class="attr">
+				<div class="kategori">
+					Internasional
+				</div>
+				<div class="title">
+					Pesawat memakan banyak bahan bakar
+				</div>
+				<div class="time">10-10-2019</div>
+			</div>
+		</div>
+		<div class="list">
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+			<div class="attr">
+				<div class="kategori">
+					Internasional
+				</div>
+				<div class="title">
+					Pesawat memakan banyak bahan bakar
+				</div>
+				<div class="time">10-10-2019</div>
+			</div>
 		</div>
 	</div>
-	@endforeach
+
+	<div class="banner-box bl">
+		<div class="list">
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+			<div class="attr">
+				<div class="kategori">
+					Internasional
+				</div>
+				<div class="title">
+					Pesawat memakan banyak bahan bakar
+				</div>
+				<div class="time">10-10-2019</div>
+			</div>
+		</div>
+		<div class="list">
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+			<div class="attr">
+				<div class="kategori">
+					Internasional
+				</div>
+				<div class="title">
+					Pesawat memakan banyak bahan bakar
+				</div>
+				<div class="time">10-10-2019</div>
+			</div>
+		</div>
+		<div class="list">
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+			<div class="attr">
+				<div class="kategori">
+					Internasional
+				</div>
+				<div class="title">
+					Pesawat memakan banyak bahan bakar
+				</div>
+				<div class="time">10-10-2019</div>
+			</div>
+		</div>
+	</div>
 </div>
-
-<div class="c-title mt-5">Infografis</div>
-<div class="Infografis">
-	@foreach($infografis_head as $item)
-	<div class="big-banner js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
-		<div class="title">{{str_limit($item['judul'], 50)}}</div>
-		<div class="desc">
-			@php
-				$headline_render = strip_tags($item['berita']);
-			@endphp
-			{{str_limit($headline_render, 100)}}
+<div class="box-bg-infografis">
+	<div class="title mt-4 mb-4">Infografis</div>
+	<div class="box-double">
+		<div class="box-content">
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+			<div class="attr">
+				<div class="title">
+					Pesawat memakan banyak bahan bakar
+				</div>
+				<div class="time">10 Agustus 2019</div>
+			</div>
 		</div>
 	</div>
-	@endforeach
-
-	<div class="list-banner">
-		@foreach($infografis_head as $item)
-		<div class="small-banner js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-			<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
-			<div class="title text-center">
-				{{str_limit($item['judul'], 50)}}
-				<div class="info text-center">
-					<div class="kategori" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
-					<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
+	<div class="box-double">
+		<div class="box-content">
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+			<div class="attr">
+				<div class="title">
+					Pesawat memakan banyak bahan bakar
+				</div>
+				<div class="time">10 Agustus 2019</div>
+			</div>
+		</div>
+	</div>
+	<div class="box-double">
+		<div class="box-content">
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+			<div class="attr">
+				<div class="title">
+					Pesawat memakan banyak bahan bakar
+				</div>
+				<div class="time">10 Agustus 2019</div>
+			</div>
+		</div>
+	</div>
+	<div class="box-double">
+		<div class="box-content">
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+			<div class="attr">
+				<div class="title">
+					Pesawat memakan banyak bahan bakar
+				</div>
+				<div class="time">10 Agustus 2019</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="box">
+	<div class="title mt-3">Foto</div>
+	<div class="box-double-foto">
+		<div class="box-content">
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+			<div class="bg-placeholder"></div>
+			<div class="attr">
+				<div class="title">
+					Pesawat memakan banyak bahan bakar
+				</div>
+				<div class="time">10 Agustus 2019</div>
+			</div>
+		</div>
+	</div>
+	<div class="box-double-foto">
+		<div class="box-content">
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+			<div class="bg-placeholder"></div>
+			<div class="attr">
+				<div class="title">
+					Pesawat memakan banyak bahan bakar
+				</div>
+				<div class="time">10 Agustus 2019</div>
+			</div>
+		</div>
+	</div>
+	<div class="box-double-foto">
+		<div class="box-content">
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+			<div class="bg-placeholder"></div>
+			<div class="attr">
+				<div class="title">
+					Pesawat memakan banyak bahan bakar
+				</div>
+				<div class="time">10 Agustus 2019</div>
+			</div>
+		</div>
+	</div>
+	<div class="box-double-foto">
+		<div class="box-content">
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+			<div class="bg-placeholder"></div>
+			<div class="attr">
+				<div class="title">
+					Pesawat memakan banyak bahan bakar
+				</div>
+				<div class="time">10 Agustus 2019</div>
+			</div>
+		</div>
+	</div>
+</div>
+<hr>
+<div class="box-nm">
+	<div class="box">
+		<div class="box-single-block">
+			<div class="title mt-4 m-32">TV</div>
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+			<div class="attr m-32">
+				<div class="title">
+					Pesawat memakan banyak bahan bakar
+				</div>
+				<div class="desc">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat...
 				</div>
 			</div>
 		</div>
-		@endforeach
 	</div>
 </div>
-<div class="c-title mt-5">Foto</div>
-<div class="foto">
-	<div class="scrollable">
-		<div class="dividder" style="width: 1300px">
-			@foreach($foto as $item)
-			<div class="split-banner js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-				<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
-				<div class="title">{{str_limit($item['judul'], 50)}}</div>
-				<div class="info text-center">
-					<div class="kategori" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
-					<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
+<div class="box" style="margin-bottom: 184px">
+	<hr>
+	<div class="title mt-4">Terpopuler</div>
+	<div class="banner split mt-3">
+		<div class="banner-box">
+			<div class="list">
+				<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+				<div class="attr">
+					<div class="kategori">
+						Internasional
+					</div>
+					<div class="title">
+						Pesawat memakan banyak bahan bakar
+					</div>
+					<div class="time">10-10-2019</div>
 				</div>
 			</div>
-			@endforeach
+			<div class="list">
+				<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+				<div class="attr">
+					<div class="kategori">
+						Internasional
+					</div>
+					<div class="title">
+						Pesawat memakan banyak bahan bakar
+					</div>
+					<div class="time">10-10-2019</div>
+				</div>
+			</div>
+			<div class="list">
+				<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+				<div class="attr">
+					<div class="kategori">
+						Internasional
+					</div>
+					<div class="title">
+						Pesawat memakan banyak bahan bakar
+					</div>
+					<div class="time">10-10-2019</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="banner-box bl">
+			<div class="list">
+				<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+				<div class="attr">
+					<div class="kategori">
+						Internasional
+					</div>
+					<div class="title">
+						Pesawat memakan banyak bahan bakar
+					</div>
+					<div class="time">10-10-2019</div>
+				</div>
+			</div>
+			<div class="list">
+				<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+				<div class="attr">
+					<div class="kategori">
+						Internasional
+					</div>
+					<div class="title">
+						Pesawat memakan banyak bahan bakar
+					</div>
+					<div class="time">10-10-2019</div>
+				</div>
+			</div>
+			<div class="list">
+				<div class="img" id="hash-{{rand(000, 999)}}" data-img="http://mamujutoday.com/wp-content/uploads/2018/08/IMG-20180809-WA0005-1000x600.jpg"></div>
+				<div class="attr">
+					<div class="kategori">
+						Internasional
+					</div>
+					<div class="title">
+						Pesawat memakan banyak bahan bakar
+					</div>
+					<div class="time">10-10-2019</div>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="c-title mt-5 mb-3">Video</div>
-<div class="video">
-	@foreach($video as $item)
-	<div class="big-banner-tr js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
-		<div class="text-banner">
-			<div class="title">{{str_limit($item['judul'], 50)}}</div>
-			<div class="desc">
-				@php
-					$headline_render = strip_tags($item['berita']);
-				@endphp
-				{{str_limit($headline_render, 100)}}
-			</div>
-			<div class="info text-center mt-3">
-				<div class="kategori" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
-				<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
-			</div>
-		</div>
-	</div>
-	@endforeach
 </div>
 @endsection

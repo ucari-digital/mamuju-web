@@ -33,3 +33,14 @@
 		<span>Cari</span>
 	</div>
 </div>
+<div class="logister">
+	@if(session('id'))
+	<div class="account account-img js-link" data-link="{{url('u/profil')}}">
+		<img src="/{{env('PATH_STORAGE').session('avatar')}}">
+	</div>
+	@else
+	<div class="account js-link" data-link="{{url('login')}}">
+		<i class="fal fa-user-circle"></i> <span class="text">Masuk</span>
+	</div>
+	@endif
+</div>

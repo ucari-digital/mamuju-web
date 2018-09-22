@@ -36,8 +36,26 @@
 	<div class="sidebar">
 		@include('desktop.partial.sidebar')
 	</div>
-	<div class="content">
-		<nav class="navbar sticky-top navbar-custome">
+	<div class="mega-content">
+		<div class="col-md-8 m-0 p-0">
+			<div class="content">
+				@yield('content')
+				<div class="box-nm mt-3">
+				@include('desktop.partial.footer')
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 m-0 p-0">
+			<div class="viewer">
+				<div class="loading"></div>
+				<div class="loader"></div>
+				<div class="placeholder"></div>
+				<div class="placeholder-text">Buka berita dan baca disini.</div>
+			</div>
+		</div>
+	</div>
+	{{-- <div class="content"> --}}
+		{{-- <nav class="navbar sticky-top navbar-custome">
 			<a class="navbar-brand link-navbar" href="/"></a>
 			@if(session('id'))
 				<div class="account account-img js-link" data-link="{{url('u/profil')}}">
@@ -50,7 +68,7 @@
 					<a href="{{url('register')}}" class="btn btn-info">atau daftar terlebih dahulu?</a>
 				</div>
 			@endif
-		</nav>
+		</nav> --}}
 		{{--<div class="col-md-12">--}}
 			{{--<div class="card text-white bg-dark mb-3">--}}
 				{{--<div class="card-body">--}}
@@ -58,14 +76,15 @@
 				{{--</div>--}}
 			{{--</div>--}}
 		{{--</div>--}}
-		@yield('content')
-	</div>
-	@include('desktop.partial.footer')
+		{{-- @yield('content') --}}
+
+	{{-- </div> --}}
 	{{-- START JAVASCRIPT --}}
 	<script type="text/javascript" src="{{url('js/jquery.min.js')}}"></script>
 	<script type="text/javascript" src="{{url('js/popper.min.js')}}"></script>
 	<script type="text/javascript" src="{{url('js/bootstrap.min.js')}}"></script>
 	<script type="text/javascript" src="{{url('js/mobile.js')}}"></script>
+	<script type="text/javascript" src="{{url('js/desktop.js')}}"></script>
 	@yield('footer')
 	<script type="text/javascript">
 		$( "img" ).on('error', function() {

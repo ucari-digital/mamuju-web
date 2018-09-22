@@ -9,7 +9,7 @@
 				<a href="{{url('kontak')}}">Kontak</a>
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-3">
 			<div class="list">
 				<a href="#">Beriklan</a>
 				<a href="#">Komplain</a>
@@ -18,7 +18,7 @@
 				<a href="#">Instagram</a>
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-5">
 			<div class="subscribe">
 				<form action="{{url('subscribe')}}" method="post">
 					@csrf
