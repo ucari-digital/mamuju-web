@@ -12,13 +12,13 @@ class DesktopController extends Controller
     public function index()
     {
         $headline = G::news('1', '0')['data'];
-        $terbaru = G::news('4', '1')['data'];
-        $infografis_head = G::news('1', '0', '1')['data'];
-        $infografis = G::news('3', '1', '1')['data'];
-        $foto = G::news('3', '0', '2')['data'];
-        $video = G::news('1', '0', '3')['data'];
+        $terbaru = G::news('6', '1')['data'];
+        $infografis = G::news('4', '0', '1')['data'];
+        $foto = G::news('4', '0', '2')['data'];
+        $video_head = G::news('1', '0', '3')['data'];
+        $video = G::news('6', '1', '3')['data'];
         $populer = G::news('5', '0')['data'];
-    	return view('desktop.index', compact('headline', 'terbaru', 'infografis_head', 'infografis', 'foto', 'video', 'populer'));
+    	return view('desktop.index', compact('headline', 'terbaru', 'infografis', 'foto', 'video', 'video_head', 'populer'));
     }
 
     public function profil()
@@ -53,21 +53,28 @@ class DesktopController extends Controller
     {
         try {
             $param = [
-                'method' => 'post',
-                'url' => 'news/search',
+                'method' => 'get',
+                'url' => 'news/'.$request->text,
                 'request' => [
                     'allow_redirects' => true,
                     'headers' => [
                     ],
                     'form_params' => [
-                        'text' => $request->text,
                     ]
                 ]
             ];
             $data = Guzzle::request($param)['data'];
+            if(! $data)
+            {
+                alert()->info('opps', "sepertinya info yang anda cari mengenain ".$request->text." belum tersedia...");
+                return redirect('/');
+            }
+
+            $populer = G::news('5', '0')['data'];
             return view('desktop.berita-cari')
                 ->with('data', $data)
-                ->with('cari', $request->cari);
+                ->with('populer', $populer)
+                ->with('cari', $request->text);
         } catch (\Exception $e) {
             return $e;
         }

@@ -1,37 +1,71 @@
 @extends('desktop.layout')
-@section('header')
-    <style>
-        .pull-content{margin-bottom:100px;}
-        .img-empty{width:600px;height:500px;}
-    </style>
-@endsection
 @section('content')
-    <div class="col-md-12 pull-content">
-        <div class="card-columns">
-            @foreach($data as $item)
-            <div class="card js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}" style="margin:5px;">
-                <img class="card-img-top" src="{{env('PATH_STORAGE').$item['gambar']}}" alt="{{$item['gambar']}}">
-                <div class="card-body">
-                    <h5 class="card-title">{{str_limit($item['judul'], 50)}}</h5>
-                    <p class="card-text">
-                        @php
-                            $headline_render = strip_tags($item['berita']);
-                        @endphp
-                        {{str_limit($headline_render, 100)}}
-                    </p>
-                    <p class="card-text"><small class="text-muted">Last updated {{App\Helper\TimeFormat::formatId($item['created_at'])}}</small></p>
-                </div>
+    <div class="box">
+        <div class="title mt-4 text-capitalize">hasil pencarian {{$cari}}</div>
+        <hr>
+        <div class="banner split mt-12">
+            <div class="banner-box">
+                @foreach($data as $i => $item)
+                    <div class="list fw js-load" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
+                        <div class="img" id="hash-{{rand(000, 999)}}" data-img="{{env('PATH_STORAGE').$item['gambar']}}"></div>
+                        <div class="attr">
+                            <div class="kategori" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">
+                                {{$item['kategori']}}
+                            </div>
+                            <div class="title">
+                                {{str_limit($item['judul'], 50)}}
+                            </div>
+                            <div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-            @endforeach
         </div>
     </div>
-    @forelse($data as $item)
-    @empty
-        <center>
-            <h5>opps, sepertinya berita yang anda cari mengenai <span class="text-danger">{{$cari}}</span> belum tersedia.</h5>
-            <img src="{{asset('asset/search giff.gif')}}" class="img img-responsive rounded img-empty">
-        </center>
-    @endforelse
+    <div class="box" style="margin-bottom: 184px">
+        <hr>
+        <div class="title mt-4">Terpopuler</div>
+        <div class="banner split mt-3">
+            <div class="banner-box">
+                @foreach($populer as $i => $item)
+                    <div class="list fw js-load" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
+                        <div class="img" id="hash-{{rand(000, 999)}}" data-img="{{env('PATH_STORAGE').$item['gambar']}}"></div>
+                        <div class="attr">
+                            <div class="kategori" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">
+                                {{$item['kategori']}}
+                            </div>
+                            <div class="title">
+                                {{str_limit($item['judul'], 50)}}
+                            </div>
+                            <div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
+                        </div>
+                    </div>
+                    @if($i == 2)
+                        @break
+                    @endif
+                @endforeach
+            </div>
+
+            <div class="banner-box bl">
+                @foreach($populer as $i => $item)
+                    @if($i > 2)
+                        <div class="list fw js-load" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
+                            <div class="img" id="hash-{{rand(000, 999)}}" data-img="{{env('PATH_STORAGE').$item['gambar']}}"></div>
+                            <div class="attr">
+                                <div class="kategori" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">
+                                    {{$item['kategori']}}
+                                </div>
+                                <div class="title">
+                                    {{str_limit($item['judul'], 50)}}
+                                </div>
+                                <div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+    </div>
 @endsection
 @section('footer')
 

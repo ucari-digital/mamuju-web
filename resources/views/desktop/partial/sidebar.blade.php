@@ -26,8 +26,8 @@
 		</div>
 		<span>Lainnya</span>
 	</div>
-	<div class="list">
-		<div class="icon default active" data-toggle="modal" data-target="#exampleModalCenter">
+	<div class="list" data-toggle="modal" data-target="#exampleModalCenter">
+		<div class="icon default active">
 			<i class="fas fa-search"></i>
 		</div>
 		<span>Cari</span>
@@ -35,8 +35,8 @@
 </div>
 <div class="logister">
 	@if(session('id'))
-	<div class="account account-img js-link" data-link="{{url('u/profil')}}">
-		<img src="/{{env('PATH_STORAGE').session('avatar')}}">
+	<div class="account js-link" data-link="{{url('u/profil')}}">
+		<i class="fal fa-user-circle"></i> <span class="text text-capitalize">{{session('name')}}</span>
 	</div>
 	@else
 	<div class="account js-link" data-link="{{url('login')}}">

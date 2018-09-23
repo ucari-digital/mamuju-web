@@ -2,7 +2,7 @@
 @section('content')
 <div class="profil py-3">
 	<div class="avatar">
-		<img src="/{{env('PATH_STORAGE').$data['users']['avatar']}}" alt="">
+		<img src="{{env('PATH_STORAGE').$data['users']['avatar']}}" alt="">
 	</div>
 	<div class="info">
 		<div class="name">{{$data['users']['name']}}</div>

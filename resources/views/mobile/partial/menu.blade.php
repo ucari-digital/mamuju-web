@@ -1,7 +1,6 @@
 <div class="layout-menu">
 	<div class="container">
-		<form method="post" action="{{url('search')}}">
-			@csrf
+		<form method="get" action="{{url('search')}}">
 			<div class="search mt-3">
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">

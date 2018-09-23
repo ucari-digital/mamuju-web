@@ -31,8 +31,8 @@ class BeritaViewerController extends Controller
         $berita = $data['news_detail'];
         $penulis = $data['user_detail'];
         $komentar = $data['komentar'];
-        $terbaru = G::news('3', '0')['data'];
-        return view('desktop.berita-viewer', compact('berita', 'penulis', 'komentar', 'terbaru'));
+        $sum_komentar = $data['sum_komentar'];
+        return view('desktop.berita-viewer', compact('berita', 'penulis', 'komentar', 'sum_komentar'));
     }
 
     public function komentar(Request $request, $berita_id)

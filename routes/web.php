@@ -37,7 +37,7 @@ if ($agent->isMobile()) {
 		Route::get('register', 'MessageController@register');
 	});
 	Route::post('subscribe', 'Mobile\MobileIndexController@subscribe');
-	Route::post('search', 'Mobile\MobileIndexController@search');
+	Route::get('search', 'Mobile\MobileIndexController@search');
 
 	Route::get('redaksi', function(){
 		return view('mobile.page.redaksi');
@@ -80,7 +80,7 @@ if ($agent->isMobile()) {
         Route::get('register', 'MessageController@register');
     });
     Route::post('subscribe', 'Desktop\DesktopController@subscribe');
-    Route::post('search', 'Desktop\DesktopController@search');
+    Route::get('search', 'Desktop\DesktopController@search');
 
     Route::get('redaksi', function(){
         $active = "redaksi";

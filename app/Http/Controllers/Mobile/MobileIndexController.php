@@ -72,20 +72,21 @@ class MobileIndexController extends Controller
     {
         try {
             $param = [
-                'method' => 'post',
-                'url' => 'news/search',
+                'method' => 'get',
+                'url' => 'news/'.$request->text,
                 'request' => [
                     'allow_redirects' => true,
                     'headers' => [
                     ],
                     'form_params' => [
-                        'text' => $request->text,
                     ]
                 ]
             ];
             $data = Guzzle::request($param)['data'];
+            $populer = G::news('5', '0')['data'];
             return view('mobile.berita-cari')
                 ->with('data', $data)
+                ->with('populer', $populer)
                 ->with('cari', $request->cari);
         } catch (\Exception $e) {
             return $e;

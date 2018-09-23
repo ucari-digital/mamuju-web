@@ -2,7 +2,7 @@
 @section('content')
 <div class="profil py-3">
 	<div class="avatar">
-		<img src="/{{env('PATH_STORAGE').session('avatar')}}" alt="">
+		<img src="{{env('PATH_STORAGE').session('avatar')}}" alt="">
 	</div>
 	<div class="info">
 		<div class="name">{{session('name')}}</div>

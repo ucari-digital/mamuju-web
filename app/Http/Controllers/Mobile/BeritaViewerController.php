@@ -31,7 +31,8 @@ class BeritaViewerController extends Controller
         $berita = $data['news_detail'];
         $penulis = $data['user_detail'];
         $komentar = $data['komentar'];
-    	return view('mobile.berita-viewer', compact('berita', 'penulis', 'komentar'));
+        $sum_komentar = $data['sum_komentar'];
+    	return view('mobile.berita-viewer', compact('berita', 'penulis', 'komentar', 'sum_komentar'));
     }
 
     public function user($user)
