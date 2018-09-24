@@ -5,9 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="{{url('css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url('css/desktop.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url('css/desktop-customize.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url('css/fontawesome/css/all.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url('css/animate.css')}}">
-	<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+	<script src="{{url('js/sweetalert2.all.js')}}"></script>
 	@yield('header')
 </head>
 <body>
@@ -41,10 +42,16 @@
 		</div>
 		<div class="col-md-4 m-0 p-0">
 			<div class="viewer">
+				@if(! session('id'))
+					<div class="signin">
+						@include('desktop.auth.login-konten')
+					</div>
+				@else
+					<div class="placeholder"></div>
+					<div class="placeholder-text">Hai, <span class="js-link text-primary" data-link="{{url('u/profil')}}">{{session('name')}}</span> sepertinya kamu belum membaca berita?</div>
+				@endif
 				<div class="loading"></div>
 				<div class="loader"></div>
-				<div class="placeholder"></div>
-				<div class="placeholder-text">Buka berita dan baca disini.</div>
 			</div>
 		</div>
 	</div>

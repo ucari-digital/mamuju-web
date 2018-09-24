@@ -1,0 +1,76 @@
+.viewer .signin{
+    margin-left:55px;
+    margin-top:15px;
+}
+.form .input-group-text{
+    border-radius: 0;
+    background-color: transparent;
+}
+.input-group-text{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: .375rem .75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+.social-logister .login{
+    text-align: center;
+    text-transform: uppercase;
+}
+.social-logister .g{
+    border: 1px solid #e0e0e0;
+    background-color: #FFF;
+    background-image: url('../asset/2000px-Google__G__Logo.svg.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position-x: 10px;
+    background-position-y: 5px;
+    font-weight: 500;
+    display: flex;
+}
+.social-logister .g i{
+    padding: 10px 20px;
+    font-size: 20px;
+}
+.social-logister .login .text{
+    padding: 10px;
+    width: 100%;
+}
+.text{
+    font-size: 14px;
+    text-align: center;
+}
+.social-logister .login{
+    text-align: center;
+    text-transform: uppercase;
+}
+.social-logister .f{
+    background-color: #1976d2;
+    color: #FFF;
+    font-weight: 500;
+    display: flex;
+}
+.social-logister .f i{
+    padding: 10px 20px;
+    font-size: 20px;
+}
+.fab{
+    font-family: "Font Awesome 5 Brands";
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
