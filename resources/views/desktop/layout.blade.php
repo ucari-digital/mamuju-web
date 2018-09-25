@@ -42,14 +42,8 @@
 		</div>
 		<div class="col-md-4 m-0 p-0">
 			<div class="viewer">
-				@if(! session('id'))
-					<div class="signin">
-						@include('desktop.auth.login-konten')
-					</div>
-				@else
-					<div class="placeholder"></div>
-					<div class="placeholder-text">Hai, <span class="js-link text-primary" data-link="{{url('u/profil')}}">{{session('name')}}</span> sepertinya kamu belum membaca berita?</div>
-				@endif
+				<div class="placeholder"></div>
+				<div class="placeholder-text">Hai, <span class="js-link text-primary" data-link="{{url('u/profil')}}">{{session('name')}}</span> sepertinya kamu belum membaca berita?</div>
 				<div class="loading"></div>
 				<div class="loader"></div>
 			</div>

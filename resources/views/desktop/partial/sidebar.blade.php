@@ -33,10 +33,14 @@
 		<span>Cari</span>
 	</div>
 </div>
-@if(session('id'))
 <div class="logister">
-	<div class="account js-link" data-link="{{url('u/profil')}}">
+	@if(session('id'))
+	<div class="account js-load" data-link="{{url('u/profil')}}">
 		<i class="fal fa-user-circle"></i> <span class="text text-capitalize">{{session('name')}}</span>
 	</div>
+	@else
+	<div class="account js-load" data-link="{{url('login')}}">
+		<i class="fal fa-user-circle"></i> <span class="text">Masuk</span>
+	</div>
+	@endif
 </div>
-@endif
