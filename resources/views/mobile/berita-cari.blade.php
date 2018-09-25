@@ -32,7 +32,7 @@
                     </div>
                     @foreach($populer as $item)
                         <div class="box-list mt-3 js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-                            <div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
+                            <div class="img" id="hash-{{rand(000, 999)}}" data-img="{{env('PATH_STORAGE').$item['gambar']}}"></div>
                             <div class="content">
                                 <div class="title">{{str_limit($item['judul'], 40)}}</div>
                                 <div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>

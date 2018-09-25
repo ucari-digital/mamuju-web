@@ -12,7 +12,7 @@
 	<div class="container">
 		@foreach($data['berita'] as $item)
 		<div class="box-list mt-3">
-			<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="{{env('PATH_STORAGE').$item['gambar']}}"></div>
 			<div class="content">
 				<div class="title">{{str_limit($item['judul'], 50)}}</div>
 				<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>

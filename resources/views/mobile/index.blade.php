@@ -45,7 +45,7 @@
 {{-- ST HEADLINE --}}
 @foreach($headline as $item)
 <div class="box-single js-link headline" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-	<img src="/{{env('PATH_STORAGE').$item['gambar']}}">
+	<img src="{{env('PATH_STORAGE').$item['gambar']}}">
 	<div class="content">
 		<h5 class="title">{{str_limit($item['judul'], 50)}}</h5>
 		<div class="description">
@@ -74,7 +74,7 @@
 	</div>
 	@foreach($terbaru as $item)
 	<div class="box-list mt-3 js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
+		<div class="img" id="hash-{{rand(000, 999)}}" data-img="{{env('PATH_STORAGE').$item['gambar']}}"></div>
 		<div class="content">
 			<div class="title">{{str_limit($item['judul'], 50)}}</div>
 			<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
@@ -93,7 +93,7 @@
 		</div>
 		@foreach($infografis as $item)
 		<div class="box-double js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-			<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
+			<div class="img" id="hash-{{rand(000, 999)}}" data-img="{{env('PATH_STORAGE').$item['gambar']}}"></div>
 			<div class="content">
 				<div class="title mb-1 pb-1">{{str_limit($item['judul'], 50)}}</div>
 				<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
@@ -114,7 +114,7 @@
 			<div class="scroll">
 				@foreach($foto as $item)
 				<div class="box-item js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-					<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
+					<div class="img" id="hash-{{rand(000, 999)}}" data-img="{{env('PATH_STORAGE').$item['gambar']}}"></div>
 					<div class="content">
 						<div class="title">{{str_limit($item['judul'], 50)}}</div>
 					</div>
@@ -141,7 +141,7 @@
 		</div>
 	@foreach($video as $item)
 	<div class="box-single js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
+		<div class="img" id="hash-{{rand(000, 999)}}" data-img="{{env('PATH_STORAGE').$item['gambar']}}"></div>
 		<div class="content">
 			<h5 class="title">{{str_limit($item['judul'], 50)}}</h5>
 			<div class="information mt-3">
@@ -163,7 +163,7 @@
 	</div>
 	@foreach($populer as $item)
 	<div class="box-list mt-3 js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
-		<div class="img" id="hash-{{rand(000, 999)}}" data-img="/{{env('PATH_STORAGE').$item['gambar']}}"></div>
+		<div class="img" id="hash-{{rand(000, 999)}}" data-img="{{env('PATH_STORAGE').$item['gambar']}}"></div>
 		<div class="content">
 			<div class="title">{{str_limit($item['judul'], 40)}}</div>
 			<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>

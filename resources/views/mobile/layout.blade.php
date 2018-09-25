@@ -24,7 +24,7 @@
 			</div>
 			@if(session('id'))
 			<div class="account account-img js-link" data-link="{{url('u/profil')}}">
-				<img src="/{{env('PATH_STORAGE').session('avatar')}}">
+				<img src="{{env('PATH_STORAGE').session('avatar')}}">
 			</div>
 			@else
 			<div class="account js-link" data-link="{{url('login')}}">
