@@ -89,6 +89,67 @@
 .mega-content {
   display: flex; }
 
+.box-logister {
+  padding: 0px 30px;
+  margin-top: 10vh; }
+  .box-logister .logo {
+    width: 100%; }
+    .box-logister .logo img {
+      width: 80px; }
+  .box-logister .form input {
+    border-radius: 0; }
+  .box-logister .form .input-group-text {
+    border-radius: 0;
+    background-color: transparent; }
+  .box-logister .social-text {
+    position: relative;
+    text-align: center; }
+    .box-logister .social-text .text {
+      display: inline-block;
+      text-align: center;
+      position: relative;
+      background-color: #fff; }
+    .box-logister .social-text .line {
+      position: absolute;
+      top: -2px;
+      width: 100%;
+      z-index: -1; }
+  .box-logister .social-logister .g {
+    border: 1px solid #e0e0e0;
+    background-color: #FFF;
+    background-image: url(../asset/2000px-Google__G__Logo.svg.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position-x: 10px;
+    background-position-y: 5px;
+    font-weight: 500;
+    display: flex; }
+    .box-logister .social-logister .g i {
+      padding: 10px 20px;
+      font-size: 20px; }
+    .box-logister .social-logister .g .text {
+      width: 100%; }
+  .box-logister .social-logister .f {
+    background-color: #1976d2;
+    color: #FFF;
+    font-weight: 500;
+    display: flex; }
+    .box-logister .social-logister .f i {
+      padding: 10px 20px;
+      font-size: 20px; }
+    .box-logister .social-logister .f .text {
+      width: 100%; }
+  .box-logister .social-logister .login {
+    text-align: center;
+    text-transform: uppercase; }
+    .box-logister .social-logister .login .text {
+      padding: 10px; }
+  .box-logister .text {
+    font-size: 14px;
+    text-align: center; }
+  .box-logister button {
+    border-radius: 0; }
+
 .banner.fw {
   width: 100%; }
 .banner img {
@@ -237,7 +298,8 @@
   position: fixed;
   height: 100%;
   padding: 15px;
-  overflow-x: auto; }
+  overflow-x: auto;
+  width: 450px; }
   .viewer .placeholder {
     background-image: url("../asset/obs_21.jpg");
     background-position: center;
