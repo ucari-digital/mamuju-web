@@ -1,4 +1,10 @@
 @extends('mobile.layout')
+@section('title')
+	MAMUJUTODAY
+@endsection
+@section('description')
+	berita menarik hari ini
+@endsection
 @section('content')
 <div class="container">
 	<div class="block-nav x-m">

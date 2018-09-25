@@ -1,4 +1,7 @@
 @extends('desktop.layout')
+@section('title')
+    MAMUJUTODAY
+@endsection
 @section('content')
     <div class="box">
         <div class="title mt-4 text-capitalize">hasil pencarian {{$cari}}</div>

@@ -1,4 +1,10 @@
 @extends('mobile.layout')
+@section('title')
+	MAMUJUTODAY
+@endsection
+@section('description')
+	berita menarik hari ini
+@endsection
 @section('content')
 {{-- ST MENU KATEGORI --}}
 <div class="container">

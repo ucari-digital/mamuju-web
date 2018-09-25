@@ -1,12 +1,12 @@
 @extends('desktop.layout')
+@section('title')
+    MAMUJUTODAY
+@endsection
+@section('description')
+    berita menarik hari ini
+@endsection
 @section('header')
-    <style>
-        .nav-pills .nav-link.active, .nav-pills .show>.nav-link{background-color:#16a085;}
-        a.link-tabs{color:#7f8c8d;}
-        .pull-content{margin-bottom:800px;}
-        .padding-content-tab{padding-top:25px;}
-        .margin-tab{margin-top:20px;}
-    </style>
+    <link rel="stylesheet" href="{{asset('css/customize.css')}}">
 @endsection
 @section('content')
     <ul class="nav nav-pills nav-justified mb-3 margin-tab" id="pills-tab" role="tablist">

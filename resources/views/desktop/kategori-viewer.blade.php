@@ -1,4 +1,10 @@
 @extends('desktop.layout')
+@section('title')
+    MAMUJUTODAY - {{$kategori}}
+@endsection
+@section('description')
+    berita {{$kategori}}
+@endsection
 @section('content')
     @foreach($data_single as $item)
         <div class="box-nm">

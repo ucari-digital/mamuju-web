@@ -1,4 +1,10 @@
 @extends('desktop.layout')
+@section('title')
+	MAMUJUTODAY
+@endsection
+@section('description')
+	berita menarik hari ini
+@endsection
 @section('content')
 @foreach($headline as $item)
 <div class="box-nm">

@@ -1,4 +1,10 @@
 @extends('mobile.layout')
+@section('title')
+	MAMUJUTODAY
+@endsection
+@section('description')
+	berita menarik hari ini
+@endsection
 @section('header')
 <style type="text/css">
 	.hsm{
