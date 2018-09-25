@@ -393,7 +393,12 @@
   .berita .konten {
     font-size: 14px; }
     .berita .konten > * {
-      font-size: 14px !important; }
+      font-size: 14px !important;
+      max-width: 372px !important; }
+    .berita .konten img {
+      width: 100% !important;
+      height: auto !important;
+      max-width: 372px !important; }
   .berita .tags .label {
     font-size: 14px;
     display: inline-block;

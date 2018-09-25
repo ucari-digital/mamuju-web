@@ -1,0 +1,83 @@
+.box-logister{
+	padding: 0px 30px;
+	margin-top: 10vh;
+	.logo{
+		width: 100%;
+		img{
+			width: 80px;
+		}
+	}
+	.form{
+		input{
+			border-radius: 0;
+		}
+		
+		.input-group-text{
+			border-radius: 0;
+			background-color: transparent;
+		}
+	}
+	.social-text{
+		position: relative;
+		text-align: center;
+		.text{
+			display: inline-block;
+			text-align: center;
+			position: relative;
+			background-color: #fff;
+		}
+		.line{
+			position: absolute;
+			top: -2px;
+			width: 100%;
+			z-index: -1;
+		}
+	}
+	.social-logister{
+		.g{
+			border: 1px solid $border;
+			background-color: #FFF;
+			background-image: url(#{$path_url_image}/2000px-Google__G__Logo.svg.png);
+			background-size: 30px;
+		    background-repeat: no-repeat;
+		    background-position-x: 10px;
+		    background-position-y: 5px;
+		    font-weight: 500;
+		    display: flex;
+		    i{
+				padding: 10px 20px;
+				font-size: 20px;
+			}
+			.text{
+				width: 100%;
+			}
+		}
+		.f{
+			background-color: #1976d2;
+			color: #FFF;
+			font-weight: 500;
+			display: flex;
+			i{
+				padding: 10px 20px;
+				font-size: 20px;
+			}
+			.text{
+				width: 100%;
+			}
+		}
+		.login{
+			text-align: center;
+			text-transform: uppercase;
+			.text{
+				padding: 10px;
+			}
+		}
+	}
+	.text{
+		font-size: 14px;
+		text-align: center;
+	}
+	button{
+		border-radius: 0;
+	}
+}
