@@ -16,7 +16,7 @@ class DesktopController extends Controller
         $infografis = G::news('4', '0', '245')['data'];
         $foto = G::news('4', '0', '247')['data'];
         $video_head = G::news('1', '0', '249')['data'];
-        $video = G::news('6', '1', '249')['data'];
+        $video = G::news('1', '0', '249')['data'];
         $populer = G::news('5', '0')['data'];
     	return view('desktop.index', compact('headline', 'terbaru', 'infografis', 'foto', 'video', 'video_head', 'populer'));
     }

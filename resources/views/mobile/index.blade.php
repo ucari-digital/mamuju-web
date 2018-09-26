@@ -76,7 +76,7 @@
 	<div class="box-list mt-3 js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
 		<div class="img" id="hash-{{rand(000, 999)}}" data-img="{{env('PATH_STORAGE').$item['gambar']}}"></div>
 		<div class="content">
-			<div class="title">{{str_limit($item['judul'], 50)}}</div>
+			<div class="title">{!! str_limit($item['judul'], 50) !!}</div>
 			<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
 			<div class="category" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
 		</div>
@@ -95,7 +95,7 @@
 		<div class="box-double js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
 			<div class="img" id="hash-{{rand(000, 999)}}" data-img="{{env('PATH_STORAGE').$item['gambar']}}"></div>
 			<div class="content">
-				<div class="title mb-1 pb-1">{{str_limit($item['judul'], 50)}}</div>
+				<div class="title mb-1 pb-1">{!! str_limit($item['judul'], 50) !!}</div>
 				<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
 			</div>
 		</div>
@@ -116,7 +116,7 @@
 				<div class="box-item js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
 					<div class="img" id="hash-{{rand(000, 999)}}" data-img="{{env('PATH_STORAGE').$item['gambar']}}"></div>
 					<div class="content">
-						<div class="title">{{str_limit($item['judul'], 50)}}</div>
+						<div class="title">{!! str_limit($item['judul'], 50) !!}</div>
 					</div>
 					<div class="information">
 						<div class="category" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
@@ -143,7 +143,7 @@
 	<div class="box-single js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
 		<div class="img" id="hash-{{rand(000, 999)}}" data-img="{{env('PATH_STORAGE').$item['gambar']}}"></div>
 		<div class="content">
-			<h5 class="title">{{str_limit($item['judul'], 50)}}</h5>
+			<h5 class="title">{!! str_limit($item['judul'], 50) !!}</h5>
 			<div class="information mt-3">
 				<div class="category" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
 				<div class="time">
@@ -165,7 +165,7 @@
 	<div class="box-list mt-3 js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
 		<div class="img" id="hash-{{rand(000, 999)}}" data-img="{{env('PATH_STORAGE').$item['gambar']}}"></div>
 		<div class="content">
-			<div class="title">{{str_limit($item['judul'], 40)}}</div>
+			<div class="title">{!! str_limit($item['judul'], 40) !!}</div>
 			<div class="time">{{App\Helper\TimeFormat::formatId($item['created_at'])}}</div>
 			<div class="category" style="background-color: {{explode(';', $item['kategori_color'])[0]}}; color: {{explode(';', $item['kategori_color'])[1]}}">{{$item['kategori']}}</div>
 		</div>
