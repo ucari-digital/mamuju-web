@@ -1,3 +1,12 @@
+@section('title')
+    {{$berita['judul']}}
+@endsection
+@section('description')
+    @php
+        $news = strip_tags($berita['berita']);
+    @endphp
+    {{str_limit($news, 100)}}
+@endsection
 <div class="berita">
     <h6 class="title">{{$berita['judul']}}</h6>
     <div class="time-upload">{{$berita['tgl_upload']}} <div class="coment-counter">{{$sum_komentar}} komentar <i class="fal fa-comment-alt"></i> | {{$berita['visit']}} kali dibaca <i class="fal fa-eye"></i></div></div>

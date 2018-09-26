@@ -1,4 +1,7 @@
 @extends('desktop.layout')
+@section('title')
+    MAMUJUTODAY
+@endsection
 @section('content')
     <div class="container">
         <div class="jumbotron">

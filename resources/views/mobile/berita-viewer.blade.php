@@ -1,4 +1,13 @@
 @extends('mobile.layout')
+@section('title')
+	{{$berita['judul']}}
+@endsection
+@section('description')
+	@php
+		$news = strip_tags($berita['berita']);
+	@endphp
+	{{str_limit($news, 100)}}
+@endsection
 @section('content')
 <div class="berita">
 {{-- 	<div class="page-map">--}}

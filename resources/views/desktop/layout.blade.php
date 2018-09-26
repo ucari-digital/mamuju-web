@@ -1,11 +1,11 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>MAMUJUTODAY</title>
+	<title>@yield('title')</title>
+	<meta name="description" content="@yield('description')">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="{{url('css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url('css/desktop.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{url('css/desktop-customize.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url('css/fontawesome/css/all.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url('css/animate.css')}}">
 	<script src="{{url('js/sweetalert2.all.js')}}"></script>
