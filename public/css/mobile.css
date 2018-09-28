@@ -272,6 +272,8 @@ hr.dashed {
     .berita .konten img {
       width: 100% !important;
       height: auto !important; }
+    .berita .konten iframe {
+      width: 100% !important; }
   .berita .tags .label {
     font-size: 14px;
     display: inline-block;
