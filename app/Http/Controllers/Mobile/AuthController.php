@@ -44,6 +44,8 @@ class AuthController extends Controller
 	        	$request->session()->put('email', $data['data']['email']);
 	        	$request->session()->put('avatar', $data['data']['avatar']);
 	        	$request->session()->save();
+
+                alert()->success('selamat datang '.$data['data']['name'], 'pantau terus info menarik mamuju today');
 	        	return redirect('/');
 	        } else {
 	        	return redirect()->back()

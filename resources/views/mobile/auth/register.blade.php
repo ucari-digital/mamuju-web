@@ -53,13 +53,13 @@
 					<hr class="line">
 				</div>
 				<div class="social-logister">
-					<div class="g login">
+					<div class="g login js-link" data-link="{{url('auth/google')}}">
 						<i></i>
-						<div class="text">Daftar dengan Google</div>
+						<div class="text">Masuk dengan Google</div>
 					</div>
-					<div class="f login mt-3">
+					<div class="f login mt-3 js-link" data-link="{{url('auth/facebook')}}">
 						<i class="fab fa-facebook-f"></i>
-						<div class="text">Daftar dengan Facebook</div>
+						<div class="text">Masuk dengan Facebook</div>
 					</div>
 				</div>
 			</div>

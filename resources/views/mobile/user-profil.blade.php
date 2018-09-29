@@ -6,7 +6,7 @@
 	berita menarik hari ini
 @endsection
 @section('content')
-<div class="profil py-3">
+<div class="profil py-3" style="margin-bottom:280px;">
 	<div class="avatar">
 		<img src="{{env('PATH_STORAGE').session('avatar')}}" alt="">
 	</div>

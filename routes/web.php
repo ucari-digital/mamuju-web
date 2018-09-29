@@ -14,6 +14,8 @@ $agent = new Agent();
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
 if ($agent->isMobile()) {
 	Route::get('/', 'Mobile\MobileIndexController@index');
