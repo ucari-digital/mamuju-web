@@ -37,7 +37,7 @@
 			@yield('menu-maps')
 		</div>
 	</div>
-	<div class="content">
+	<div class="content-parent">
 		@yield('content')
 	</div>
 	<div class="footer mt-3">
