@@ -8,6 +8,24 @@
 	@endphp
 	{{str_limit($news, 100)}}
 @endsection
+@section('header')
+	<script>
+        window.fbAsyncInit = function(){
+            FB.init({
+                appId: 'xxxxx', status: true, cookie: true, xfbml: true });
+        };
+        (function(d, debug){var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+            if(d.getElementById(id)) {return;}
+            js = d.createElement('script'); js.id = id;
+            js.async = true;js.src = "//connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";
+            ref.parentNode.insertBefore(js, ref);}(document, /*debug*/ false));
+        function postToFeed(title, desc, url, image){
+            var obj = {method: 'feed',link: url, picture: 'http://www.url.com/images/'+image,name: title,description: desc};
+            function callback(response){}
+            FB.ui(obj, callback);
+        }
+	</script>
+@endsection
 @section('content')
 	{{--Modal Image--}}
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -101,6 +119,16 @@
 					@endforeach
 				</div>
 			</div>
+			<div class="tags py-2">
+				<div class="label">Bagikan : </div>
+				<div class="list px-2">
+					@php
+						$isi_berita = strip_tags($berita['berita']);
+					@endphp
+					<a target="_blank" data-image="{{env('PATH_STORAGE').$berita['gambar']}}" data-title="{{$berita['judul']}}" data-desc="{{str_limit($isi_berita, 100)}}" href="stackoverflow.com" class="btnShareFb item" style="background-color:#007bff;color:#ecf0f1;">facebook</a>
+					<a target="_blank" href="http://twitter.com/share?text={{$berita['judul']}} -&url={{url('viewer/'.$berita['kode_kategori'].'/'.$berita['seo'].'-'.$berita['id'])}}/', 'twitterShare', 'width=626,height=436" class="item" style="background-color:#17a2b8;color:#ecf0f1;">tweeter</a>
+				</div>
+			</div>
 			@if(session('id'))
 				<div class="komentar pt-2 my-2">
 					<div class="label">Komentar</div>
@@ -130,4 +158,14 @@
 			@endif
 		</div>
 	</div>
+@endsection
+@section('footer')
+	<script>
+        $('.btnShareFb').click(function(){
+            elem = $(this);
+            postToFeed(elem.data('title'), elem.data('desc'), elem.prop('href'), elem.data('image'));
+
+            return false;
+        });
+	</script>
 @endsection

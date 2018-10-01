@@ -49,8 +49,28 @@ class BeritaViewerController extends Controller
                 ]
             ]
         ];
-        $data = Guzzle::request($param)['data'];   
-    	return view('mobile.user-viewer', compact('data'));
+        $data = Guzzle::request($param)['data'];
+        $count_data = round(count($data['berita']) / 10);
+    	return view('mobile.user-viewer', compact('data', 'count_data'));
+    }
+
+    public function user_paginate($user, $id)
+    {
+        $param = [
+            'method' => 'post',
+            'url' => 'user',
+            'request' => [
+                'allow_redirects' => true,
+                'headers' => [
+                ],
+                'form_params' => [
+                    'nickname' => $user
+                ]
+            ]
+        ];
+        $data = Guzzle::request($param)['data'];
+        $count_data = round(count($data['berita']) / 10);
+        return view('mobile.user-viewer-paginate', compact('id', 'data', 'count_data'));
     }
 
     public function komentar(Request $request, $berita_id)
