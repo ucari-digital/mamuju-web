@@ -5,47 +5,10 @@
 @section('description')
 	berita menarik hari ini
 @endsection
+@section('menu-maps')
+@include('mobile.partial.navigation')
+@endsection
 @section('content')
-<div class="container">
-	<div class="block-nav x-m">
-		<div class="row">
-			<div class="col-md-3 col-3 js-link nav-item lb tb" data-link="{{url('/kategori/infografis')}}">
-				<div class="item green" id="infografis">
-					<div class="icon">
-						<i class="far fa-map"></i>
-					</div>
-					<span>Infografis</span>
-				</div>
-			</div>
-			<div class="col-md-3 col-3 js-link nav-item lb tb" data-link="{{url('/')}}">
-				<div class="item red" id="populer">
-					<div class="icon">
-						<i class="far fa-fire">
-						<div class="m-label">Hot</div>
-						</i>
-					</div>
-					<span>Populer</span>
-				</div>
-			</div>
-			<div class="col-md-3 col-3 js-link nav-item lb tb" data-link="{{url('/kategori/tv')}}">
-				<div class="item orange" id="tv">
-					<div class="icon">
-						<i class="far fa-tv"></i>
-					</div>
-					<span>TV</span>
-				</div>
-			</div>
-			<div class="col-md-3 col-3 nav-item tb" id="menu">
-				<div class="item orange" id="tv">
-					<div class="icon">
-						<i class="fas fa-th"></i>
-					</div>
-					<span>Lainnya</span>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 @foreach($data_single as $item)
 <div class="box-single js-link" data-link="{{url('viewer/'.$item['kategori'].'/'.$item['seo'].'-'.$item['id'])}}">
 	<img src="{{env('PATH_STORAGE').$item['gambar']}}">
