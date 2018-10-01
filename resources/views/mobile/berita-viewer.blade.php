@@ -125,7 +125,7 @@
 					@php
 						$isi_berita = strip_tags($berita['berita']);
 					@endphp
-					<a target="_blank" data-image="{{env('PATH_STORAGE').$berita['gambar']}}" data-title="{{$berita['judul']}}" data-desc="{{str_limit($isi_berita, 100)}}" href="stackoverflow.com" class="btnShareFb item" style="background-color:#007bff;color:#ecf0f1;">facebook</a>
+					<a target="_blank" data-image="{{env('PATH_STORAGE').$berita['gambar']}}" data-title="{{$berita['judul']}}" data-desc="{{str_limit($isi_berita, 100)}}" href="{{url('viewer/'.$berita['kode_kategori'].'/'.$berita['seo'].'-'.$berita['id'])}}" class="btnShareFb item" style="background-color:#007bff;color:#ecf0f1;">facebook</a>
 					<a target="_blank" href="http://twitter.com/share?text={{$berita['judul']}} -&url={{url('viewer/'.$berita['kode_kategori'].'/'.$berita['seo'].'-'.$berita['id'])}}/', 'twitterShare', 'width=626,height=436" class="item" style="background-color:#17a2b8;color:#ecf0f1;">tweeter</a>
 				</div>
 			</div>
