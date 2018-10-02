@@ -6,7 +6,7 @@
 	berita menarik hari ini
 @endsection
 @section('menu-maps')
-@include('mobile.partial.navigation')
+	@include('mobile.partial.navigation')
 @endsection
 @section('content')
 {{-- ST HEADLINE --}}

@@ -3,7 +3,7 @@
     MAMUJUTODAY
 @endsection
 @section('menu-maps')
-@include('mobile.partial.navigation')
+    @include('mobile.partial.navigation')
 @endsection
 @section('content')
     <div class="container">

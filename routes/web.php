@@ -31,7 +31,6 @@ if ($agent->isMobile()) {
 	Route::get('/kategori/{kategori}', 'Mobile\KategoriViewerController@index');
 	Route::get('/viewer/{kategori}/{kode_berita}', 'Mobile\BeritaViewerController@index');
 	Route::get('/u/{user}', 'Mobile\BeritaViewerController@user');
-	Route::get('/u/{user}/page={id}', 'Mobile\BeritaViewerController@user_paginate');
 
 	Route::post('komentar/{berita_id}', 'Mobile\BeritaViewerController@komentar');
 

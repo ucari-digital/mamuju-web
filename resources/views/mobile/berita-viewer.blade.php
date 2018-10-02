@@ -8,7 +8,6 @@
 	@endphp
 	{{str_limit($news, 100)}}
 @endsection
-<<<<<<< HEAD
 @section('header')
 	<script>
         window.fbAsyncInit = function(){
@@ -26,10 +25,8 @@
             FB.ui(obj, callback);
         }
 	</script>
-=======
 @section('menu-maps')
-@include('mobile.partial.navigation')
->>>>>>> f063b07fb5222fc6a3e4cad2db7c01a324bd329b
+	@include('mobile.partial.navigation')
 @endsection
 @section('content')
 	{{--Modal Image--}}
@@ -103,27 +100,50 @@
 					</form>
 				</div>
 				<div class="viewer-komentar">
-					@foreach($komentar as $item)
-					<div class="list">
-						<div class="avatar">
-							<img src="{{env('PATH_STORAGE').$item['avatar']}}">
+					@if (count($komentar) > 0)
+						<div class="infinite-scroll">
+							@foreach($komentar as $item)
+							<div class="list">
+								<div class="avatar">
+									<img src="{{env('PATH_STORAGE').$item['avatar']}}">
+								</div>
+								<div class="box">
+									<div class="name">{{$item['name']}}</div>
+									<div class="time">{{App\Helper::time_elapsed_string($item['created_at'])}}</div>
+								</div>
+								<div class="komentar-content">
+									{{str_limit($item['komentar'], 200)}}
+								</div>
+							</div>
+							@endforeach
+							{{ $komentar->links() }}
 						</div>
-						<div class="box">
-							<div class="name">{{$item['name']}}</div>
-							<div class="time">{{App\Helper::time_elapsed_string($item['created_at'])}}</div>
-						</div>
-						<div class="komentar-content">
-							{{str_limit($item['komentar'], 200)}}
-						</div>
-					</div>
-					@endforeach
-					<div class="load-more-komentar">Muat lebih banyak komentar</div>
+					@endif
 				</div>
 			@endif
 		</div>
 	</div>
 @endsection
 @section('footer')
+	<script src="https://demos.laraget.com/js/jquery.jscroll.min.js.pagespeed.jm.IN99dNepja.js"></script>
+	{{-- MAKE SURE THAT YOU PUT THE CORRECT PATH FOR jquery.jscroll.min.js --}}
+
+	<script type="text/javascript">
+        $('ul.pagination').hide();
+        $(function() {
+            $('.infinite-scroll').jscroll({
+                autoTrigger: true,
+                loadingHtml: '<div class="load-more-komentar">Muat lebih banyak komentar</div>', // MAKE SURE THAT YOU PUT THE CORRECT IMG PATH
+                padding: 0,
+                nextSelector: '.pagination li.active + li a',
+                contentSelector: 'div.infinite-scroll',
+                callback: function() {
+                    $('ul.pagination').remove();
+                }
+            });
+        });
+	</script>
+
 	<script>
         $('.btnShareFb').click(function(){
             elem = $(this);

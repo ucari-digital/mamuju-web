@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Helper\Guzzle;
-use App\Http\Controllers\GlobalController as G;
+use Illuminate\Pagination\LengthAwarePaginator;
+
 class BeritaViewerController extends Controller
 {
-    public function index($kategori, $kode_berita)
+    public function index(Request $request, $kategori, $kode_berita)
     {
     	$url = explode('-', $kode_berita);
     	$id = end($url);
@@ -30,12 +31,36 @@ class BeritaViewerController extends Controller
         $data = Guzzle::request($param)['data'];
         $berita = $data['news_detail'];
         $penulis = $data['user_detail'];
-        $komentar = $data['komentar'];
         $sum_komentar = $data['sum_komentar'];
-    	return view('mobile.berita-viewer', compact('berita', 'penulis', 'komentar', 'sum_komentar'));
+
+        $items = Guzzle::request($param)['data']['komentar'];
+
+        // Get current page form url e.x. &page=1
+        $currentPage = LengthAwarePaginator::resolveCurrentPage();
+
+        // Create a new Laravel collection from the array data
+        $itemCollection = collect($items);
+
+        // Define how many items we want to be visible in each page
+        $perPage = 10;
+
+        // Slice the collection to get the items to display in current page
+        $currentPageItems = $itemCollection->slice(($currentPage * $perPage) - $perPage, $perPage)->all();
+
+        // Create our paginator and pass it to the view
+        $paginatedItems= new LengthAwarePaginator($currentPageItems , count($itemCollection), $perPage);
+
+        // set url path for generted links
+        $paginatedItems->setPath($request->url());
+    	return view('mobile.berita-viewer', [
+            'komentar' => $paginatedItems,
+            'berita' => $berita,
+            'penulis' => $penulis,
+            'sum_komentar' => $sum_komentar,
+        ]);
     }
 
-    public function user($user)
+    public function user(Request $request, $user)
     {
         $param = [
             'method' => 'post',
@@ -49,28 +74,27 @@ class BeritaViewerController extends Controller
                 ]
             ]
         ];
-        $data = Guzzle::request($param)['data'];
-        $count_data = round(count($data['berita']) / 10);
-    	return view('mobile.user-viewer', compact('data', 'count_data'));
-    }
+        $data = Guzzle::request($param)['data']['users'];
+        $items = Guzzle::request($param)['data']['berita'];
 
-    public function user_paginate($user, $id)
-    {
-        $param = [
-            'method' => 'post',
-            'url' => 'user',
-            'request' => [
-                'allow_redirects' => true,
-                'headers' => [
-                ],
-                'form_params' => [
-                    'nickname' => $user
-                ]
-            ]
-        ];
-        $data = Guzzle::request($param)['data'];
-        $count_data = round(count($data['berita']) / 10);
-        return view('mobile.user-viewer-paginate', compact('id', 'data', 'count_data'));
+        // Get current page form url e.x. &page=1
+        $currentPage = LengthAwarePaginator::resolveCurrentPage();
+
+        // Create a new Laravel collection from the array data
+        $itemCollection = collect($items);
+
+        // Define how many items we want to be visible in each page
+        $perPage = 15;
+
+        // Slice the collection to get the items to display in current page
+        $currentPageItems = $itemCollection->slice(($currentPage * $perPage) - $perPage, $perPage)->all();
+
+        // Create our paginator and pass it to the view
+        $paginatedItems= new LengthAwarePaginator($currentPageItems , count($itemCollection), $perPage);
+
+        // set url path for generted links
+        $paginatedItems->setPath($request->url());
+    	return view('mobile.user-viewer', ['items' => $paginatedItems, 'user' => $data]);
     }
 
     public function komentar(Request $request, $berita_id)
