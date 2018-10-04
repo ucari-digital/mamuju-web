@@ -40,7 +40,7 @@
 	<div class="content-parent">
 		@yield('content')
 	</div>
-	<div class="footer mt-3">
+	<div class="footer">
 		<div class="container">
 			<div class="row input-box">
 				<div class="col-md-12 col-12">

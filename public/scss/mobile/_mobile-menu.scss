@@ -12,6 +12,10 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+	.container{
+		overflow: auto;
+	    height: 100%;
+	}
 	.list-menu{
 		display: flex;
 		.item{
@@ -21,6 +25,7 @@
 			padding: 10px;
 			border-radius: 3px;
 			margin: 5px;
+			font-size: 3.5vw;
 		}
 	}
 	.menu-button-close{

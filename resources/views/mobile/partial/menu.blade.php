@@ -1,6 +1,6 @@
 <div class="layout-menu">
 	<div class="container">
-		<form method="get" action="{{url('search')}}">
+		<form method="get" action="{{url('search')}}" class="mb-5">
 			<div class="search mt-3">
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">

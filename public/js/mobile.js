@@ -4,9 +4,7 @@ $(document).ready(function() {
 			
 		});
 		$('.sidebar').addClass('animated slideInUp');
-		$('.content').fadeOut('fast', function() {
-			
-		});
+		$('.content-parent').hide();
 	});
 
 	$('.menu-button-close').click(function(){
@@ -14,7 +12,7 @@ $(document).ready(function() {
 		$('.partial-menu').fadeOut('slow', function() {
 			
 		});
-		$('.content').show();
+		$('.content-parent').show();
 	});
 
 	$('.js-link').click(function(){

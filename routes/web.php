@@ -56,6 +56,13 @@ if ($agent->isMobile()) {
 		return view('mobile.page.kontak');
 	});
 
+    /**
+     * Route untuk index berita
+     */
+
+    Route::get('index', 'Mobile\IndexBeritaController@index');
+    
+
 
 
 	Route::get('s', function(Request $request){
