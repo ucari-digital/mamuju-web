@@ -14,10 +14,7 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $agent = new Agent();
-        if ($agent->isMobile())
-            return view('mobile.auth.login');
-        else
-            return view('desktop.auth.login');
+        return view('mobile.auth.login');
     }
 
     public function loginSubmit(Request $request)

@@ -1,3 +1,13 @@
+// 1 row = 90 / 5 -> 18
+// 1 col = 18
+// 2 col = 36
+// 3 col = 54
+// 4 col = 72
+// 5 col = 90
+
+body{
+	min-width: 1200px;
+}
 .content{
 	padding: 0 2rem;
 	margin-left: 250px;
@@ -20,4 +30,83 @@
 
 .mega-content{
 	display: flex;
+}
+
+.account{
+	float: right;
+    display: inline-block;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    font-size: 24px;
+    color: $font;
+}
+.account-img {
+	float: right;
+    display: inline-block;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    font-size: 24px;
+    color: $font;
+	img{
+		width: 30px;
+		height: 30px;
+		border: 1px solid $border;
+		border-radius: 50px;
+	}
+}
+@mixin section(){
+	width: 100%;
+	display: flex;
+	padding: 10px 0;
+	&.break{
+		margin-top: 10px;
+	}
+	.title{
+		width: 20%;
+		font-size: 20px;
+		padding: 10px;
+		display: inline-block;
+	}
+}
+
+.layout{
+	background-color: #fafafa;
+	padding: 100px 0 0;
+	.paper{
+		margin: 0 50px;
+		background-color: #fff;
+		.box-row{
+			// container untuk col-v
+			width: 100%;
+		}
+		.section{
+			@include section();
+		}
+	}
+}
+
+.js-link{
+	cursor: pointer;
+}
+
+// Animate
+.a-1,
+.a-2,
+.a-3,
+.a-4,
+.a-5,
+.b-0,
+.b-1,
+.b-2,
+.c-0,
+.c-1,
+.d-0,
+.d-1,
+.d-2,
+.e-0,
+.e-1,
+.e-2{
+	display: none !important;
 }

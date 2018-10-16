@@ -26,11 +26,47 @@ class GlobalController extends Controller
         return Guzzle::request($param);
     }
 
+    public static function populer($take, $skip, $kategori = '')
+    {
+        $param = [
+            'method' => 'POST',
+            'url' => 'populer',
+            'request' => [
+                'allow_redirects' => true,
+                'headers' => [
+                    
+                ],
+                'form_params' => [
+                    'take' => $take,
+                    'skip' => $skip,
+                    'kategori' => $kategori
+                ]
+            ]
+        ];
+        return Guzzle::request($param);
+    }
+
     public static function kategori_menu()
     {
         $param = [
             'method' => 'POST',
             'url' => 'kategori/menu',
+            'request' => [
+                'allow_redirects' => true,
+                'headers' => [
+                ],
+                'form_params' => [
+                ]
+            ]
+        ];
+        return Guzzle::request($param);
+    }
+
+    public static function kategori()
+    {
+        $param = [
+            'method' => 'get',
+            'url' => 'kategori',
             'request' => [
                 'allow_redirects' => true,
                 'headers' => [

@@ -12,3 +12,14 @@ $(document).ready(function() {
 		});
 	});
 });
+
+$('.img').each(function(i, obj){
+	var img_url = $(obj).data('img');
+	var id = $(obj).attr('id');
+	var elm = document.getElementById(id);
+	elm.style.backgroundImage = 'url('+img_url+')';
+});
+
+$('.btn-more').click(function(){
+	$('.more').toggle();
+});

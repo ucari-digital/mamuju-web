@@ -66,7 +66,7 @@
 					<small class="js-link" data-link="{{url('kontak')}}">Kontak</small>
 				</div>
 				<div class="col-md-6 col-6">
-					<small>Beriklan</small>
+					<small class="js-link" data-link="{{url('index')}}">Index</small>
 					<small>Komplain</small>
 					<small>Facebook</small>
 					<small>Twitter</small>

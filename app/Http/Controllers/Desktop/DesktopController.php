@@ -11,14 +11,7 @@ class DesktopController extends Controller
 {
     public function index()
     {
-        $headline = G::news('1', '0')['data'];
-        $terbaru = G::news('6', '1')['data'];
-        $infografis = G::news('4', '0', '245')['data'];
-        $foto = G::news('4', '0', '247')['data'];
-        $video_head = G::news('1', '0', '249')['data'];
-        $video = G::news('1', '0', '249')['data'];
-        $populer = G::news('5', '0')['data'];
-    	return view('desktop.index', compact('headline', 'terbaru', 'infografis', 'foto', 'video', 'video_head', 'populer'));
+    	return view('desktop.index');
     }
 
     public function profil()
@@ -78,5 +71,15 @@ class DesktopController extends Controller
         } catch (\Exception $e) {
             return $e;
         }
+    }
+
+    public function getApi(Request $request)
+    {
+        return G::news($request->take, $request->skip, $request->kategori)['data'];
+    }
+
+    public function getPopuler(Request $request)
+    {
+        return G::populer($request->take, $request->skip, $request->kategori)['data'];
     }
 }

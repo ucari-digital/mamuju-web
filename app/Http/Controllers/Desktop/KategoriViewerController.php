@@ -11,7 +11,7 @@ class KategoriViewerController extends Controller
     public function index($kategori)
     {
         $data_single = G::news('1', '0', $kategori)['data'];
-        $data_multiple = G::news('6', '1', $kategori)['data'];
+        $data_multiple = array_chunk(G::news('100', '1', $kategori)['data'], 4);
         return view('desktop.kategori-viewer', compact('data_single', 'data_multiple', 'kategori'));
     }
 }

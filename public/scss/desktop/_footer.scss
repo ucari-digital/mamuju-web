@@ -1,7 +1,6 @@
 .footer{
-	padding: 2rem;
+	padding: 2rem 50px;
 	background-color: $dark;
-	position: absolute;
 	width: fill-available;
 	width: -webkit-fill-available;
 	background-image: url('#{$path_url_image}/pattern-white.png');
@@ -41,26 +40,33 @@
 		    box-shadow: none !important;
 		}
 	}
-	.dl{
-		background-color: #616161;
-	    padding: 5px;
-	    border-radius: 5px;
-	    display: inline-flex;
-		.ios{
-			width: 107px;
-			background-image: url('#{$path_url_image}/gap.png');
-			height: 35px;
-		    background-size: 107px;
-		    background-position-x: 105px;
-		    background-position-y: 155.5px;
-		}
-		.and{
-			width: 107px;
-			background-image: url('#{$path_url_image}/gap.png');
-			height: 35px;
-		    background-size: 107px;
-		    background-position-x: 108px;
-		    background-position-y: 115.5px;
+	.apps{
+		margin: 0 auto;
+		width: 225px;
+		.dl{
+			background-color: #616161;
+		    padding: 5px;
+		    border-radius: 5px;
+		    display: inline-flex;
+			.ios{
+				width: 107px;
+				background-image: url('#{$path_url_image}/gap.png');
+				height: 35px;
+			    background-size: 107px;
+			    background-position-x: 105px;
+			    background-position-y: 155.5px;
+			    margin: 0 auto;
+			}
+			.and{
+				width: 107px;
+				background-image: url('#{$path_url_image}/gap.png');
+				height: 35px;
+			    background-size: 107px;
+			    background-position-x: 108px;
+			    background-position-y: 115.5px;
+			    margin: 0px auto;
+			}
 		}
 	}
+	
 }

@@ -10,42 +10,82 @@
 	<link rel="stylesheet" type="text/css" href="{{url('css/animate.css')}}">
 	<script src="{{url('js/sweetalert2.all.js')}}"></script>
 	@yield('header')
+	<script>
+		var url = '{{url('/')}}';
+		var path = '{{env('PATH_STORAGE', '')}}'
+	</script>
+	<style type="text/css">
+		@keyframes placeHolderShimmer{
+			0% {
+				background-position: -700px 0;
+			}
+			100% {
+				background-position: 0px 0;
+			}
+		}
+		.animated-background {
+			animation-duration: 1.4s;
+			animation-fill-mode: forwards;
+			animation-iteration-count: infinite;
+			animation-name: placeHolderShimmer;
+			animation-timing-function: linear;
+			background: #f6f7f8;
+			background: linear-gradient(to right,  #eeeeee 40%, #dddddd 50%, #eeeeee 40%);
+			background-repeat: no-repeat;
+			background-size: 1200px 160px;
+			/*position: absolute;*/
+/*			top: 20px;
+			left: 20px;
+			width: 440px;
+			height: 160px;*/
+			transform: translate3d(0, 0, 0);
+			transition: all .4s ease-in-out;
+		}
+	</style>
 </head>
 <body>
 	@include('sweetalert::alert')
-
-	<!-- Modal -->
-	<form method="get" action="{{url('search')}}">
-		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-				<div class="modal-content">
-					<div class="modal-body">
-						<input type="text" name="text" id="input-cari" class="form-control border-0" placeholder="berita apa yang anda cari?..." aria-label="Pencarian" aria-describedby="basic-addon1" onsubmit="">
+	@include('desktop.partial.navbar')
+	<div class="layout">
+		@yield('content')
+		<div class="footer mt-3">
+			<div class="col-v1"></div>
+			<div class="col-v1">
+				<div class="list">
+					<a href="{{url('redaksi')}}">Redaksi</a>
+					<a href="{{url('p-media-siber')}}">Pedoman Media Siber</a>
+					<a href="{{url('')}}">Tentang Kami</a>
+					<a href="{{url('disclaimer')}}">Disclaimer</a>
+					<a href="{{url('kontak')}}">Kontak</a>
+				</div>
+			</div>
+			<div class="col-v1" style="width: 200px">
+				<div class="list">
+					<a href="{{url('index')}}">Index</a>
+					<a href="#">Komplain</a>
+					<a href="#">Facebook</a>
+					<a href="#">Twitter</a>
+					<a href="#">Instagram</a>
+				</div>
+			</div>
+			<div class="col-v2" style="width: 400px; float: right;">
+				<div class="subscribe">
+					<form action="{{url('subscribe')}}" method="post">
+						@csrf
+						<div class="input-group mb-3">
+							<input type="email" name="email" class="form-control border-0" placeholder="Alamat Email" aria-label="Alamat Email" aria-describedby="button-addon2">
+							<div class="input-group-append">
+								<button class="btn btn-outline-secondary border-0" id="button-addon2">Subscribe</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="apps">
+					<div class="dl">
+						<div class="ios"></div>
+						<div class="and"></div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</form>
-	{{--End Modal--}}
-
-	<div class="sidebar">
-		@include('desktop.partial.sidebar')
-	</div>
-	<div class="mega-content">
-		<div class="m-0 p-0">
-			<div class="content">
-				@yield('content')
-				<div class="box-nm mt-3">
-				@include('desktop.partial.footer')
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4 m-0 p-0">
-			<div class="viewer">
-				<div class="placeholder"></div>
-				<div class="placeholder-text">Klik berita dan baca disini.</div>
-				<div class="loading"></div>
-				<div class="loader"></div>
 			</div>
 		</div>
 	</div>

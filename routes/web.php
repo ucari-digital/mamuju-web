@@ -69,6 +69,8 @@ if ($agent->isMobile()) {
 		return $request->session()->all();
 	});
 } else {
+    Route::get('api/news', 'Desktop\DesktopController@getApi');
+    Route::get('api/populer', 'Desktop\DesktopController@getPopuler');
 	Route::get('/', 'Desktop\DesktopController@index');
     Route::get('login', 'Mobile\AuthController@login');
     Route::post('login', 'Mobile\AuthController@loginSubmit');
@@ -92,32 +94,21 @@ if ($agent->isMobile()) {
     Route::get('search', 'Desktop\DesktopController@search');
 
     Route::get('redaksi', function(){
-        $active = "redaksi";
-        return view('desktop.page', compact('active'));
+        return view('desktop.page.redaksi');
     });
     Route::get('p-media-siber', function(){
-        $active = "p-media-siber";
-        return view('desktop.page', compact('active'));
-    });
-
-    Route::get('tentang-kami', function(){
-        $active = "tentang-kami";
-        return view('desktop.page', compact('active'));
+        return view('desktop.page.pedoman-siber');
     });
 
     Route::get('disclaimer', function(){
-        $active = "disclaimer";
-        return view('desktop.page', compact('active'));
+        return view('desktop.page.disclaimer');
     });
 
     Route::get('kontak', function(){
-        $active = 'kontak';
-        return view('desktop.page', compact('active'));
+        return view('desktop.page.kontak');
     });
 
-    Route::get('s', function(Request $request){
-        return $request->session()->all();
-    });
+    Route::get('index', 'Desktop\IndexBeritaController@index');
 }
 
 
