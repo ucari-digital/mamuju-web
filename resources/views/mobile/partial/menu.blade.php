@@ -9,15 +9,11 @@
 					<input type="text" name="text" class="form-control border-0" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon1" onsubmit="">
 				</div>
 			</div>
-			@foreach(App\Http\Controllers\GlobalController::kategori_menu()['data'] as $item)
-				<div class="list-menu">
-					@foreach($item as $sub_item)
-						<div class="item js-link" style="background-color: {{App\Helper\Lib::hex2rgb(explode(';', $sub_item['label_color'])[0], 0.6)}}; color: {{explode(';', $sub_item['label_color'])[1]}};" data-link="{{url('/kategori/'.$sub_item['nama_kategori'])}}">
-							{{$sub_item['nama_kategori']}}
-						</div>
-					@endforeach
-				</div>
-			@endforeach
+			<div class="list-menu">
+				@foreach(App\Http\Controllers\GlobalController::kategori()['data'] as $item)
+				<div class="list js-link" data-link="{{url('kategori/'.$item['nama_kategori'])}}"><i class="far fa-circle"></i> {{$item['nama_kategori']}}</div>
+				@endforeach
+			</div>
 		</form>
 	</div>
 	<div class="menu-button-close">

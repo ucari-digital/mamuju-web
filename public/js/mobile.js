@@ -7,11 +7,16 @@ $(document).ready(function() {
 		$('.content-parent').hide();
 	});
 
+	$('.btn-search').click(function(){
+		$('.partial-search').fadeIn();
+		$('.sidebar').addClass('animated slideInUp');
+		$('.content-parent').hide();
+	});
+
 	$('.menu-button-close').click(function(){
 		$('.sidebar').removeClass('slideInUp');
-		$('.partial-menu').fadeOut('slow', function() {
-			
-		});
+		$('.partial-menu').fadeOut('slow');
+		$('.partial-search').fadeOut('slow');
 		$('.content-parent').show();
 	});
 

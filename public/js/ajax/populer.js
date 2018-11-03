@@ -189,3 +189,36 @@ $.ajax({
         }
 	}
 });
+
+$.ajax({
+	url: url+'/api/populer',
+	type: 'get',
+	data: {
+		take: '1',
+		skip: '6',
+		kategori: ''
+	},
+	dataType: 'json',
+	async: true,
+	tryCount : 0,
+    retryLimit : 3,
+	success: function(data) {
+		var str_color = data[0]['kategori_color'].split(';');
+		$('.pp-6 .title').html(data[0]['judul']);
+		$('.pp-6 .category').html(data[0]['kategori']).css('background-color', str_color[0]).css('color', str_color[1]);
+		$('.pp-6 > img').attr('src', path+'/'+data[0]['gambar']);
+		$('.pp-6.js-link').attr('data-link', url+'/viewer/'+data[0]['kategori']+'/'+data[0]['seo']+'-'+data[0]['id']);
+
+		$('.ea-0').hide();
+		$('.e-0').attr( "style", "display: block !important;" );
+	},
+	error: function(e){
+		console.log('Recall.. API');
+		this.tryCount++;
+        if (this.tryCount <= this.retryLimit) {
+            //try again
+            $.ajax(this);
+            return;
+        }
+	}
+});

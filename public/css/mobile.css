@@ -1,4 +1,4 @@
-.partial-menu {
+.partial-menu, .partial-search {
   position: fixed;
   z-index: 20;
   top: 0;
@@ -7,25 +7,24 @@
   font-weight: 500;
   height: 100%;
   display: none;
-  background-color: #fff;
-  background-image: url(../asset/pattern-white.png);
+  background-color: #f5f5f5;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
-  .partial-menu .container {
+  .partial-menu .container, .partial-search .container {
     overflow: auto;
     height: 100%; }
-  .partial-menu .list-menu {
-    display: flex; }
-    .partial-menu .list-menu .item {
-      width: calc(100% / 3);
-      display: inline-block;
-      text-align: center;
-      padding: 10px;
-      border-radius: 3px;
-      margin: 5px;
-      font-size: 3.5vw; }
-  .partial-menu .menu-button-close {
+  .partial-menu .list-menu, .partial-search .list-menu {
+    display: block; }
+    .partial-menu .list-menu .list, .partial-search .list-menu .list {
+      display: block;
+      padding: 10px 0;
+      border-bottom: 1px dashed #e0e0e0;
+      color: #707070; }
+      .partial-menu .list-menu .list i, .partial-search .list-menu .list i {
+        font-size: 14px;
+        margin-right: 5px; }
+  .partial-menu .menu-button-close, .partial-search .menu-button-close {
     background-color: #212121;
     text-align: center;
     color: #FFF;

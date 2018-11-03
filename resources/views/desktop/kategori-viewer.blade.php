@@ -6,37 +6,54 @@
     berita {{$kategori}}
 @endsection
 @section('content')
-    <div class="paper">
+    <div class="paper box-container">
         @foreach($data_single as $item)
-            <div class="box-row">
-                <div class="section ">
-                    <div class="title">
-                        {{$kategori}}
+            <div class="box-row py-3">
+                <div class="box-1">
+                    <div class="box-title head">
+                        <div class="head-title">{{$kategori}}</div>
                     </div>
-                    <div class="col-v1 br-l pb js-link" data-link="">
-                        <div class="headline-title hbt">
-                            {{$item['judul']}}
-                        </div>
-                    </div>
-                    <div class="col-v2 js-link">
-                        <div class="headline-image-b">
-                            <img src="{{env('PATH_STORAGE').$item['gambar']}}" alt="">
-                        </div>
-                    </div>
-        {{--             <div class="col-v1 pb br-l box-single-image h-05 aa-5 animated-background"></div>
-                    <div class="col-v1 pb br-l box-single-image h-05 a-5 js-link">
-                        <img src="https://via.placeholder.com/350x150" alt="">
-                        <div class="category">
-                            Sulawesi tengah
-                        </div>
-                        <div class="title">
-                            lorem ipsum dorlor sit
-                        </div>
-                    </div> --}}
                 </div>
+                {{-- TITLE HEDLINE 01 --}}
+                <div class="box-1 br-l js-link">
+                    <div class="box-title">
+                        <div class="title-big">{{$item['judul']}}</div>
+                    </div>
+                </div>
+                {{-- END TITLE --}}
+        
+                {{-- IMAGE CONTENT --}}
+                <div class="box-2 js-link">
+                    <div class="box-content px-3 br-b pb-1">
+                        <img src="{{env('PATH_STORAGE').$item['gambar']}}" class="h-01 image">
+                    </div>
+                </div>
+                {{-- END IMAGE CONTENT 06 --}}
             </div>
         @endforeach
-        <div class="box-row">
+
+        @foreach($data_multiple as $item)
+            <div class="box-row">
+                <div class="box-1 br-r">
+                </div>
+                @foreach($item as $sitem)
+                <div class="box-1 px-2 js-link" data-link="{{url('/viewer/'.$sitem['kategori'].'/'.$sitem['seo'].'-'.$sitem['id'])}}">
+                    <div class="box-image">
+                        <img src="{{env('PATH_STORAGE').$sitem['gambar']}}" alt="">
+                        <div class="category">
+                            {{$kategori}}
+                        </div>
+                        <div class="title">
+                            {{$sitem['judul']}}
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        @endforeach
+
+
+        {{-- <div class="box-row">
             @foreach($data_multiple as $item)
                 <div class="section">
                 <div class="title">
@@ -54,13 +71,8 @@
                 @endforeach
                 </div>
             @endforeach
-        </div>
+        </div> --}}
     </div>
 @endsection
 @section('footer')
-<script type="text/javascript" src="{{url('js/ajax/headlines.js')}}"></script>
-<script type="text/javascript" src="{{url('js/ajax/infografis.js')}}"></script>
-<script type="text/javascript" src="{{url('js/ajax/tv.js')}}"></script>
-<script type="text/javascript" src="{{url('js/ajax/foto.js')}}"></script>
-<script type="text/javascript" src="{{url('js/ajax/populer.js')}}"></script>
 @endsection

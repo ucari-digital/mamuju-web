@@ -34,10 +34,8 @@
 			background-repeat: no-repeat;
 			background-size: 1200px 160px;
 			/*position: absolute;*/
-/*			top: 20px;
-			left: 20px;
-			width: 440px;
-			height: 160px;*/
+			width: 100%;
+			height: 200px;
 			transform: translate3d(0, 0, 0);
 			transition: all .4s ease-in-out;
 		}

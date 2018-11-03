@@ -83,11 +83,7 @@ class MobileIndexController extends Controller
                 ]
             ];
             $data = Guzzle::request($param)['data'];
-            $populer = G::news('5', '0')['data'];
-            return view('mobile.berita-cari')
-                ->with('data', $data)
-                ->with('populer', $populer)
-                ->with('cari', $request->cari);
+            return collect($data)->take(50);
         } catch (\Exception $e) {
             return $e;
         }

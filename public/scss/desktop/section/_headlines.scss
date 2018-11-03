@@ -1,17 +1,6 @@
-.headline{
-	&-title{
-		font-size: 22px;
-	}
-	&-desc{
-		font-size: 14px;
-		overflow: hidden;
-    	text-overflow: ellipsis;
-    	height: 100px;
-	}
-	&-image{
-		&-b img{
-			width: 100%;
-			max-height: 300px;
-		}
-	}
+.head{
+	.time-now{
+        color: $red;
+        padding: 0 20px;
+    }
 }

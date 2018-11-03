@@ -6,35 +6,26 @@ MAMUJUTODAY
 berita menarik hari ini
 @endsection
 @section('content')
-
-<div class="box-container my-3">
-	<div class="box-row py-3">
-		<div class="box-1">
-			<div class="box-title head">
-				<div class="head-title">Headlines</div>
-				<div class="time-now">1 Novenber 2018</div>
+<div class="paper row-headline">
+	<div class="box-row">
+		<div class="section ">
+			<div class="title">
+				Headlines
 			</div>
-		</div>
-		{{-- TITLE HEDLINE 01 --}}
-		<div class="box-1 h-01 aa-1 animated-background"></div>
-		<div class="box-1 a-1 br-l js-link">
-			<div class="box-title">
-				<div class="h-01 a-1 title-big"></div>
+			<div class="col-v3 animated-background aa-1" data-animate="a-1">
 			</div>
-		</div>
-		{{-- END TITLE --}}
-
-		{{-- IMAGE CONTENT --}}
-		<div class="box-2 h-01 aa-1 animated-background"></div>
-		<div class="box-2 a-1 js-link">
-			<div class="box-content px-3 br-b pb-1">
-				<img src="https://via.placeholder.com/350x150" class="h-01 image">
+			<div class="col-v1 br-l pb a-1 js-link" data-link="">
+				<div class="headline-title hbt">
+					Content Not Loaded
+				</div>
 			</div>
-		</div>
-		{{-- END IMAGE CONTENT 06 --}}
-		<div class="box-1">
-			<div class="col-v1 pb br-l box-single-image h-06 aa-6 animated-background"></div>
-			<div class="box-single-image br-l h-06 a-6 js-link">
+			<div class="col-v2 a-1 js-link">
+				<div class="headline-image-b">
+					<img src="https://via.placeholder.com/350x150" alt="">
+				</div>
+			</div>
+			<div class="col-v1 pb br-l box-single-image h-05 aa-5 animated-background"></div>
+			<div class="col-v1 pb br-l box-single-image h-05 a-5 js-link">
 				<img src="https://via.placeholder.com/350x150" alt="">
 				<div class="category">
 					Sulawesi tengah
@@ -45,131 +36,47 @@ berita menarik hari ini
 			</div>
 		</div>
 	</div>
-	{{-- SINGLE TEXT --}}
-	<div class="box-row-auto pb-3">
-		<div class="box-1">
-			<div class="box-title">
-				<div class="head-title"></div>
+	<div class="box-row">
+		<div class="section break">
+			<div class="col-v1"></div>
+			<div class="col-v1 pb br-l box-single-text h-02 aa-2 animated-background"></div>
+			<div class="col-v1 pb br-l box-single-text h-02 a-2 js-link">
+				<div class="category">
+					Sulawesi tengah
+				</div>
+				<div class="title">
+					lorem ipsum dorlor sit
+				</div>
 			</div>
-		</div>
-		{{-- 1 --}}
-		<div class="box-1 pb br-l box-single-text h-02 aa-2 animated-background"></div>
-		<div class="box-1 pb br-l box-single-text h-02 a-2 js-link">
-			<div class="category">
-				Sulawesi tengah
+			<div class="col-v1 pb br-l box-single-text h-03 aa-3"></div>
+			<div class="col-v1 pb br-l box-single-text h-03 a-3 js-link">
+				<div class="category">
+					Sulawesi tengah
+				</div>
+				<div class="title">
+					lorem ipsum dorlor sit
+				</div>
 			</div>
-			<div class="title">
-				lorem ipsum dorlor sit
-			</div>
-		</div>
-		{{-- 2 --}}
-		<div class="box-1 pb br-l box-single-text h-03 aa-3 animated-background"></div>
-		<div class="box-1 pb br-l box-single-text h-03 a-3 js-link">
-			<div class="category">
-				Sulawesi tengah
-			</div>
-			<div class="title">
-				lorem ipsum dorlor sit
-			</div>
-		</div>
-		{{-- 3 --}}
-		<div class="box-1 pb br-l box-single-text h-04 aa-4 animated-background"></div>
-		<div class="box-1 pb br-l box-single-text h-04 a-4 js-link">
-			<div class="category">
-				Sulawesi tengah
-			</div>
-			<div class="title">
-				lorem ipsum dorlor sit
-			</div>
-		</div>
-		{{-- 4 --}}
-		<div class="box-1 pb br-l box-single-text h-05 aa-5 animated-background"></div>
-		<div class="box-1 pb br-l box-single-text h-05 a-5 js-link">
-			<div class="category">
-				Sulawesi tengah
-			</div>
-			<div class="title">
-				lorem ipsum dorlor sit
+			<div class="col-v1 pb br-l box-single-text h-04 aa-4"></div>
+			<div class="col-v1 pb br-l box-single-text h-04 a-4 js-link">
+				<div class="category">
+					Sulawesi tengah
+				</div>
+				<div class="title">
+					lorem ipsum dorlor sit
+				</div>
 			</div>
 		</div>
 	</div>
-	{{-- END SINGLE TEXT --}}
 </div>
-
-{{-- INFOGRAFIS --}}
-<div class="box-container my-3">
-	<div class="box-row py-3">
-		<div class="box-1">
-			<div class="box-title">
-				<div class="head-title">Infografis</div>
-			</div>
-		</div>
-		{{-- SINGLE IMAGE WITH TEXT 00 --}}
-		<div class="box-2 br-l pb box-image in-0 ba-0 animated-background"></div>
-		<div class="box-2 br-l pb box-image in-0 b-0 js-link">
-			<img src="https://via.placeholder.com/350x150" alt="">
-			<div class="category">
-				Sulawesi tengah
-			</div>
+<div class="paper row-infografis mt-3">
+	<div class="box-row">
+		<div class="section">
 			<div class="title">
-				lorem ipsum dorlor sit
+				Infografis
 			</div>
-		</div>
-		{{-- END SINGLE IMAGE WITH TEXT --}}
-		{{-- TEXT CONTENT --}}
-		<div class="box-1 box-single-text-row ba-1 animated-background"></div>
-		<div class="box-1 box-single-text-row b-1">
-			{{-- 01 --}}
-			<div class="in-1 js-link">
-				<div class="category">
-					Sulawesi tengah
-				</div>
-				<div class="title">
-					lorem ipsum dorlor sit
-				</div>
-			</div>
-			{{-- 02 --}}
-			<div class="in-2 js-link">
-				<div class="category">
-					Sulawesi tengah
-				</div>
-				<div class="title">
-					lorem ipsum dorlor sit
-				</div>
-			</div>
-			{{-- 03 --}}
-			<div class="in-3 js-link">
-				<div class="category">
-					Sulawesi tengah
-				</div>
-				<div class="title">
-					lorem ipsum dorlor sit
-				</div>
-			</div>
-			{{-- 04 --}}
-			<div class="in-4 js-link">
-				<div class="category">
-					Sulawesi tengah
-				</div>
-				<div class="title">
-					lorem ipsum dorlor sit
-				</div>
-			</div>
-			{{-- 05 --}}
-			<div class="in-5 js-link">
-				<div class="category">
-					Sulawesi tengah
-				</div>
-				<div class="title">
-					lorem ipsum dorlor sit
-				</div>
-			</div>
-		</div>
-		{{-- END TEXT CONTENT --}}
-		{{-- SINGLE IMAGE 06--}}
-		<div class="box-1">
-			<div class="pb br-l box-single-image in-6 ba-2 animated-background"></div>
-			<div class="pb br-l br-b box-single-image in-6 b-2 js-link">
+			<div class="col-v2 br-l pb box-image in-0 ba-0 animated-background"></div>
+			<div class="col-v2 br-l pb box-image in-0 b-0 js-link">
 				<img src="https://via.placeholder.com/350x150" alt="">
 				<div class="category">
 					Sulawesi tengah
@@ -178,10 +85,9 @@ berita menarik hari ini
 					lorem ipsum dorlor sit
 				</div>
 			</div>
-			<div class="box-single-text-row ba-1 br-l animated-background"></div>
-			<div class="box-single-text-row br-l b-1">
-				{{-- 07 --}}
-				<div class="in-7 js-link">
+			<div class="col-v1 box-single-text-row ba-1 animated-background"></div>
+			<div class="col-v1 box-single-text-row b-1">
+				<div class="in-1 js-link">
 					<div class="category">
 						Sulawesi tengah
 					</div>
@@ -189,8 +95,52 @@ berita menarik hari ini
 						lorem ipsum dorlor sit
 					</div>
 				</div>
-				{{-- 08 --}}
-				<div class="in-8 js-link">
+				<div class="in-2 js-link">
+					<div class="category">
+						Sulawesi tengah
+					</div>
+					<div class="title">
+						lorem ipsum dorlor sit
+					</div>
+				</div>
+				<div class="in-3 js-link">
+					<div class="category">
+						Sulawesi tengah
+					</div>
+					<div class="title">
+						lorem ipsum dorlor sit
+					</div>
+				</div>
+				<div class="in-4 js-link">
+					<div class="category">
+						Sulawesi tengah
+					</div>
+					<div class="title">
+						lorem ipsum dorlor sit
+					</div>
+				</div>
+				<div class="in-5 js-link">
+					<div class="category">
+						Sulawesi tengah
+					</div>
+					<div class="title">
+						lorem ipsum dorlor sit
+					</div>
+				</div>
+			</div>
+			<div class="col-v1 pb br-l box-single-image">
+				<div class="col-v1 pb br-l box-single-image in-6 ba-2 animated-background"></div>
+				<div class="in-6 b-2 js-link">
+					<img src="https://via.placeholder.com/350x150" alt="">
+					<div class="category">
+						Sulawesi tengah
+					</div>
+					<div class="title">
+						lorem ipsum dorlor sit
+					</div>
+				</div>
+				<div class="in-6 b-2 js-link mt-3">
+					<img src="https://via.placeholder.com/350x150" alt="">
 					<div class="category">
 						Sulawesi tengah
 					</div>
@@ -202,7 +152,6 @@ berita menarik hari ini
 		</div>
 	</div>
 </div>
-
 <div class="paper row-tv mt-3">
 	<div class="box-row">
 		<div class="section">
@@ -304,15 +253,6 @@ berita menarik hari ini
 					</div>
 				</div>
 				<div class="pp-3 js-link">
-					<div class="category">
-						Sulawesi tengah
-					</div>
-					<div class="title">
-						lorem ipsum dorlor sit
-					</div>
-				</div>
-				{{-- 06 --}}
-				<div class="pp-6 js-link">
 					<div class="category">
 						Sulawesi tengah
 					</div>

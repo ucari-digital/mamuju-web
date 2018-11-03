@@ -9,6 +9,9 @@
 	<link rel="stylesheet" type="text/css" href="{{url('css/fontawesome/css/all.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url('css/animate.css')}}">
 	<script src="{{url('js/sweetalert2.all.js')}}"></script>
+	<script type="text/javascript">
+		var laravel_url = "{{url('/')}}"
+	</script>
 	@yield('header')
 </head>
 <body>
@@ -20,7 +23,7 @@
 					<img class="rounded d-block js-link" data-link="{{url('/')}}" src="{{url('asset/mt.png')}}">
 				</div>
 			</div>
-			<div class="search btn-more">
+			<div class="search btn-search">
 				<i class="far fa-search"></i>
 			</div>
 			@if(session('id'))
@@ -84,8 +87,13 @@
 	<div class="partial-menu">
 		@include('mobile.partial.menu')
 	</div>
+	<div class="partial-search">
+		@include('mobile.partial.search')
+	</div>
 	{{-- START JAVASCRIPT --}}
 	<script type="text/javascript" src="{{url('js/jquery.min.js')}}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="{{url('js/vue-pragma.js')}}"></script>
 	<script type="text/javascript" src="{{url('js/popper.min.js')}}"></script>
 	<script type="text/javascript" src="{{url('js/bootstrap.min.js')}}"></script>
 	<script type="text/javascript" src="{{url('js/mobile.js')}}"></script>
