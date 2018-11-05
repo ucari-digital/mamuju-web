@@ -155,7 +155,14 @@
 
 			}
 			.box-2{
-				width: 472px;
+				width: 470px;
+				display: inline-block;
+				.image{
+					width: 100%;
+				}
+			}
+			.box-4{
+				width: 940px;
 				display: inline-block;
 				.image{
 					width: 100%;

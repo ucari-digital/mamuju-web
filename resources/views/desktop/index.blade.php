@@ -12,7 +12,7 @@ berita menarik hari ini
 		<div class="box-1">
 			<div class="box-title head">
 				<div class="head-title">Headlines</div>
-				<div class="time-now">1 Novenber 2018</div>
+				<div class="time-now">{{$time}}</div>
 			</div>
 		</div>
 		{{-- TITLE HEDLINE 01 --}}

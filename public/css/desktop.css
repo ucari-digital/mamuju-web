@@ -321,9 +321,14 @@ body {
         width: 235px;
         display: inline-block; }
       .box-container .box-row-auto .box-2 {
-        width: 472px;
+        width: 470px;
         display: inline-block; }
         .box-container .box-row-auto .box-2 .image {
+          width: 100%; }
+      .box-container .box-row-auto .box-4 {
+        width: 940px;
+        display: inline-block; }
+        .box-container .box-row-auto .box-4 .image {
           width: 100%; }
     .box-container .box-row .box-1 {
       width: 235px;
@@ -510,5 +515,14 @@ body {
         background-position-x: 108px;
         background-position-y: 115.5px;
         margin: 0px auto; }
+
+.ads-b {
+  background-image: url("https://dge4uaysoh8oy.cloudfront.net/public/templates/gallery/img/bcjiec1da/Car-Special-Offer-Banner-Template.jpg");
+  background-repeat: no-repeat;
+  height: 250px;
+  max-width: 970px;
+  max-height: 300px;
+  margin: 2 auto;
+  background-position: center; }
 
 /*# sourceMappingURL=desktop.css.map */

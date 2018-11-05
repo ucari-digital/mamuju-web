@@ -31,7 +31,16 @@
                 {{-- END IMAGE CONTENT 06 --}}
             </div>
         @endforeach
-
+        <div class="box-row-auto">
+            <div class="box-1">
+                
+            </div>
+            <div class="box-4">
+                <div class="ads-b">
+                    <div class="img"></div>
+                </div>
+            </div>
+        </div>
         @foreach($data_multiple as $item)
             <div class="box-row">
                 <div class="box-1 br-r">

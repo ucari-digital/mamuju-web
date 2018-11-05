@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers\Desktop;
 
+use Carbon\Carbon;
+use App\Helper\Guzzle;
 use Illuminate\Http\Request;
+
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\GlobalController as G;
 
-use App\Helper\Guzzle;
 class DesktopController extends Controller
 {
     public function index()
     {
-    	return view('desktop.index');
+        $carbon = Carbon::now();
+        setlocale(LC_TIME, 'Indonesian');
+        $time = "{$carbon->day} {$carbon->localeMonth} {$carbon->year}";
+    	return view('desktop.index', compact('time'));
     }
 
     public function profil()
