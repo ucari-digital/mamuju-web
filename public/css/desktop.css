@@ -517,12 +517,22 @@ body {
         margin: 0px auto; }
 
 .ads-b {
-  background-image: url("https://dge4uaysoh8oy.cloudfront.net/public/templates/gallery/img/bcjiec1da/Car-Special-Offer-Banner-Template.jpg");
   background-repeat: no-repeat;
   height: 250px;
   max-width: 970px;
   max-height: 300px;
-  margin: 2 auto;
-  background-position: center; }
+  margin: 10px 0;
+  background-position: center;
+  border: 1px solid #e0e0e0; }
+.ads-l {
+  background-repeat: no-repeat;
+  height: 800px;
+  width: 200px;
+  max-width: 200px;
+  max-height: 800px;
+  margin: 50px 20px 0;
+  background-position: center;
+  position: absolute;
+  border: 1px solid #e0e0e0; }
 
 /*# sourceMappingURL=desktop.css.map */

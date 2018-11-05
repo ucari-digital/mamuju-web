@@ -12,6 +12,9 @@
                 <div class="box-1">
                     <div class="box-title head">
                         <div class="head-title">{{$kategori}}</div>
+                        @if (!empty($ads['ads_l']['gambar']))
+                    <div class="ads-l js-link" style="background-image: url('{{env('PATH_STORAGE').'images/iklan/'.$ads['ads_l']['gambar']}}');" data-link="{{$ads['ads_l']['url']}}"></div>
+                        @endif
                     </div>
                 </div>
                 {{-- TITLE HEDLINE 01 --}}
@@ -36,9 +39,9 @@
                 
             </div>
             <div class="box-4">
-                <div class="ads-b">
-                    <div class="img"></div>
-                </div>
+                @if (!empty($ads['ads_b']['gambar']))
+            <div class="ads-b js-link" style="background-image: url('{{env('PATH_STORAGE').'images/iklan/'.$ads['ads_b']['gambar']}}');" data-link="{{$ads['ads_b']['url']}}"></div>
+                @endif
             </div>
         </div>
         @foreach($data_multiple as $item)

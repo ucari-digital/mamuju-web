@@ -1,12 +1,24 @@
 .ads{
     // Big Banner
     &-b{
-        background-image: url('https://dge4uaysoh8oy.cloudfront.net/public/templates/gallery/img/bcjiec1da/Car-Special-Offer-Banner-Template.jpg');
         background-repeat: no-repeat;
         height: 250px;
         max-width: 970px;
         max-height: 300px;
-        margin: 2 auto;
+        margin: 10px 0;
         background-position: center;
+        border: 1px solid $border;
+    }
+
+    &-l{
+        background-repeat: no-repeat;
+        height: 800px;
+        width: 200px;
+        max-width: 200px;
+        max-height: 800px;
+        margin: 50px 20px 0;
+        background-position: center;
+        position: absolute;
+        border: 1px solid $border;
     }
 }
